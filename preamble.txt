@@ -50,9 +50,3 @@
 \makeatletter
 \renewcommand{\@seccntformat}[1]{}
 \makeatother
-
-\begin{document}
-
-\tableofcontents
-\newpage
-\contentsfalse

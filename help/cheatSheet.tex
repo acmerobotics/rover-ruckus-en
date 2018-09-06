@@ -1,0 +1,88 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentsfalse
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\begin{document} %all entries must go between \begin{document} and \end{document}
+
+\subsection{Starts a new entry, goal goes here}
+%!The description of the goal goes below, and starts with %!
+Write the entry itself below
+
+You can start a new paragraph by leaving a blank line,
+but if you go down to a new line without leaving one blank, it will stay in the same paragraph
+
+\subsubsection{Do this if you want smaller headings within your entry}
+
+To insert an image, throw the file in the images directory of the correct week
+\begin{figure} % as you begin typing this, it should give you the option to auto-complete
+    \centering
+    \includegraphics[width=.6\textwidth]{overleaf.png} % make sure to add the bit between the [] to correctly scale the image, .6 is a good default, but you can change it to scale the image relative to width of the text.  put the full path to the image in the brackets, it should auto-complete
+    \caption{The overleaf logo} % give your picture a caption
+    \label{fig:overleaf} % put a tag that the figure can be referenced by after fig:
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=2cm]{overleaf.png}
+    \caption{the overleaf logo}
+    \label{fig:o}
+\end{figure}
+
+You can then reference the image by the tag that you gave it: figure \ref{fig:overleaf} shows the overleaf logo (the number looks a bit weird here, but when the notebook is generated the first number will refer to to the week, and the second one to the figure within that week). Remember that you have to type out `figure', it is not inserted automatically. On a side note to type quotes, start with a grave, and end with a single quote, `like so', for double quotes double up the graves and quotes, ``double quotes''
+
+\subsubsection{More complex stuff}
+sharelatex.com/learn has great tutorials on all sorts of common stuff, including more advanced image formatting, tables, lists, and math formatting. If you find something that you want to add to entry that requires you to import import another package, check in with Kelly first to make sure that that will not break things, and look to see if that package is already imported.
+
+the overleaf logo is figure number $$F(x) = \int_0^1 3x^3 dx$$ 
+
+
+\end{document}
