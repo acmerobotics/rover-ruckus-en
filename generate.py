@@ -14,6 +14,8 @@ out = open('out/notebook.tex', 'w+')
 preamble = open('preamble.txt', 'r').read()
 
 out.write(preamble)
+out.write('\n')
+out.writelines([r'\begin{document}', r'\tableofcontents', r'\newpage', r'\contentsfalse'])
 
 weekDirs = [x for x in os.listdir('.') if x[:2].isdigit()]
 if not checkWeekPresence(weekDirs): sys.exit('week missing or misnamed')
