@@ -5,12 +5,10 @@ import re
 
 
 def checkWeekPresence(dirs):
-    dirs = [int(x) for x in dirs]
+    dirs = [int(x.split('_')[0]) for x in dirs]
     return dirs[-1] == len(dirs)
 
-if not os.path.exists('out'):
-    os.makedirs('out')
-out = open('out/notebook.tex', 'w+')
+out = open('./notebook.tex', 'w+')
 preamble = open('preamble.txt', 'r').read()
 
 out.write(preamble)
@@ -18,6 +16,7 @@ out.write('\n')
 out.writelines([r'\begin{document}', r'\tableofcontents', r'\newpage', r'\contentsfalse'])
 
 weekDirs = [x for x in os.listdir('.') if x[:2].isdigit()]
+print weekDirs
 if not checkWeekPresence(weekDirs): sys.exit('week missing or misnamed')
 
 for week in weekDirs:
