@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\begin{document}\contentsfalse
+\subsection{Start Working on Lift Kinematics}
+%! Begin to work on lift kinematics for the robot.
+This week, Emma began to work on lift code for the robot. There were several things that the team needed the lift to do. First there needed to be a driver controlled portion of the code so that drivers could manually lift and lower the lift. The other modes needed were run to position; where the lift could go to a certain position and hold position; so that the lift will stay at the position it is currently at. Emma used an enum for this. Enums are excellent for storing data that doesn't present as textual or numerical data, which is why they are ideal for this situation. Emma also learned how we use motion profiling on the robot. It is important to integrate motion profiling into the lift so that movements are as smooth and precise as possible. Here is the code that Emma wrote this week.
+\begin{lstlisting}[language=Java]
+    private enum LiftMode{
+        DRIVER_CONTROLLED,
+        HOLD_POSITION,
+        RUN_TO_POSITION;
+
+    }
+            switch (liftMode){
+
+    public void goToPosition(double position){
+        liftProfile = MotionProfileGenerator.generateSimpleMotionProfile(
+                new MotionState(0, 0, 0, 0),
+                new MotionState(position, 0, 0, 0),
+                1, 1, 1 //find real values eventually
+        );
+        liftMode = LiftMode.RUN_TO_POSITION;
+        startTime = System.currentTimeMillis();
+
+    }
+\end{lstlisting}
+A motion profile is generated every time goToPosition is called. Emma is hoping to work on the other modes next week.
+
+\end{document}

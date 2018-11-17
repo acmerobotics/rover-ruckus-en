@@ -1,0 +1,137 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\begin{document}\contentsfalse
+
+\subsection{Continue working on lift kinematics}
+%! Continue developing software for the lift.
+This week Emma continued to work on software for the lift. She wrote the code for the other modes that the lift needs to execute. These being the "hold position" and "driver controlled" modes. As stated in her last entry, Emma used a enum to switch between modes. Emma also experimented with motor encoders for the first time. Especially how you can use encoder ticks to find out how far up or down the lift has moved. Below is the code that she wrote. 
+\begin{lstlisting}[language=Java] 
+    private enum LiftMode{
+        DRIVER_CONTROLLED,
+        HOLD_POSITION,
+        RUN_TO_POSITION;
+    }
+
+    private int inchesToTicks(double inches) {
+        double ticksPerRev = liftMotor1.getMotorType().getTicksPerRev();
+        double circumference = 2 * Math.PI * RADIUS;
+        return (int) Math.round(inches * ticksPerRev / circumference);
+    }
+
+    private double ticksToInches(int ticks) {
+        double ticksPerRev = liftMotor1.getMotorType().getTicksPerRev();
+        double revs = ticks / ticksPerRev;
+        return 2 * Math.PI * RADIUS * revs;
+    }
+
+    private double getLiftHeight(){
+        return ticksToInches(getEncoderPosition());
+    }
+
+    private void setLiftHeight(double height){
+        setEncoderPosition(inchesToTicks(height));
+    }
+    public void update(){
+
+        double liftPower;
+        switch (liftMode){
+            case DRIVER_CONTROLLED:
+                double start = getStartingPosition();
+                double max = getMaxLiftPosition();
+                double min = getMinLiftPosition();
+                int currentPos = getEncoderPosition();
+                setStartingPosition(start);
+                setMaxLiftPosition(max);
+                setMinLiftPosition(min);
+                setEncoderPosition(currentPos);
+
+                if(currentPos > start){
+                    liftPower = this.liftPower;
+
+                }else if(currentPos == start){
+                    liftPower = this.liftPower;
+
+                } else {
+                    liftMode = LiftMode.HOLD_POSITION;
+                };
+                update();
+                break;
+
+            case HOLD_POSITION:
+                double liftHeight = getLiftHeight();
+                double error = pidController.getError(liftHeight);
+                liftPower = pidController.update(error);
+
+                break;
+
+            case RUN_TO_POSITION:
+                MotionState currrentState = liftProfile.get(System.currentTimeMillis() - startTime);
+                break;
+        }
+    }
+    public void goToPosition(double position){
+        liftProfile = MotionProfileGenerator.generateSimpleMotionProfile(
+                new MotionState(0, 0, 0, 0),
+                new MotionState(position, 0, 0, 0),
+                1, 1, 1 //find real values eventually
+        );
+        liftMode = LiftMode.RUN_TO_POSITION;
+        startTime = System.currentTimeMillis();
+
+    }
+}
+\end{lstlisting}
+Of course there is more, as far as the variables and setters and getters, but this should give you the general idea. Through this Emma also realized that relying on getting the motor position to account for where the lift is at all times probably isn't very reliable. So she plans to use a Hall Effect sensor on the lift to narrow the field of possible positions.
+
+\end{document}
