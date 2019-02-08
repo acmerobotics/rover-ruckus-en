@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+\subsection{Writing Tournament Presentation}
+%! Present at the county writing tournament.
+The writing tournament is an event in Nevada county for 6th and 7th graders. There are three parts to the tournament, the response to a presentation, the creative writing piece, and letter writing. They always have quest speakers and this year, ACME was asked to come. \\
+
+Emma and Kelly prepared a half an hour presentation about ACME, FIRST, and  their 2017-18 season. The presentation basically told the story of their journey to Worlds with important information like how their design process and how software works mixed in. The students participating in the event were given a prompt to respond to. The prompt this year was "What makes a robotics team successful?" ACME made sure to include multiple ways for this question to be answered. For example, a robotics team can be successful by being Gracious Professionals, but also by doing well during competition. \\
+
+The presentation went off without a hitch and the kids seemed to enjoy it as well. The participants were given a chance to ask Kelly and Emma questions after they were done with the presentation, and had several in depth questions that needed answering. After that, the students wrote their essays, which were later graded by a group of teacher judges. ACME got a chance to read the essays and include some of the winning ones in \textbf{Appendix D of the Business Notebook}. \\
+
+This presentation was a great way to connect with more students in the community, especially those that enjoy writing and could be potential recruits to facilitate the engineering and business notebooks in the future. \\
+
+
+
+\end{document}

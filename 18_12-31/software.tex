@@ -1,0 +1,69 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+\subsection{Parse the JSON Response}
+%! Use a JSONArray to parse the JSON response from the API
+With the prescouter, the response from the API is in JSON, which is very difficult to read as it is all strung together. Since this app is specifically made to make prescouting easier, it was important to parse the information. As Emma had no experience parsing before, she spent some time researching the basics before attempting to write the code. She decided to use a JSONArray to parse the data since the response was an array. This array consists of the JSON response from the GET. Then, Emma made JSONObjects for each key then used the array to get the value. Finally she printed the result to the console. Here is the JSONArray that she used to parse the data. 
+
+\begin{lstlisting}[language=Java]
+String jsonResponse = response.toString();
+JSONArray array = new JSONArray(jsonResponse);
+JSONObject teamKey = (JSONObject) array.get(0);
+System.out.println("Team Key: " + teamKey.get("team_key"));
+
+\end{lstlisting}
+
+Each key in the array has a separate JSONObject in order to parse it. As this is a lot of code to have in the Main class of her application, next Emma has decided to make each command she will use into a different class and then call it in Main when she needs that specific data parsed. 
+
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+\subsection{Introduce OOP to the Prescouter}
+%! Use Object-Oriented Programming procedures to simplify the PreScouter.
+In order to simplify the code in her Main class, Emma decided to use Object-Oriented Programming methods to call the different commands she intends to use while prescouting. She knew what object-oriented programming was, but decided to refresh her memory via the internet to make absolutely certain she understood the concept. \\
+
+After doing that, Emma picked out which commands from the API she wanted to use. She decided that she wanted to be able to get information about the team, their match performance, the awards they had won, the results of their tournaments, and the events that they attended. Emma thought that these commands would yield the most information about the team she would be prescouting. She made a class for each command at set to work. Emma used the exact same method to parsing the JSON response in each class and also set it up so that they could be easily called in the Main. After a lot of tweaking, Emma got it working. It is now very easy to call commands in Main and her code is a lot cleaner. It is very clear as to why OOP is very useful and an important tool to use while programming. 
+
+\end{document}

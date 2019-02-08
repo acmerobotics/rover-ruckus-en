@@ -1,0 +1,71 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+\subsection{Re-Organize the Outreach Section}
+%! Better organize the outreach section of the Business Notebook. 
+ACME does a lot of outreach and the outreach section of the BN was looking a little bit disorganized. So, Kelly, Emma and Stephanie talked about how it could be better. They decided they needed clearer categories of outreach and came up with the following sections: 
+
+\begin{itemize}
+    \item Community Events
+    \item FIRST Connections
+    \item Team Building
+\end{itemize}
+
+They also realized that it would be good to explain what types of outreach events fell under each category. Also, instead of listing a bunch of future events they were planning at the end of the outreach section, those events could be split up by category and put under the explanations. \\
+
+Emma took on the job of reorganizing. While in the process, she realized that Team Building needed to be split into two different section in order for it to make more sense. Before doing this, this section encompassed all of the events that helped build up the program in the county as well as events that the team does for fun. Thus, Emma created another section called Program Building, which housed all of the events that helped create a sustainable program in the community. Emma also added a ''Contents" section to the front page describing each category. She thought that it would be good to list what was in the category so that the judges could find things that seemed interesting to them. She made sure to order the Contents in the exact same order in which the individual events were listed for added easy accessibility. \\
+
+When finished, the outreach section was much more organized than it was before. It was easy to find things and the categories made sense for the events that were in them. 
+
+\end{document}

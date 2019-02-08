@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+
+\subsection{Pre-Tournament Scouting Application}
+%! Start working on an application that will use the Orange Alliance API to get information about other teams. 
+Emma has begun work on a new scouting tool that will aid the team before the tournament even begins. The main function of this app will be to get information about the teams they will be competing with, especially their match history, awards, rankings, etc. Having this information will be good going into a tournament because it gives the team a good idea of what they are up against and who they should be making connections with. Emma is using the Orange Alliance API to find this information. The Orange Alliance is a site that centralizes FTC team data so that all FTC teams can have access to it for scouting purposes. Their API can be used to get all of this data. The other uses for this pre-scouting app include having a match schedule with projected and actual scores, the projected best division based on OPR scores, and potentially simulated matches that would see how ACME would fare against other teams with ACME's top score and their top score. Majority of these things would happen in the future, as Emma's main goal right now is to get a simple console app that would get the data when requested. Eventually, Emma is hoping to integrate this into Kelly's scouting app so that all of the scouting fun would be in one place. 
+
+\subsection{Joystick ramping}
+%!Experiment with joystick profiles and speed ramping.
+In previous years, ACME had used a linear profile for the teleop controls. This meant that the commanded speed of the robot would scale linearly with the distance the joystick was pushed, i.e. if the joystick was pushed half way then the robot would move at half its maximum velocity. The issue with this scheme is that it is difficult for drivers to precisely align, because they have to make such small movements with the joystick for the robot to move small distances slowly and accurately. To resolve this, there were multiple modes that drivers could enter that would scale the velocity of the robot by $\frac{1}{2}$ or $\frac{1}{4}$. This meant that divers had to remember to enter the correct mode before they made a precise movement, and the exit it before they traveled quickly from one point to another. 
+
+An alternative to this approach is to use a nonlinear relationship between the joystick and the robot speed. Kelly experimented in Demos, an online graphing calculator, and came up with two options. The first was a dual-zone approach. This is two linear functions combined into one, so that the lower speeds of the robot take up a greater proportion of the joystick range, and the higher speeds are compressed into the extremes. This function is determined by the threshold between the two linear functions, and the slope of the first function.
+\begin{equation}
+dualZone(r) = 
+\begin{cases} 
+      s_{lope}x & 0 \leq r \leq t_{hreshold}\\
+      \frac{(1-s_{lope}t_{hreshold})(r-1)}{1-t_{hreshold}} +1& t_{hreshold} \leq r \leq 1 \\
+  \end{cases}
+\end{equation}
+The second option is an exponential function. It accomplishes the same thing as the first, but is smooth, and only has one parameter, the exponent. 
+\begin{equation}
+    exponential(r) = r^{exponent}
+\end{equation}
+After playing around with these functions, Kelly implemented them in a subclass of \texttt{Gamepad}. To transform the vector representing the position of the joystick into a vector representing the speed of the robot, it is separated into a heading and magnitude, the magnitude is scaled by the appropriate function (either linear, dual zone, or exponential), and then multiplied by the max speed of the robot. 
+
+The next teleop improvement Kelly worked on was power ramping. This would limit the acceleration of the robot and smooth out any sudden commands the driver applies. Each time the power was updated, a vector calculating the distance between the last commanded power and the desired command is calculated. If the magnitude of the vector is greater than the maximum change in velocity over the period of time since the last update occurred, it is clamped to the maximum allowed change, and then added to the last commanded velocity to get the new velocity to command. 
+
+\end{document}

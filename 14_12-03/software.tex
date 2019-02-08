@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+
+\subsection{Make a GET Request from Orange Alliance API}
+%! Write out the basics of a GET request for the pre-scouting application.
+When you need to obtain data from an API, you can use a GET request. In order to request something from an API you need to have an API key and use specific routing commands. Since Emma is going to use Java for this she made a Java application using the IDE Intellij. She had never done a GET request before, let alone in Java, so this was an interesting experience for her. \\
+
+Emma used a website called Mkyong.com that provided an example of a GET request that would return the version of the API. Although Emma could have just control C and control V-ed this into her application but, it was important that she knew how this code operated so that she could understand it for the future. Therefore, Emma spent a long time learning what each line of code did and how it was vital to getting a request. Finally, after fixing a couple of mistakes, the code did what it was supposed to do (yay!) and Emma, through lots of Googling, was able to thoroughly understand how it works. \\
+
+
+
+
+\end{document}
