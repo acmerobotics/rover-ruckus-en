@@ -58,4 +58,17 @@ This week, Emma finished the console version of the PreScouter. After calling ea
 
 At the end of the sendGet() method, Emma used another if else function to print out the data. She decided to use another if else statement because it was easy to use the request from the beginning of the program in order to call the specific class that parsed the data. After she got that all working, the console version of the PreScouter was complete. \\
 
+
+\subsection {Design double sampling paths}
+%Design paths that sample both sets of minerals for extra points in autonomous
+
+While supporting ARES at one of their qualifiers, Kelly saw that many teams either had no auto, or had an auto that only deployed from the lander. Kelly decided that this would make a auto that could disturb both of the gold minerals would be really good to have. In the scenario where an alliance partner did not leave the lander during auto, the location they started at would not matter, so these paths would only have to be designed for ACME's prefered start location, next to the crater. After experimenting by pushing the robot around, Kelly found that there was not enough room between the parked robot and the sampling field to approach the sampling field from the lander side, so the robot would have to first enter the depot, and then push the gold mineral toward the parked robot. This also happened to be an easier modification to make, because it only required duplicating the depot waypoint where the robot dropped off its marker, and adding a waypoint between them to disturb the gold mineral. Kelly tested the paths and found that they worked!
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6\textwidth]{22_01-28/double.png}
+    \caption{Double sampling path (line thickness corresponds to robot velocity)}
+    \label{fig:double}
+\end{figure}
+
 \end{document}

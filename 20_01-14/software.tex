@@ -8,6 +8,7 @@
 \usepackage{caption}
 \usepackage{amsmath}
 \usepackage{rotating}
+\usepackage{pgfplots}
 
 \usepackage{listings}
 \usepackage{color}
@@ -52,5 +53,26 @@
 \renewcommand{\@seccntformat}[1]{}
 \makeatother
 \begin{document}
+
+\subsection{Deploy during auto}
+%! Use a proximity sensor and hall effect sensor to deploy during auto
+Kelly worked on deploying from the lander during auto. Because the exact position at at which the robot is initialized may vary, using the encoders would be an inconsistent way to deploy. To consistently determine the robot's distance from the ground, Kelly decided to use a IR proximity sensor mounted at the bottom of the robot. After mounting the sensor and verifying that the robot's full range of travel would be encompased by the sensor's usable range, Kelly took the sensor off to linearize. Because it is an ir sensor, it measures distance by the intensity of reflected IR light. This means that there is a nonlinear relationship between the voltage returned by the sensor and the distance between the sensor and the ground. Before a loop can sucessfuly be closed around this sensor, the reading must be linearized. Attempting to use a PID loop with a non-linear sensor yeilds different responses at different locations within the sensor's range. and can lead to either instability or inaccuracy. To determine this relationship Kelly and Aidan built a test rig that contained both the IR sensor and a linear potentiometer. The linear potentiometer would return a voltage porportional to the displacement of the stylus along its length. By logging the voltage returned by both the sensors, and offsetting the voltage returned by the potentiometer so that 0 corresponded to the IR sensor being in contact with the ground, Kelly found the relationship between voltage and distance. This distance is still unitless, but the important part is that it is linear.
+
+After removing the unusable data at either end and preforming a regression, Kelly found the relationship to be $d=0.3928 v^{-1.66868}$. 
+
+Kelly then used this sensor to close a PID loop, consistently lowering the robot to the ground each time.
+
+
+\begin {figure}
+\centering
+\begin{tikzpicture}
+\begin{axis} [xlabel=Potentiometer voltage, ylabel=IR Sensor voltage]
+\addplot table [y=dist, x=pot, col sep=comma, only marks, blue, mark options={scale=.5}] {20_01-14/linearization.csv};
+
+\end{axis}
+\end{tikzpicture}
+\caption {Distance reported by sensor vs actual distance}
+\label {fig:graph}
+\end{figure}
 
 \end{document}

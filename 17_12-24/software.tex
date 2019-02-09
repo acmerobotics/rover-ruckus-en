@@ -53,4 +53,32 @@
 \makeatother
 \begin{document}
 
+\subsection {AHHHHHHH}
+AHHHHH
+
+\subsection {Characterize and tune the drive train}
+%! Empericaly determine the characteristics of the drivetrain, and use them to tune both the PIDF onboard velocity loop and the PID position loop for trajectory following during autonomous. 
+
+Before the robot can be able to follow paths during auto, the control loops must be tuned. There are two cascading control loops that control the robot's position. The first is the PIDF velocity loop onbard the Rev Hub. Changes to the rev hub firmware this year mean that rather than commanding velocity in some unitless number between -1 and 1, velocity can actualy be commanded, in radians per second. This takes some of the complication out of the control system, because the constant that relates that unitless number to an actual velocity does not need to be found, but the onbard loop still has to be turned. 
+
+The first step is to turn off the feedback components of the controller, by setting $kP$, $kI$, and $kD$ all to zero. To tune the feedforward constant, $kF$, Kelly first set it to 1. Then he wrote a opMode that gradualy ramped the commanded velocity up while the robot hurtled down a long strip of field tiles, sheporded by Emma. The opMode logged both the commanded velocity and the actual velocity reported by the Rev Hub. The velocities were recorded in radians per second rather than inches per second, because the velocity loop works with individual motors rather than the velocity of the robot its self. The measured data is shown in figure \ref{fig:graph}. While it is obvious that the real line of best fit should be of the form $y=ax+b$, that would not translate to a usable $kF$ for the velocity control loop, as the Rev Hub has no option to set a $kStatic$. Because of this, static friction will have to be ignored, and the regression calcualted in the form $y=ax$, which would make $kF = \frac{1}{a}$. This form of the regression still leaves the coeficient of determination sufficiently high, and even if there is some leftover error, the feedback portion of the loop will take care of that. After preforming the regression, $kF$ is found to be $12.579$. If the mass of the robot significantly changes, this process will have to be preformed again to find the new coeficients.
+
+The next step in the tuning process is to determine the feedback components of the velocity control loop, but this is made easier by a reasonably tuned feedforward component. It is important to tune the feedback coeficients, because the default tunings are meant for an unloaded motor. The motors respond well then just a bare shaft is spinning, but the coeficients are much too low once they are moving around the mass of a 18kg robot. First $kP$ is tuned, by increasing it until the loop becomes unstable, and then backing off a bit. Then $kD$ is added to dampen the rest of the oscilations, and $kI$ to take up any remaining constand error. To tune these coeficients the robot follows a series of motion profiles to travel in a square in the middle of the field while Kelly watches on the dashboard, adjusting the coeficients as needed. Because changing the coefficients on the Rev Hubs requires stoping the motors and re-seting their run mode, the coeficients can only be updated between paths.
+
+After finding a reasonable tuning for the velocity, Kelly tuned the positional PID. The same process was repated, driving the robot in a square around the middle of the field, but this time the positional coeficients were tuned. The corrections determined by the three positional PID loops, axial, lateral, and heading, are added to the velocity calculated from the trajectory to determine the velocity commaned to the drivetrain, which is turned into the velocity commanded to each motor. Because the velocity loops reduced the error quite a bit to begin with, only P terms were needed on the positional loops. 
+
+With the control loops tuned, the robot was now ready to begin executing paths.
+
+\begin {figure}
+\centering
+\begin{tikzpicture}
+\begin{axis} [xlabel=Command, ylabel=Actual]
+\addplot table [x=target, y=actual, col sep=comma, mark=none, blue] {17_12-24/fftuner.csv};
+\addplot +[no marks, red, thin, domain = 0:420 ] {x / 13} ;
+\end{axis}
+\end{tikzpicture}
+\caption {Actual vs. Commanded velocity, with line of best fit}
+\label {fig:graph}
+\end{figure}
+
 \end{document}

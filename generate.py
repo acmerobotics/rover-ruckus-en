@@ -56,7 +56,7 @@ for week in weekDirs:
         end = content.find(r'\end{document}')
         content = content[start:end]
 
-        start = [m.start() for m in re.finditer('subsection{', content)]
+        start = [m.start() for m in re.finditer('subsection{', content)] + [m.start() for m in re.finditer('subsection {', content)]
         if len(start) < 1:
             print 'week {} {} team is empty'.format(week, name)
             continue

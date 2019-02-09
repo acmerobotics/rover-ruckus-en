@@ -8,6 +8,7 @@
 \usepackage{caption}
 \usepackage{amsmath}
 \usepackage{rotating}
+\usepackage{pgfplots}
 
 \usepackage{listings}
 \usepackage{color}

@@ -1,0 +1,729 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.11.2)  8 FEB 2019 13:28
+entering extended mode
+**C:/krm/rover-rumble-en/notebook.tex
+(C:/krm/rover-rumble-en/notebook.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip43
+\f@nch@O@elh=\skip44
+\f@nch@O@erh=\skip45
+\f@nch@O@olh=\skip46
+\f@nch@O@orh=\skip47
+\f@nch@O@elf=\skip48
+\f@nch@O@erf=\skip49
+\f@nch@O@olf=\skip50
+\f@nch@O@orf=\skip51
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ms\everysel.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip52
+\RaggedLeftLeftskip=\skip53
+\RaggedRightLeftskip=\skip54
+\CenteringRightskip=\skip55
+\RaggedLeftRightskip=\skip56
+\RaggedRightRightskip=\skip57
+\CenteringParfillskip=\skip58
+\RaggedLeftParfillskip=\skip59
+\RaggedRightParfillskip=\skip60
+\JustifyingParfillskip=\skip61
+\CenteringParindent=\skip62
+\RaggedLeftParindent=\skip63
+\RaggedRightParindent=\skip64
+\JustifyingParindent=\skip65
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen113
+\captionmargin@=\dimen114
+\captionwidth=\dimen115
+\caption@tempdima=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+)
+\c@ContinuedFloat=\count91
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip66
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen120
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen121
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks17
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks18
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks19
+\multlinegap=\skip67
+\multlinetaggap=\skip68
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\rotating.sty"
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count104
+\rotFPtop=\skip69
+\rotFPbot=\skip70
+\rot@float@box=\box28
+\rot@mess@toks=\toks21
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count105
+\lst@gtempboxa=\box29
+\lst@token=\toks22
+\lst@length=\count106
+\lst@currlwidth=\dimen129
+\lst@column=\count107
+\lst@pos=\count108
+\lst@lostspace=\dimen130
+\lst@width=\dimen131
+\lst@newlines=\count109
+\lst@lineno=\count110
+\lst@maxwidth=\dimen132
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+\c@lstnumber=\count111
+\lst@skipnumbers=\count112
+\lst@framebox=\box30
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2018/09/02 1.7 listings configuration
+))
+Package: listings 2018/09/02 1.7 (Carsten Heinz)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\chngcntr\chngcntr.sty"
+Package: chngcntr 2018/04/09 v1.1a change counter resetting
+)
+No file notebook.aux.
+\openout1 = `notebook.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(108.405pt, 397.485pt, 108.405pt)
+* v-part:(T,H,B)=(108.405pt, 578.15999pt, 108.405pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=397.485pt
+* \textheight=578.15999pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=-0.86499pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 55.
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count113
+\scratchdimen=\dimen133
+\scratchbox=\box31
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen134
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
+\everyMPtoPDFconversion=\toks24
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: rotating package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count119
+
+No file notebook.toc.
+\tf@toc=\write3
+\openout3 = `notebook.toc'.
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+] [2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+[3] [4
+
+]
+
+LaTeX Warning: Reference `fig:jiradash' on page C5 undefined on input line 96.
+
+<02_09-10/images/jiradash.png, id=18, 1010.27437pt x 446.41782pt>
+File: 02_09-10/images/jiradash.png Graphic file (type png)
+
+<use 02_09-10/images/jiradash.png>
+Package pdftex.def Info: 02_09-10/images/jiradash.png used on input line 100.
+(pdftex.def)             Requested size: 238.49342pt x 105.38503pt.
+ [5 <C:/krm/rover-rumble-en/02_09-10/images/jiradash.png>] <02_09-10/images/int
+akesketch.png, id=22, 1927.2pt x 1084.05pt>
+File: 02_09-10/images/intakesketch.png Graphic file (type png)
+
+<use 02_09-10/images/intakesketch.png>
+Package pdftex.def Info: 02_09-10/images/intakesketch.png used on input line 11
+7.
+(pdftex.def)             Requested size: 238.49342pt x 134.14954pt.
+ [6 <C:/krm/rover-rumble-en/02_09-10/images/intakesketch.png>] <02_09-10/images
+/IMG_0256.JPG, id=28, 642.4pt x 481.8pt>
+File: 02_09-10/images/IMG_0256.JPG Graphic file (type jpg)
+
+<use 02_09-10/images/IMG_0256.JPG>
+Package pdftex.def Info: 02_09-10/images/IMG_0256.JPG used on input line 132.
+(pdftex.def)             Requested size: 238.49342pt x 178.86604pt.
+
+
+LaTeX Warning: Reference `fig:camera' on page C7 undefined on input line 146.
+
+
+<02_09-10/images/originalcameraposition.png, id=29, 466.74374pt x 467.49657pt>
+File: 02_09-10/images/originalcameraposition.png Graphic file (type png)
+
+<use 02_09-10/images/originalcameraposition.png>
+Package pdftex.def Info: 02_09-10/images/originalcameraposition.png used on inp
+ut line 154.
+(pdftex.def)             Requested size: 238.49342pt x 238.87663pt.
+ [7 <C:/krm/rover-rumble-en/02_09-10/images/IMG_0256.JPG>] [8 <C:/krm/rover-rum
+ble-en/02_09-10/images/originalcameraposition.png>] [9
+
+]
+<03_09-17/images/IMG_0262.JPG, id=41, 642.4pt x 481.8pt>
+File: 03_09-17/images/IMG_0262.JPG Graphic file (type jpg)
+
+<use 03_09-17/images/IMG_0262.JPG>
+Package pdftex.def Info: 03_09-17/images/IMG_0262.JPG used on input line 176.
+(pdftex.def)             Requested size: 238.49342pt x 178.86604pt.
+ [10 <C:/krm/rover-rumble-en/03_09-17/images/IMG_0262.JPG>] [11
+
+]
+
+LaTeX Warning: Reference `fig:Sorter Version 2' on page C12 undefined on input 
+line 197.
+
+
+LaTeX Warning: Reference `fig:Final Sorting Mechnism' on page C12 undefined on 
+input line 197.
+
+<04_09-24/images/sorter.jpg, id=48, 3276.24pt x 2457.18pt>
+File: 04_09-24/images/sorter.jpg Graphic file (type jpg)
+
+<use 04_09-24/images/sorter.jpg>
+Package pdftex.def Info: 04_09-24/images/sorter.jpg used on input line 201.
+(pdftex.def)             Requested size: 238.49342pt x 178.844pt.
+
+<04_09-24/images/sorter2.png, id=49, 879.285pt x 1038.12843pt>
+File: 04_09-24/images/sorter2.png Graphic file (type png)
+
+<use 04_09-24/images/sorter2.png>
+Package pdftex.def Info: 04_09-24/images/sorter2.png used on input line 208.
+(pdftex.def)             Requested size: 238.49342pt x 281.56566pt.
+
+<04_09-24/images/lift.jpg, id=50, 2457.18pt x 3276.24pt>
+File: 04_09-24/images/lift.jpg Graphic file (type jpg)
+
+<use 04_09-24/images/lift.jpg>
+Package pdftex.def Info: 04_09-24/images/lift.jpg used on input line 218.
+(pdftex.def)             Requested size: 298.11374pt x 397.4811pt.
+ [12 <C:/krm/rover-rumble-en/04_09-24/images/sorter.jpg>] [13 <C:/krm/rover-rum
+ble-en/04_09-24/images/sorter2.png>]
+<04_09-24/images/math.jpg, id=58, 3276.24pt x 2457.18pt>
+File: 04_09-24/images/math.jpg Graphic file (type jpg)
+
+<use 04_09-24/images/math.jpg>
+Package pdftex.def Info: 04_09-24/images/math.jpg used on input line 229.
+(pdftex.def)             Requested size: 397.485pt x 298.11081pt.
+ [14] [15 <C:/krm/rover-rumble-en/04_09-24/images/lift.jpg>] [16 <C:/krm/rover-
+rumble-en/04_09-24/images/math.jpg>]
+Overfull \hbox (1.45528pt too wide) in paragraph at lines 243--245
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[17] [18
+
+] <05_10-01/images/cube.jpg, id=75, 2423.0525pt x 2407.99625pt>
+File: 05_10-01/images/cube.jpg Graphic file (type jpg)
+
+<use 05_10-01/images/cube.jpg>
+Package pdftex.def Info: 05_10-01/images/cube.jpg used on input line 282.
+(pdftex.def)             Requested size: 238.49342pt x 236.99245pt.
+ [19 <C:/krm/rover-rumble-en/05_10-01/images/cube.jpg>] <05_10-01/images/xrail.
+jpg, id=80, 3276.24pt x 2457.18pt>
+File: 05_10-01/images/xrail.jpg Graphic file (type jpg)
+
+<use 05_10-01/images/xrail.jpg>
+Package pdftex.def Info: 05_10-01/images/xrail.jpg used on input line 300.
+(pdftex.def)             Requested size: 238.49342pt x 178.844pt.
+ [20] [21 <C:/krm/rover-rumble-en/05_10-01/images/xrail.jpg>] [22
+
+] [23] <06_10-08/images/latch1.JPG, id=93, 642.4pt x 481.8pt>
+File: 06_10-08/images/latch1.JPG Graphic file (type jpg)
+
+<use 06_10-08/images/latch1.JPG>
+Package pdftex.def Info: 06_10-08/images/latch1.JPG used on input line 356.
+(pdftex.def)             Requested size: 238.49342pt x 178.86604pt.
+
+<06_10-08/images/latch.png, id=94, 1927.2pt x 1084.05pt>
+File: 06_10-08/images/latch.png Graphic file (type png)
+
+<use 06_10-08/images/latch.png>
+Package pdftex.def Info: 06_10-08/images/latch.png used on input line 363.
+(pdftex.def)             Requested size: 238.49342pt x 134.14954pt.
+ [24 <C:/krm/rover-rumble-en/06_10-08/images/latch1.JPG> <C:/krm/rover-rumble-e
+n/06_10-08/images/latch.png>] [25] [26] [27]
+[28
+
+]
+
+LaTeX Warning: Reference `fig:Letters' on page C29 undefined on input line 481.
+
+
+<07_10-15/images/letters.jpg, id=112, 3035.34pt x 4047.12pt>
+File: 07_10-15/images/letters.jpg Graphic file (type jpg)
+
+<use 07_10-15/images/letters.jpg>
+Package pdftex.def Info: 07_10-15/images/letters.jpg used on input line 485.
+(pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
+ [29] [30 <C:/krm/rover-rumble-en/07_10-15/images/letters.jpg>]
+
+LaTeX Warning: Reference `fig:Intake CAD' on page C31 undefined on input line 5
+00.
+
+<07_10-15/images/IntakeCAD.png, id=119, 435.12563pt x 291.33844pt>
+File: 07_10-15/images/IntakeCAD.png Graphic file (type png)
+
+<use 07_10-15/images/IntakeCAD.png>
+Package pdftex.def Info: 07_10-15/images/IntakeCAD.png used on input line 504.
+(pdftex.def)             Requested size: 238.49342pt x 159.6854pt.
+ [31 <C:/krm/rover-rumble-en/07_10-15/images/IntakeCAD.png>] [32
+
+]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+<08_10-22/images/IMG_0330.JPG, id=127, 4047.12pt x 3035.34pt>
+File: 08_10-22/images/IMG_0330.JPG Graphic file (type jpg)
+
+<use 08_10-22/images/IMG_0330.JPG>
+Package pdftex.def Info: 08_10-22/images/IMG_0330.JPG used on input line 536.
+(pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
+ [33] [34 <C:/krm/rover-rumble-en/08_10-22/images/IMG_0330.JPG>] [35
+
+]
+
+LaTeX Warning: Reference `fig:marker' on page C36 undefined on input line 557.
+
+<09_10-29/images/anvil_marker.jpg, id=137, 2842.62pt x 1760.5775pt>
+File: 09_10-29/images/anvil_marker.jpg Graphic file (type jpg)
+
+<use 09_10-29/images/anvil_marker.jpg>
+Package pdftex.def Info: 09_10-29/images/anvil_marker.jpg used on input line 56
+1.
+(pdftex.def)             Requested size: 238.49342pt x 147.69945pt.
+
+<09_10-29/images/bearingblock.JPG, id=138, 4047.12pt x 3035.34pt>
+File: 09_10-29/images/bearingblock.JPG Graphic file (type jpg)
+
+<use 09_10-29/images/bearingblock.JPG>
+Package pdftex.def Info: 09_10-29/images/bearingblock.JPG used on input line 57
+2.
+(pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
+ [36 <C:/krm/rover-rumble-en/09_10-29/images/anvil_marker.jpg>] [37 <C:/krm/rov
+er-rumble-en/09_10-29/images/bearingblock.JPG>] [38
+
+]
+
+LaTeX Warning: Reference `fig:pitboard' on page C39 undefined on input line 604
+.
+
+<10_11-05/images/pit_board.jpg, id=149, 2578.63374pt x 2003.485pt>
+File: 10_11-05/images/pit_board.jpg Graphic file (type jpg)
+
+<use 10_11-05/images/pit_board.jpg>
+Package pdftex.def Info: 10_11-05/images/pit_board.jpg used on input line 608.
+(pdftex.def)             Requested size: 238.49342pt x 185.2889pt.
+
+
+LaTeX Warning: Reference `' on page C39 undefined on input line 618.
+
+[39 <C:/krm/rover-rumble-en/10_11-05/images/pit_board.jpg>]
+<10_11-05/images/sorter.JPG, id=153, 4047.12pt x 3035.34pt>
+File: 10_11-05/images/sorter.JPG Graphic file (type jpg)
+
+<use 10_11-05/images/sorter.JPG>
+Package pdftex.def Info: 10_11-05/images/sorter.JPG used on input line 622.
+(pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
+
+<10_11-05/images/intake_shield.JPG, id=154, 4047.12pt x 3035.34pt>
+File: 10_11-05/images/intake_shield.JPG Graphic file (type jpg)
+
+<use 10_11-05/images/intake_shield.JPG>
+Package pdftex.def Info: 10_11-05/images/intake_shield.JPG used on input line 6
+33.
+(pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
+
+<10_11-05/images/drivetrain.JPG, id=155, 4047.12pt x 3035.34pt>
+File: 10_11-05/images/drivetrain.JPG Graphic file (type jpg)
+
+<use 10_11-05/images/drivetrain.JPG>
+Package pdftex.def Info: 10_11-05/images/drivetrain.JPG used on input line 644.
+
+(pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
+ [40 <C:/krm/rover-rumble-en/10_11-05/images/sorter.JPG>] [41 <C:/krm/rover-rum
+ble-en/10_11-05/images/intake_shield.JPG> <C:/krm/rover-rumble-en/10_11-05/imag
+es/drivetrain.JPG>] [42
+
+]
+<11_11-12/images/rake_slides.JPG, id=165, 4047.12pt x 3035.34pt>
+File: 11_11-12/images/rake_slides.JPG Graphic file (type jpg)
+
+<use 11_11-12/images/rake_slides.JPG>
+Package pdftex.def Info: 11_11-12/images/rake_slides.JPG used on input line 669
+.
+(pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
+
+<11_11-12/images/rake.jpg, id=166, 3035.34pt x 2180.145pt>
+File: 11_11-12/images/rake.jpg Graphic file (type jpg)
+
+<use 11_11-12/images/rake.jpg>
+Package pdftex.def Info: 11_11-12/images/rake.jpg used on input line 680.
+(pdftex.def)             Requested size: 238.49342pt x 171.28813pt.
+ [43] [44 <C:/krm/rover-rumble-en/11_11-12/images/rake_slides.JPG> <C:/krm/rove
+r-rumble-en/11_11-12/images/rake.jpg>]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+ [45
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 693--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 701--702
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--704
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 705--706
+
+ []
+
+[46] [47] [48
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 727--728
+
+ []
+
+[49] [50] [51] [52
+
+] <14_12-03/images/IMG_0422.JPG, id=206, 642.4pt x 481.8pt>
+File: 14_12-03/images/IMG_0422.JPG Graphic file (type jpg)
+
+<use 14_12-03/images/IMG_0422.JPG>
+Package pdftex.def Info: 14_12-03/images/IMG_0422.JPG used on input line 789.
+(pdftex.def)             Requested size: 238.49342pt x 178.86604pt.
+ [53 <C:/krm/rover-rumble-en/14_12-03/images/IMG_0422.JPG>]
+
+LaTeX Warning: Reference `fig:math' on page C54 undefined on input line 799.
+
+
+LaTeX Warning: Reference `fig:stress' on page C54 undefined on input line 799.
+
+<14_12-03/images/Math.jpg, id=210, 2615.7725pt x 2142.0025pt>
+File: 14_12-03/images/Math.jpg Graphic file (type jpg)
+
+<use 14_12-03/images/Math.jpg>
+Package pdftex.def Info: 14_12-03/images/Math.jpg used on input line 806.
+(pdftex.def)             Requested size: 238.49342pt x 195.28859pt.
+
+<14_12-03/images/Stress_Analysis.png, id=211, 1028.34187pt x 545.78906pt>
+File: 14_12-03/images/Stress_Analysis.png Graphic file (type png)
+
+<use 14_12-03/images/Stress_Analysis.png>
+Package pdftex.def Info: 14_12-03/images/Stress_Analysis.png used on input line
+ 813.
+(pdftex.def)             Requested size: 238.49342pt x 126.57817pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 820--821
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--823
+
+ []
+
+[54] [55 <C:/krm/rover-rumble-en/14_12-03/images/Math.jpg> <C:/krm/rover-rumble
+-en/14_12-03/images/Stress_Analysis.png>] [56] [57
+
+]
+
+LaTeX Warning: Reference `fig:diverter' on page C58 undefined on input line 838
+.
+
+<15_12-10/images/Diverter.jpg, id=226, 3035.34pt x 4047.12pt>
+File: 15_12-10/images/Diverter.jpg Graphic file (type jpg)
+
+<use 15_12-10/images/Diverter.jpg>
+Package pdftex.def Info: 15_12-10/images/Diverter.jpg used on input line 842.
+(pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
+ [58 <C:/krm/rover-rumble-en/15_12-10/images/Diverter.jpg>]
+!pdfTeX error: pdflatex.EXE (file C:/krm/rover-rumble-en/15_12-10/images/IMG_79
+74.JPG): reading JPEG image failed (no JPEG header found)
+ ==> Fatal error occurred, no output PDF file produced!

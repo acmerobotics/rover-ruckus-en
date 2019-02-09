@@ -53,4 +53,27 @@
 
 \begin{document}\contentsfalse
 
+\subsection {Change waypoint representations}
+% Write a wrapper around roadrunner's path generation to facilitate more intuitive waypoint creation and path design
+Roadrunner (ACME's motion planning and control library), is designed to be usable by any team, regardless of their drivetrain type. For this reason, the default behaviour of the path generator is to keep the headnig of the robot consistant with the direction of travel, so that the paths are executable by a tank drive robot. Spline paths are created by calling \texttt{PathBuilder.splineTo (Pose2d pose)}, where the positional component of the pose represents the location of the endpoint of the spline, and the heading component represents the direction of travel on entering the point, which in a tank drive is the same as the heading of the robot. To facilitate holonomic drives, where the direction of travel is not neccecarily, and in fact idealy is not the same as the heading, an optional \texttt{HeadingInterpolator} can be passed, which could be constant, linear, or some other sort of more sophisticated interpolator. In most cases, a linear interpolator should be used, so that a single profile can be used for the entire path, and heading will vary linearly with displacement along the path. The problem then becomes an issue of code readabilty and path creation. To go to a point, \texttt{builder.splineTo (new Pose2d (x, y, entranceDirection), new LinearInterpolator (startHeading, endHeading))} must be called. If the start heading of one endpoint does not mach the endpoint of the last, a heading discontinuity results, making things tougher. Points with different entrance and exit directions are also more dificult to create.
+
+To resolve this, Kelly created two new classes, a \texttt{Waypoint} class, and a \texttt{TrajectoryBuilder} class. A \texttt{Waypoint} contains a Pose2d to store the position of the robot at the Waypoint, as well as the entrance and exit angles of the waypoint. This allows a waypoint to be declared as such:
+
+ \lstinline{ Waypoint SAMPLE_RIGHT_DEPOT = new Waypoint(new Pose2d(48, 24, -PI / 4), PI / 4); }
+
+The entrance and exit poses required by Roadrunner's path generation can be accesed by \texttt{waypoint.getEnter()} and \texttt{waypoint.getExit()}. To construct a set of paths, a TrajectoryBuilder object is constructed, and then passed a series of waypoints. The headings are automaticaly taken care of, and multiple paths are created if the waypoints require the robot to come to a complete stop on its way to traverse them. 
+
+\begin{lstlisting}[language=Java]
+public TrajectoryBuilder to(Waypoint waypoint) {
+	currentPath.splineTo(waypoint.getEnter(), new LinearInterpolator(lastWaypoint.getHeading(), waypoint.getHeading()));
+	lastWaypoint = waypoint;
+	if (waypoint.getStop()) {
+		trajectories.add(new SplineTrajectory(currentPath.build()));
+		currentPath = new PathBuilder(waypoint.getExit());
+	}
+	return this;
+}
+\end{lstlisting}
+
+
 \end{document}

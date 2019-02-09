@@ -8,6 +8,7 @@
 \usepackage{caption}
 \usepackage{amsmath}
 \usepackage{rotating}
+\usepackage{pgfplots}
 
 \usepackage{listings}
 \usepackage{color}
@@ -52,5 +53,27 @@
 \renewcommand{\@seccntformat}[1]{}
 \makeatother
 \begin{document}
+
+
+
+\subsection{Tune lift kinematics}
+%!Tune the control loops to run the lift automaticaly
+The lift needed to be motion profiled in order to run during auto (to get off of the lander, and then lower the lift back down), as well as to run it automaticaly during teleop, so the drivers only need to press a single button for the lift to automaticaly go to a set position. Because the two motors of the lift drive the same gearbox, it would not work to use the onboard PIDF velocity control. If the Rev Hub commanded different voltages to each motor, they could end up fighting each other, and potentialy burn out, or at least reduce the efficiency of the lift. To avoid this, Kelly decided to run the motors in an open loop mode, where the voltage applied to the motors will be commanded to the rev hub in a number between -1 and 1. This means that a feed forward constant will have to be used within the subsystem code, rather than onboard the rev hub. This constant relates the speed commanded, on the interval of -1 to 1, to the actual velocity of the lift, in inches per second. If this were the drivetrain, a opmode could run the lift to collect the neccecary data, but since running the lift too far in any direction could potentialy break the robot, Kelly did not feel comfortable running the lift autonomously until the control loop was tuned. Kelly instead ran the lift manualy, moving it up and down with the joystick at various velocities and positions, while logging the data. 
+
+By preforming a regression on the data, Kelly determined $kF$ to be $0.0917$. Kelly also determined 14 m/s, 30 m/s/s, and 30 m/s/s/s to be reasonable values for $maxV$, $maxA$, and $maxJ$ respectively.
+
+Kelly then tuned the lift PID loop. Because the lift only has one degree of freedom error is not the end of the world, and smooth motion is the priority, so Kelly omitted D from the loop, and kept P and I low. After the loop was tuned the lift was able to run to a desired position at the press of a button during teleop.
+
+\begin {figure}
+\centering
+\begin{tikzpicture}
+\begin{axis} [xlabel=Command, ylabel=Actual]
+\addplot table [x=command, y=velocity, col sep=comma, only marks, blue, mark options={scale=.5}] {16_12-17/lift.csv};
+\addplot +[no marks, red, thick, domain = -1:1 ] {x / .0917} ;
+\end{axis}
+\end{tikzpicture}
+\caption {Actual vs. Commanded velocity}
+\label {fig:graph}
+\end{figure}
 
 \end{document}
