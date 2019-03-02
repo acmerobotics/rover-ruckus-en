@@ -54,8 +54,8 @@
 \begin{document}\contentsfalse
 
 \subsection{Investigate problem with motion profile generation}
-%! Investigate a problem that causes trapazoidal profiles to be returned instead of s-curve profiles in some cases.
-While testing pathing on the robot, Kelly found that under certain circumstances a trapazoidal profile would be returned instead of a s-curve profile. This increased error significantly by attempting to instantaniously change the acceleration of the robot, and made the motors sound wierd whern there were discontinuities in their pitch caused by the acceleration discontinuities. After testing Kelly determined that the problem occured when the profile was not long enough for the robot to achieve maximum acceleration. 
+%! Investigate a problem that causes trapezoidal profiles to be returned instead of s-curve profiles in some cases.
+While testing pathing on the robot, Kelly found that under certain circumstances a trapezoidal profile would be returned instead of a s-curve profile. This increased error significantly by attempting to instantaneously change the acceleration of the robot, and made the motors sound weird when there were discontinuities in their pitch caused by the acceleration discontinuities. After testing Kelly determined that the problem occurred when the profile was not long enough for the robot to achieve maximum acceleration. 
 
 
 \begin{lstlisting}
@@ -90,7 +90,7 @@ While testing pathing on the robot, Kelly found that under certain circumstances
 
 \end{lstlisting}
 
-In this code snippit, a binary search is used to compute the max velocity that will be reached in the case that the robot does not have enough time to reach its actual max velocity. This algorithm had been working last year, but when it was re-written in Kotlin over the summer in preperation for the public release of roadrunner, a mistake was made in these two lines:
+In this code snippit, a binary search is used to compute the max velocity that will be reached in the case that the robot does not have enough time to reach its actual max velocity. This algorithm had been working last year, but when it was re-written in Kotlin over the summer in preparation for the public release of Roadrunner, a mistake was made in these two lines:
 
 \begin{lstlisting}
                     val searchAccelProfile = generateAccelProfile(start, maximumVelocity, maximumAcceleration, maximumJerk)
@@ -98,7 +98,7 @@ In this code snippit, a binary search is used to compute the max velocity that w
                             .reversed()
 \end{lstlisting}
 
-Rather than generating the search profiles with \texttt{peakVel}, the valiable whose correct value is being searched for, the profiles were generated with \texttt{maximumAcceleration}, the constant constraint used to generate all the profiles. This meant that the search profile never actualy changed, so the thousand iterations of the search would be preformed to no avail, and then a backup trapazoidal profile returned. By changing those two  lines to generate the search profile using \texttt{peakVel} instead, the search would converge to within $10^{-10}$ in around thirty iterations, the same preformance as last year. 
+Rather than generating the search profiles with \texttt{peakVel}, the variable whose correct value is being searched for, the profiles were generated with \texttt{maximumAcceleration}, the constant constraint used to generate all the profiles. This meant that the search profile never actually changed, so the thousand iterations of the search would be preformed to no avail, and then a backup trapezoidal profile returned. By changing those two  lines to generate the search profile using \texttt{peakVel} instead, the search would converge to within $10^{-10}$ in around thirty iterations, the same performance as last year. 
 
 
 \end{document}

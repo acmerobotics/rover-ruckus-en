@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+\subsection{Napa Tournament}
+%! Attend the Napa Qualifying tournament.
+ACME attended the Napa Qualifier. This was their last qualifying tournament, and since they had already qualified for the Northern California Regionals, this tournament was sort of a practice tournament and they didn't feel completely stressed out about matches. 
+
+They practiced judging bright and early and set up our pit area. This tournament they wanted to test out a new pre-scouting technique where a few scouters went around and asked their alliance partners to draw out their autonomous paths on a field diagram they had printed out. This worked quite well, as it allowed ACME to run different auto paths based on their partner's capabilities and paths. 
+
+The team's qualifying matches went very well! They won every one and placed third overall. Since they didn't need to qualify, they weren't interested in being alliance captain, so they decided to let the first place team pick them for their alliance. Although ACME went out in the semi-finals, they had a great time competing. 
+
+Another big accomplishment for this tournament was that every single group of judges came and talked to the team. This meant that they made the shortlist for every award. This was a first and they were very proud that their judging presentation made such a good impression on the judges. 
+
+ACME ended the day by winning the Control award for their software. They were really happy and had a fun and exciting day!
+
+\end{document}

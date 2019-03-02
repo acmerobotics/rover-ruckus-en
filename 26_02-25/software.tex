@@ -1,0 +1,71 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+\subsection{Figure out how to send the GET request after a button press}
+Emma spent a lot of time trying to figure out how to get the GET request to wait until the user had pressed the submit button. This turned out to be a very frustrating problem, and one that took a lot of time to solve. At first, she tried to use an if statement to check whether or not the button was pressed. However, this sent her down a long rabbit hole of making the button static, because the if statement would only work in the main if the argument was static. Then she switched from a regular button to a JButton, and then to a JToggleButton, to try to use the same if statment solution. Then, after days of agony of trying to get it to work, Emma finally realized that she was being silly and could just use another ActionListener to tell when the button was pressed so that it would send the GET request. It didn't just work like magic, however, she still ran into a problem where the http.sendGet() was throwing and exception. To combat this, Emma used a try statement that caught the exception. Luckily, this worked and Emma could move on to the next challenge which is making the GET request print out to the TextArea.
+
+\subsubsection{Finish the Pre-Scouting App}
+Emma needed to add the finishing touches to the prescouting app in order to get it operational. In order to do this, Emma needed to figure out how to get the GET request to print the data it gathers into the TextArea. This meant that she had to edit the individual request classes in order for it to properly parse the data. Emma decided to use a StringBuilder to accomplish this as it would give her the ability to string all of the data together in one place. After doing this for each class, she switched her focus to getting the data to print to the TextArea. She did this by checking the ''request" TextField for the request and then depending on what it is (using and if else statement), she prints the data into the TextArea. Below, is the code that accomplishes this: \\
+
+\begin{lstlisting}
+       if(requestField.getText().equals(team)) {
+            Team team = new Team();
+            team.setTeamArray(responseArray);
+            dataArea.setText(team.printTeamText());
+        } 
+\end{lstlisting}
+
+With the prescouting app complete, Emma is now looking forward to testing it out before a tournament. 
+
+\end{document}
