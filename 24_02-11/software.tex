@@ -75,6 +75,7 @@ Now, Emma needed to go about making this UI a reality and actually function prop
 \end{figure}
 
 \subsection{Write tracking omni code}
+%!
 To use the omnidirectional tracking wheels installed on the robot Kelly needed to write software to translate their movements into robot movements. The kinematics to transform a relative robot pose update to a field pose up date could be reused from the existing localization code that used the drive motors, so the task was to translate tracking wheel deltas and a heading delta reported by the imu into a robot pose delta. 
 
 Because the drivetrain is holonomic, software assumes that the robot moves with constant positional and heading velocity each update cycle, rather than the traditional twists used by differential drives. 

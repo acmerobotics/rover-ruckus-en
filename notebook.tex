@@ -54,12 +54,6 @@
 \makeatother
 
 \begin{document}\tableofcontents\newpage\contentsfalse\clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Write fundraising letters}
- Write two fundraising letters, one for existing sponsors and one for new sponsors. 
-\paragraph{B2: Discuss the Engineering Notebook process with both teams}
- Have an in-depth discussion about the Engineering Notebook process with both ACME and ARES. 
-\newpage
 \subsection{B1: Write fundraising letters}
 
 Since establishing ARES Robotics, the two teams plan to fundraise and go to outreach events together. Since ACME has more experience with writing fundraising letters, Emma was tasked with writing them. She wrote one letter for existing sponsors and then modified it to explain the teams and FIRST for potential sponsors. There are four levels of sponsorship for ACME and ARES. All of them give sponsors benefits, such as their company name/logo on the team website, company name/logo on the side of the robot, and having a private presentation to the sponsoring company. ACME had these support levels last year as well and they worked very well because the sponsor could choose their support level based on what incentives they wanted. The ARES captain, Sean, looked over the letter and approved it. After, the teams developed a potential sponsor list. and wrote another fundraising letter targeted to new sponsors.  
@@ -70,39 +64,27 @@ With all of the new team members on ACME (and with ARES being a rookie team) it 
 
 The Captains decided to write all of the EN entries in Overleaf because it is more simplistic process than what they did the previous year (i.e. writing entries in Google Sheets and then transferring them into \LaTeX). Since ACME is a smaller team this year, it was fairly simple to teach everyone how to use the platform. Having the entries written directly into Overleaf also allows the EN to be ready for competition earlier because each week can be generated when members finish writing their entries. 
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Develop a schedule for the first part of the season}
- Decide on a schedule that tailors to the needs of the team for the first tournament.
-\paragraph{B2: Setup a task tracking system}
- Decide on a task tracking platform.
-\subsection{Hardware Goals}
-\paragraph{H1: Develop intake prototypes}
-The game this year requires the robot to be able to sort the gold and silver minerals. We need to come up with and test various ideas for ways to pick up and sort out the two types of minerals.
-\paragraph{H2: Investigate possible drivetrain designs}
- Research different drivetrains and decide which would be suitable for this game.
-\paragraph{H3: Develop Drivetrain Prototypes}
- Work on a drivetrain prototype at the Build Weekend.
-\subsection{Software Goals}
-\paragraph{S1: Test vision software}
- Develop vision software to detect the gold particle
-\paragraph{S2: Experiment with new motor controller features}
- Play with new motor controller features to see what benefits they have.
-\newpage
-\subsection{B1: Develop a schedule for the first part of the season}
+\subsection{S1: Test vision software}
 
-After the Build Weekend, the team got together to discuss the schedule for the first part of the season. The schedule was based around the robot goals that members want to accomplish for the first qualifier. There were several other factors to consider as well, such as leaving time to fabricate, assemble, practice auto and driving. With these thoughts in mind, here is the schedule the team developed. 
+Finding the gold particle at the beginning of the autonomous posed many challenges for the software team. Modifying a python vision script from the Relic Recovery season, Emma and Kelly were able to successfully detect the gold particle. However, the problems started when they realized that with the robot starting above the ground, the camera would have full view of the crater full of gold particles behind the line of particles they were trying to detect, as seen in
+Figure \ref{fig:camera}.
 
-\subsection{B2: Setup a task tracking system}
+After discussing possible solutions, including identifying the three particles first (both silver and gold), Emma decided to experiment with camera angles from approximately five inches above the field. Without having the field nor the mounting point on the robot, Emma tried her best to find the optimal position for the camera, although a final position will need to be determined once the robot is complete. 
 
-Last year, the team used a whiteboard in the robotics room to keep track of tasks that needed to be completed. This worked great, except, unless you took a picture of it after every meeting, you could not easily access it remotely. Which is why this year, ACME captains decided to use Jira to keep track of tasks. Jira is an online task tracking product developed by Atlassian. Team captains have the capability to assign tasks to members, as do mentors. The team has found that this software works very well for them and will continue to use it in the future. You can see the Jira dashboard in Figure \ref{fig:jiradash}.
+Although there are different ways to solve this problem using programming, for simplicity's sake, Emma is hoping to troubleshoot more with the camera when the field arrives sometime in the next week. As they already have functional code, it would be beneficial to only have to position the camera correctly. 
 
 \begin{figure}
     \centering
-    \includegraphics[width=.6\textwidth]{02_09-10/images/jiradash.png}
-    \caption{Jira Dashboard}
-    \label{fig:jiradash}
+    \includegraphics[width=.6\textwidth]{02_09-10/images/originalcameraposition.png}
+    \caption{Original Position of the Camera}
+    \label{fig:camera}
 \end{figure}
-\subsection{H1: Develop intake prototypes}
+
+
+
+\subsection{S2: Experiment with new motor controller features}
+
+New motor functionality added with v4.0 of the SDK and the new Rev Expansion Hub firmware has the ability to have a PIDF control loop on the Rev Hub itself. This means that rather than commanding some vague `power' to the motor, and then having to empirically determine the relationship between this power and the velocity of the motor, you can directly command a velocity, and the control loop on board the hub will match that velocity regardless of voltage droop. After upgrading the firmware in the hubs and testing this functionality with a lone motor, Kelly re-wrote the MecanumDrive class to take advantage of it. After deploying this to the Relic Recovery robot, Kelly found that the robot was much easier to control. Without any feed-back control on the robot controller side, the robot was very stable, and it was much easier to move the robot slowly, because the hub would now do the work of closing a loop around the velocity of the robot.\subsection{H1: Develop intake prototypes}
 
 After the whole team watched the game video, several members began prototyping mechanisms to intake and sort cubes. Because the game requires the robot to pick up minerals that are inside the crater, the robot either needs to be able to climb over the crater to intake the minerals, or extend some sort of intake over the crater wall. 
 
@@ -141,33 +123,21 @@ Given that a good drivetrain is vital for a successful robot, the team needed a 
 
 Shawn and Ben worked on developing a rocker bogie drivetrain to test. The drivetrain used two different rotation points on both sides to be able to get over things, such as the crater wall. They used a picture from the Internet to assist in the construction of the drivetrain. After it was finished, the drivetrain worked as expected but wasn't quite within the size constraints. Sadly, the drivetrain had to be taken apart. 
 
-\subsection{S1: Test vision software}
+\subsection{B1: Develop a schedule for the first part of the season}
 
-Finding the gold particle at the beginning of the autonomous posed many challenges for the software team. Modifying a python vision script from the Relic Recovery season, Emma and Kelly were able to successfully detect the gold particle. However, the problems started when they realized that with the robot starting above the ground, the camera would have full view of the crater full of gold particles behind the line of particles they were trying to detect, as seen in
-Figure \ref{fig:camera}.
+After the Build Weekend, the team got together to discuss the schedule for the first part of the season. The schedule was based around the robot goals that members want to accomplish for the first qualifier. There were several other factors to consider as well, such as leaving time to fabricate, assemble, practice auto and driving. With these thoughts in mind, here is the schedule the team developed. 
 
-After discussing possible solutions, including identifying the three particles first (both silver and gold), Emma decided to experiment with camera angles from approximately five inches above the field. Without having the field nor the mounting point on the robot, Emma tried her best to find the optimal position for the camera, although a final position will need to be determined once the robot is complete. 
+\subsection{B2: Setup a task tracking system}
 
-Although there are different ways to solve this problem using programming, for simplicity's sake, Emma is hoping to troubleshoot more with the camera when the field arrives sometime in the next week. As they already have functional code, it would be beneficial to only have to position the camera correctly. 
+Last year, the team used a whiteboard in the robotics room to keep track of tasks that needed to be completed. This worked great, except, unless you took a picture of it after every meeting, you could not easily access it remotely. Which is why this year, ACME captains decided to use Jira to keep track of tasks. Jira is an online task tracking product developed by Atlassian. Team captains have the capability to assign tasks to members, as do mentors. The team has found that this software works very well for them and will continue to use it in the future. You can see the Jira dashboard in Figure \ref{fig:jiradash}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=.6\textwidth]{02_09-10/images/originalcameraposition.png}
-    \caption{Original Position of the Camera}
-    \label{fig:camera}
+    \includegraphics[width=.6\textwidth]{02_09-10/images/jiradash.png}
+    \caption{Jira Dashboard}
+    \label{fig:jiradash}
 \end{figure}
-
-
-
-\subsection{S2: Experiment with new motor controller features}
-
-New motor functionality added with v4.0 of the SDK and the new Rev Expansion Hub firmware has the ability to have a PIDF control loop on the Rev Hub itself. This means that rather than commanding some vague `power' to the motor, and then having to empirically determine the relationship between this power and the velocity of the motor, you can directly command a velocity, and the control loop on board the hub will match that velocity regardless of voltage droop. After upgrading the firmware in the hubs and testing this functionality with a lone motor, Kelly re-wrote the MecanumDrive class to take advantage of it. After deploying this to the Relic Recovery robot, Kelly found that the robot was much easier to control. Without any feed-back control on the robot controller side, the robot was very stable, and it was much easier to move the robot slowly, because the hub would now do the work of closing a loop around the velocity of the robot.\clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: Work with intake prototypes}
- Test intake prototypes. 
-\paragraph{H2: Develop a Team Marker}
- Design a team marker that will be used at the tournaments.
-\newpage
+\clearpage \newpage \section{Week \thesection} 
 \subsection{H1: Work with intake prototypes}
 
 After looking further into the dual flywheel intake design, Jon and Kelly decided this was not a practical option because it would be difficult to fit onto the robot and create an efficient chain setup. Kelly and Jon then decided to go with a swing down roller design, as this would be easy to fit into the existing design and will likely work just as well. After deciding this, Jon built a prototype for this new intake. 
@@ -182,17 +152,31 @@ After looking further into the dual flywheel intake design, Jon and Kelly decide
 \subsection{H2: Develop a Team Marker}
 
 Shawn and Ben were tasked with developing a team marker. The team marker should fit within the size constraints and, ideally represent something about the team. Ben and Shawn decided to make a prototype anvil marker that could roll. Ben sketched out an anvil in his notebook and measured the height of cardboard. Based on this measurement, he divided the drawing into equal sections that were that height. Shawn the cut out the cardboard pieces and they pieced it together.\clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: Sorting Mechanism}
- Design a sorting mechanism to sort the minerals. 
-\paragraph{H2: Investigate potential lift designs}
- Figure out which lift designs would work the best for the robot. 
-\paragraph{H3: Design lift gearbox}
- Design a lift gearbox that can move the lift quickly and can lift up the robot. 
-\subsection{Software Goals}
-\paragraph{S1: Integrate the hub feedforward functionality into trajectory followers}
-Integrate the new feedforward functionality into the trajectory code for auto paths.
-\newpage
+\subsection{S1: Integrate the hub feedforward functionality into trajectory followers}
+
+Before, with each update of the control system, the trajectory would return a target velocity at that given moment, which would be multiplied by the empirically determined coefficient that would convert it to a power to command to the motor. The target position of the trajectory would be compared to the actual position of the robot, and a PID loop would use this error to correct the power commanded to account for the error. Now, the velocity returned by the trajectory is directly commanded to the motor, and the rev hub does the work of converting that to a voltage that is applied to the motor. The positional error still is accounted for, but now by correcting the commanded velocity, not the commanded power. Even with very low gains on the Positional PID loop, this yielded markedly better results than the previous trajectory follower, because of the new functionality in the Rev Hubs. The second necessary change to the trajectory follower was the way error was calculated. Previously, positional error was split into two components, axial and lateral, but the axial error was always parallel to the robot's heading, and the lateral error was always perpendicular to it. Because the new pathing system treated the drive completely holonomically, this no longer made sense, because when the robot was strafing, the axial error would be normal to its direction of travel, but when the robot was driving forward, the axial error would be tangent to its direction of travel. If the robot was moving through a curve with constant heading, always on the path but 1 inch behind where it wanted to be, the error would first be primarily axial, and then primarily lateral, which would cause strange behaviours when these errors are fed into separate PID loops. To counteract this, Kelly changed it so that the axial error was always tangent to the robot's direction of travel, and the lateral error was always normal to the robot's direction of travel. This improved the usefulness of the error measurements.
+
+\begin{lstlisting}[language=Java]
+public synchronized Pose2d update(double t, Pose2d pose, TelemetryPacket packet) {
+        if (t >= duration) complete = true;
+        
+        Pose2d targetPose = path.get(axialProfile.get(t).getX());
+        double theta = path.deriv(axialProfile.get(t).getX()).pos().angle();
+        Pose2d targetVelocity = path.deriv(axialProfile.get(t).getX()).times(axialProfile.get(t).getV());
+
+        Vector2d trackingError = pose.pos().minus(targetPose.pos()).rotated(-theta);
+        Vector2d trackingCorrection = new Vector2d(
+                axialController.update(trackingError.getX()),
+                lateralController.update(trackingError.getY())
+        );
+
+        double headingError = pose.getHeading() - targetPose.getHeading();
+        double headingCorrection = headingController.update(headingError);
+
+        Pose2d correction = new Pose2d(trackingCorrection, headingCorrection);
+        return targetVelocity.plus(correction);
+    }
+\end{lstlisting}
 \subsection{H1: Sorting Mechanism}
 
 Ashlin, Aidan and Kelly worked on the process for sorting the cubes from the balls. The first idea was a mechanical sorting system that would function like a coin sorter, allowing the cubes to fall through while the balls rolled past. This design was discarded because it took too much space and was not consistent. A new sorting system involved a color sensor and a U shaped cup. In figure \ref{fig:Sorter Version 2} the new system is shown connected to a prototype robot. The cube or ball would roll into the U-cup and then be read by the color sensor. The U-cup would then rotate about 135 degrees clockwise or counterclockwise to deposit the cube or ball in the corresponding cartridge. This idea did not work because there were not available servos that could rotate the required 270 and the system required too much space. This failed sorting system led to a third sorting system that was based around version two but took up less space and did not have to rotate as much. The final design, figure \ref{fig:Final Sorting Mechnism}, allowed the ball or cube to go into the rotating circle part where it would be read by the color sensor and then a servo would rotate the circle part about 45 degrees clockwise or counterclockwise to deposit it in the corresponding cartridge. This system worked significantly better because it allowed there to be only 90 degrees of rotation needed by the servo, the process would be significantly shorter, and the whole system could be condensed to take up no more than a 6 inches.
@@ -231,49 +215,31 @@ Another goal for the lift was finding a suitable gearbox that would fit all of t
     \caption{Lift gearbox math}
     \label{fig:my_label}
 \end{figure}
-\subsection{S1: Integrate the hub feedforward functionality into trajectory followers}
+\clearpage \newpage \section{Week \thesection} 
+\subsection{S1: Start Working on Lift Kinematics}
 
-Before, with each update of the control system, the trajectory would return a target velocity at that given moment, which would be multiplied by the empirically determined coefficient that would convert it to a power to command to the motor. The target position of the trajectory would be compared to the actual position of the robot, and a PID loop would use this error to correct the power commanded to account for the error. Now, the velocity returned by the trajectory is directly commanded to the motor, and the rev hub does the work of converting that to a voltage that is applied to the motor. The positional error still is accounted for, but now by correcting the commanded velocity, not the commanded power. Even with very low gains on the Positional PID loop, this yielded markedly better results than the previous trajectory follower, because of the new functionality in the Rev Hubs. The second necessary change to the trajectory follower was the way error was calculated. Previously, positional error was split into two components, axial and lateral, but the axial error was always parallel to the robot's heading, and the lateral error was always perpendicular to it. Because the new pathing system treated the drive completely holonomically, this no longer made sense, because when the robot was strafing, the axial error would be normal to its direction of travel, but when the robot was driving forward, the axial error would be tangent to its direction of travel. If the robot was moving through a curve with constant heading, always on the path but 1 inch behind where it wanted to be, the error would first be primarily axial, and then primarily lateral, which would cause strange behaviours when these errors are fed into separate PID loops. To counteract this, Kelly changed it so that the axial error was always tangent to the robot's direction of travel, and the lateral error was always normal to the robot's direction of travel. This improved the usefulness of the error measurements.
-
+This week, Emma began to work on lift code for the robot. There were several things that the team needed the lift to do. First there needed to be a driver controlled portion of the code so that drivers could manually lift and lower the lift. The other modes needed were run to position; where the lift could go to a certain position and hold position; so that the lift will stay at the position it is currently at. Emma used an enum for this. Enums are excellent for storing data that doesn't present as textual or numerical data, which is why they are ideal for this situation. Emma also learned how we use motion profiling on the robot. It is important to integrate motion profiling into the lift so that movements are as smooth and precise as possible. Here is the code that Emma wrote this week.
 \begin{lstlisting}[language=Java]
-public synchronized Pose2d update(double t, Pose2d pose, TelemetryPacket packet) {
-        if (t >= duration) complete = true;
-        
-        Pose2d targetPose = path.get(axialProfile.get(t).getX());
-        double theta = path.deriv(axialProfile.get(t).getX()).pos().angle();
-        Pose2d targetVelocity = path.deriv(axialProfile.get(t).getX()).times(axialProfile.get(t).getV());
+    private enum LiftMode{
+        DRIVER_CONTROLLED,
+        HOLD_POSITION,
+        RUN_TO_POSITION;
 
-        Vector2d trackingError = pose.pos().minus(targetPose.pos()).rotated(-theta);
-        Vector2d trackingCorrection = new Vector2d(
-                axialController.update(trackingError.getX()),
-                lateralController.update(trackingError.getY())
+    }
+            switch (liftMode){
+
+    public void goToPosition(double position){
+        liftProfile = MotionProfileGenerator.generateSimpleMotionProfile(
+                new MotionState(0, 0, 0, 0),
+                new MotionState(position, 0, 0, 0),
+                1, 1, 1 //find real values eventually
         );
+        liftMode = LiftMode.RUN_TO_POSITION;
+        startTime = System.currentTimeMillis();
 
-        double headingError = pose.getHeading() - targetPose.getHeading();
-        double headingCorrection = headingController.update(headingError);
-
-        Pose2d correction = new Pose2d(trackingCorrection, headingCorrection);
-        return targetVelocity.plus(correction);
     }
 \end{lstlisting}
-\clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Discuss Gracious Professionalism}
- Discuss the important FIRST value of Gracious Professionalism with both teams.
-\subsection{Hardware Goals}
-\paragraph{H1: Continue Developing The Team Marker}
- Creating a releasing mechanism for the team marker. 
-\paragraph{H2: Drivetrain decision}
- Decide on the design for the drivetrain.
-\paragraph{H3: Develop X-rail based lift}
- Develop a CAD model of the x-rail based lift.
-\subsection{Software Goals}
-\paragraph{S1: Start Working on Lift Kinematics}
- Begin to work on lift kinematics for the robot.
-\newpage
-\subsection{B1: Discuss Gracious Professionalism}
-
-Although ACME members from last year were well versed in the ways of Gracious Professionalism, the new members - and ARES members - were not. As Gracious Professionalism is the underlining value of FIRST, Emma and Kelly decided to give a presentation on the subject. Pulling up a Google Slides presentation in the Drive, Emma was able to write a fairly comprehensive guide on how to be a Gracious Professional. After having Kelly read it over, and spending some time developing the Flowers Dialectic, Kelly presented it to both teams. The teams had a great discussion about how and how not to behave at competition, as well as how to be a Gracious Professional in their everyday life. The only thing this presentation could not totally explain was how rewarding it can be to practice these values. The team especially saw this last year at the Northern California Regionals, when they helped their friends, team 5214: Tech Support, by buying them an emergency servo. The team ended up being on the winning alliance because of it.  
+A motion profile is generated every time goToPosition is called. Emma is hoping to work on the other modes next week.
 \subsection{H1: Continue Developing The Team Marker}
 
 Shawn and Ben hadn't quite finished the anvil when they realized that the marker had no deployment mechanism and it looked super bad. They then decided to go with just a cube with a loop that could be dropped by a servo over the side. Shawn was tasked with making the block and he made it out of acrylic. Then Ben used basic Tetrix to make a servo mechanism that would unhook the cube and make it fall. Ben built the mechanism and found that a lot of servos didn't work.
@@ -302,73 +268,10 @@ The entire team made a matrix to help weight the pro and cons of the prototype d
      \caption{X-rail detail view}
      \label{fig:my_label}
  \end{figure}
-\subsection{S1: Start Working on Lift Kinematics}
+\subsection{B1: Discuss Gracious Professionalism}
 
-This week, Emma began to work on lift code for the robot. There were several things that the team needed the lift to do. First there needed to be a driver controlled portion of the code so that drivers could manually lift and lower the lift. The other modes needed were run to position; where the lift could go to a certain position and hold position; so that the lift will stay at the position it is currently at. Emma used an enum for this. Enums are excellent for storing data that doesn't present as textual or numerical data, which is why they are ideal for this situation. Emma also learned how we use motion profiling on the robot. It is important to integrate motion profiling into the lift so that movements are as smooth and precise as possible. Here is the code that Emma wrote this week.
-\begin{lstlisting}[language=Java]
-    private enum LiftMode{
-        DRIVER_CONTROLLED,
-        HOLD_POSITION,
-        RUN_TO_POSITION;
-
-    }
-            switch (liftMode){
-
-    public void goToPosition(double position){
-        liftProfile = MotionProfileGenerator.generateSimpleMotionProfile(
-                new MotionState(0, 0, 0, 0),
-                new MotionState(position, 0, 0, 0),
-                1, 1, 1 //find real values eventually
-        );
-        liftMode = LiftMode.RUN_TO_POSITION;
-        startTime = System.currentTimeMillis();
-
-    }
-\end{lstlisting}
-A motion profile is generated every time goToPosition is called. Emma is hoping to work on the other modes next week.
+Although ACME members from last year were well versed in the ways of Gracious Professionalism, the new members - and ARES members - were not. As Gracious Professionalism is the underlining value of FIRST, Emma and Kelly decided to give a presentation on the subject. Pulling up a Google Slides presentation in the Drive, Emma was able to write a fairly comprehensive guide on how to be a Gracious Professional. After having Kelly read it over, and spending some time developing the Flowers Dialectic, Kelly presented it to both teams. The teams had a great discussion about how and how not to behave at competition, as well as how to be a Gracious Professional in their everyday life. The only thing this presentation could not totally explain was how rewarding it can be to practice these values. The team especially saw this last year at the Northern California Regionals, when they helped their friends, team 5214: Tech Support, by buying them an emergency servo. The team ended up being on the winning alliance because of it.  
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: Sorter CAD}
- CAD the sorter.
-\paragraph{H2: Develop custom lift}
- Further investigate possible lift designs and weigh the pros and cons of each. 
-\paragraph{H3: CAD Lander Clamp}
- Create a latch in CAD that will be used to attach to the lander. 
-\paragraph{H4: Finalize robot design}
- Discuss the final robot design with the team.
-\subsection{Software Goals}
-\paragraph{S1: Continue working on lift kinematics}
- Continue developing software for the lift.
-\newpage
-\subsection{H1: Sorter CAD}
-
-Ashlin and Aidan continued to finalize the sorting system for the robot and completed the CAD model of the sorter. Aidan realized a flaw with the system, if a ball then a cube went into the sorter right after each other then the cube could jam the sorter. This was because the interior length of the rotating piece was almost 4 inches long, so if a ball then a cube went in the sensor would read the ball and then start rotate but the cube would block the rotating and jam the servo. Kelly, Ashlin, Aidan, and Jon all thought of ideas to solve this problem including shortening the sorter's dimensions, creating a servo powered gate, or just changing the whole system. The team finally decided to solve the problem once the sorter was fabricated. The problem could only occur if the two items went into the sorter immediately after each other. The team believed that the intake would probably space out the items sufficiently so this problem wouldn't occur, and if it did occur small adjustments could be made to increase the space between items.
-
-\subsection{H2: Develop custom lift}
-
-The x-rail lift design would work, but Kelly still wanted to investigate the 254-style lift, with square tubing, bearings, and custom bearing blocks. While more labor-intensive and harder to pull off, the end result would be better than with x-rail if it turned out correctly. Where the x-rail only needed bearings on one side, because the v-bearings would be able to resolve both radial and lateral loads, normal bearings can only resolve radial loads, so bearings will have to be placed on at least three sides to constrain the lift in both dimensions. Since the lift is composed of two mirrored parts, connected by the frame of the first stage, Kelly could get away with only running bearings along three sides of each tube, excluding the outer one, because the bearings in the y-axis would push the two sides against each other, preventing the lift from shifting side-to-side. Each bearing assembly would consist of four bearings, two on either side of the tube pinching it, and two next to each other running along the inside of the tube. Kelly began the CAD by making 1 in by $\frac{1}{2}$ in by $\frac{1}{16}$ in wall aluminum tubing in 16 inch lengths. One of these would be mounted to the drivetrain, and the other would make up the vertical portion of the first stage, rolling along the fixed one. A bearing assembly would go at the top of the fixed one and the bottom of the moving one, keeping the bearings as far apart from each other as possible, distributing the load and stabilizing the lift. The inner carriage would be made out of a H-shaped arrangement of more tubes, with a bearing assembly mounted at the top and bottom of each side of the H. After considering mounting the bearings by sandwiching the tube between two machined plates, Kelly realized this would not support the inner bearings, so decided on machined blocks that would be fixed to the tube with rivets. The blocks would have a quarter inch hole on the side for attaching the pinching bearings, and hole at the top where a bolt would connect the two blocks and support the inner bearings. After assembling this, Kelly found there was not enough room on the vertical portion of the first stage for both sets of bearings to roll against it, so it was neccecary for them to be swapped out for one inch by one inch tubes instead. 
-
-\subsection{H3: CAD Lander Clamp}
-
-To lower and raise the robot from the lander, the team decided to attach a latch to their lift. The team decided to do this because by attaching it to the scoring lift the team would not have to create a separate lift or arm to hang from. Kelly made the original prototype for this mechanism - which used two pillow blocks that when placed around the hook on the lander had a bar slid through to have the robot hang. Jon then used this basic prototype to CAD a more finalized design.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6 \textwidth]{06_10-08/images/latch1.JPG}
-    \caption{Latch Prototype}
-    \label{fig: Latch CAD1}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6 \textwidth]{06_10-08/images/latch.png}
-    \caption{Latch CAD}
-    \label{fig: Latch CAD2}
-\end{figure}
-
-\subsection{H4: Finalize robot design}
-
-The team got together and went over the robot design, making sure that everything had been considered and accounted for before the final stages of CAD were completed and parts were ordered. Everybody presented prototypes and CAD that they had been working on, and the team decided whether or not to stick with it, and discussed any problems that might arise as the parts went into production. The first thing to decide was the type of drive base. The team had used mecanum drives the previous two years, and was confident they could build it correctly, but did not want to dismiss a tank drive. The tank drive that was being considered was a chain driven 6-wheel drop center west coast drive. The mecanum drive being considered was the same thing that the team had used to success last year, a belt-driven mecanum drive, with dead axles constrained between drive plates giving it extra rigidity. Oren had made some improvements over last year's design, including using smaller belts and swapping out parts to increase maintainability. The team decided they should use mecanum drive for its increased maneuverability unless a definite need for tank drive was needed. Because the defensive advantage given by the advantage of tank was countered by the maneuverability of mecanum and the ability to get out of tight situations, and the settled upon intake had no need for the robot to be able to go inside the crater, the team decided to go with a mecanum drive. The team decided to stick with the intake design consisting of a rake that would extend over the crater wall and pull minerals toward the robot and a series of surgical-tubing whips to suck the minerals in from there. The active sorter using a color sensor was chosen because it would be more reliable when the robot was in motion, and the double cartridge design was chosen because it would allow the two mineral types to be scored independently. Finally, the team decided to use the custom lift rather than the x-rail based one because Oren was confident that he would have the time to manufacture it to the neccecary specifications, and Dan felt it was something that would be able to be made on the manual mill at GSS.
 \subsection{S1: Continue working on lift kinematics}
 
 This week Emma continued to work on software for the lift. She wrote the code for the other modes that the lift needs to execute. These being the "hold position" and "driver controlled" modes. As stated in her last entry, Emma used a enum to switch between modes. Emma also experimented with motor encoders for the first time. Especially how you can use encoder ticks to find out how far up or down the lift has moved. Below is the code that she wrote. 
@@ -449,52 +352,52 @@ This week Emma continued to work on software for the lift. She wrote the code fo
 }
 \end{lstlisting}
 Of course there is more, as far as the variables and setters and getters, but this should give you the general idea. Through this Emma also realized that relying on getting the motor position to account for where the lift is at all times probably isn't very reliable. So she plans to use a Hall Effect sensor on the lift to narrow the field of possible positions.
-\clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Decide what business tasks need to be completed before the Burlingame competition}
- Create tasks in Jira that need to be executed before ACME's first competition.
-\paragraph{B2: Finalize the budget with the team captains}
- Decide on the final budget for the build.
-\paragraph{B3: Print, sign, address, stamp and send the fundraising letters}
- Completely finish the process of sending out fundraising letters to sponsors.
-\paragraph{B4: Start interviewing team members for bios}
- Interview ACME members for their bios in the business notebook.
-\subsection{Hardware Goals}
-\paragraph{H1: Finish Designing the team marker}
- CAD the team marker.
-\paragraph{H2: Complete Sorter and Intake CAD}
- Editing the Sorter and attachments.
-\paragraph{H3: Testing Rev Linear Slide Kit}
- Build the linear slide system. 
-\paragraph{H4: CNC Milled Drive-Train }
- Cut Drive-Train Plates.
-\newpage
-\subsection{B1: Decide what business tasks need to be completed before the Burlingame competition}
+\subsection{H1: Sorter CAD}
 
-With the team's first competition confirmed, Emma thought it might be good to start figuring out what business tasks needed to be completed before hand. Using the business Jira board, Emma wrote up tasks that covered all areas of the business team. Such as, finishing fundraising letters, writing up the goals and action plan in the EN, and writing up ACME's outreach events in the EN. Having a list of tasks written out, whether on paper or on a screen, is better way to keep track of tasks rather than just having a running list in your head. Most of the tasks she created were specific to the EN and need to be completed before their first tournament. She will be working on several of these tasks in the weeks to come.
+Ashlin and Aidan continued to finalize the sorting system for the robot and completed the CAD model of the sorter. Aidan realized a flaw with the system, if a ball then a cube went into the sorter right after each other then the cube could jam the sorter. This was because the interior length of the rotating piece was almost 4 inches long, so if a ball then a cube went in the sensor would read the ball and then start rotate but the cube would block the rotating and jam the servo. Kelly, Ashlin, Aidan, and Jon all thought of ideas to solve this problem including shortening the sorter's dimensions, creating a servo powered gate, or just changing the whole system. The team finally decided to solve the problem once the sorter was fabricated. The problem could only occur if the two items went into the sorter immediately after each other. The team believed that the intake would probably space out the items sufficiently so this problem wouldn't occur, and if it did occur small adjustments could be made to increase the space between items.
 
-\subsection{B2: Finalize the budget with the team captains}
+\subsection{H2: Develop custom lift}
 
-Finalizing the budget for the season was important to complete sooner rather than later because so many other tasks (especially business tasks) depended on it. Using the list of parts needed for the robot, the team was able to estimate how much all of the parts would cost (\$2500), including how many extras they were going to need to build spare parts just in case something broke on the robot. The team also left enough room in the budget to allow for iteration, if need be (\$700). That total came out to be \$2,200. As an extra precaution, the team decided to add about 30\% of wiggle room onto that total, bringing the total number to \$6000. The team thinks that this is a very reasonable number and is planning to reach it by sending out fundraising letters to the community. As the team is not supported by any school, it is important to decide the budget as early as possible in order to send them out quickly.
+The x-rail lift design would work, but Kelly still wanted to investigate another type of lift, with square tubing, bearings, and custom bearing blocks. While more labor-intensive and harder to pull off, the end result would be better than with x-rail if it turned out correctly. Where the x-rail only needed bearings on one side, because the v-bearings would be able to resolve both radial and lateral loads, normal bearings can only resolve radial loads, so bearings will have to be placed on at least three sides to constrain the lift in both dimensions. Since the lift is composed of two mirrored parts, connected by the frame of the first stage, Kelly could get away with only running bearings along three sides of each tube, excluding the outer one, because the bearings in the y-axis would push the two sides against each other, preventing the lift from shifting side-to-side. Each bearing assembly would consist of four bearings, two on either side of the tube pinching it, and two next to each other running along the inside of the tube. Kelly began the CAD by making 1 in by $\frac{1}{2}$ in by $\frac{1}{16}$ in wall aluminum tubing in 16 inch lengths. One of these would be mounted to the drivetrain, and the other would make up the vertical portion of the first stage, rolling along the fixed one. A bearing assembly would go at the top of the fixed one and the bottom of the moving one, keeping the bearings as far apart from each other as possible, distributing the load and stabilizing the lift. The inner carriage would be made out of a H-shaped arrangement of more tubes, with a bearing assembly mounted at the top and bottom of each side of the H. After considering mounting the bearings by sandwiching the tube between two machined plates, Kelly realized this would not support the inner bearings, so decided on machined blocks that would be fixed to the tube with rivets. The blocks would have a quarter inch hole on the side for attaching the pinching bearings, and hole at the top where a bolt would connect the two blocks and support the inner bearings. After assembling this, Kelly found there was not enough room on the vertical portion of the first stage for both sets of bearings to roll against it, so it was neccecary for them to be swapped out for one inch by one inch tubes instead. 
 
-\subsection{B3: Print, sign, address, stamp and send the fundraising letters}
+\subsection{H3: CAD Lander Clamp}
 
-Although the fundraising letters were already written, the team still needed to print them out, address them, and mail them. Emma printed out over 50 individually addressed letters. Then, she, Kelly, and Sean and Eli from ARES signed their names at the bottom of the letters. ACME believes that this looks professional and adds a bit of a personal touch to each letter.  Eli and Sean addressed each envelope and the mentors sent them out later that day, as you can see in figure \ref{fig:Letters}. Both teams are expecting funds to come in the coming weeks. 
+To lower and raise the robot from the lander, the team decided to attach a latch to their lift. The team decided to do this because by attaching it to the scoring lift the team would not have to create a separate lift or arm to hang from. Kelly made the original prototype for this mechanism - which used two pillow blocks that when placed around the hook on the lander had a bar slid through to have the robot hang. Jon then used this basic prototype to CAD a more finalized design.
 
 \begin{figure}
     \centering
-    \includegraphics[width=.6 \textwidth]{07_10-15/images/letters.jpg}
-    \caption{Eli and Sean with the final letters}
-    \label{fig:Letters}
+    \includegraphics[width=.6 \textwidth]{06_10-08/images/latch1.JPG}
+    \caption{Latch Prototype}
+    \label{fig: Latch CAD1}
 \end{figure}
 
-\subsection{B4: Start interviewing team members for bios}
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{06_10-08/images/latch.png}
+    \caption{Latch CAD}
+    \label{fig: Latch CAD2}
+\end{figure}
 
-As always, the most distracting task of the season has come again. This is of course, interviewing members for their bios in the Business Notebook. Why is it so distracting to people? Because listening to Emma and Kelly give an interview to each member is for some reason very entertaining. Besides that they were able to gather all of the information that they needed. Some of the questions asked were, "What is your wildest idea for a FTC challenge?" and "What is your favorite gracious professionalism story?" Emma plans to type these bios up in \LaTeX along with a photo of each team member, as shirts and jackets arrive. 
+\subsection{H4: Finalize robot design}
 
+The team got together and went over the robot design, making sure that everything had been considered and accounted for before the final stages of CAD were completed and parts were ordered. Everybody presented prototypes and CAD that they had been working on, and the team decided whether or not to stick with it, and discussed any problems that might arise as the parts went into production. The first thing to decide was the type of drive base. The team had used mecanum drives the previous two years, and was confident they could build it correctly, but did not want to dismiss a tank drive. The tank drive that was being considered was a chain driven 6-wheel drop center west coast drive. The mecanum drive being considered was the same thing that the team had used to success last year, a belt-driven mecanum drive, with dead axles constrained between drive plates giving it extra rigidity. Oren had made some improvements over last year's design, including using smaller belts and swapping out parts to increase maintainability. The team decided they should use mecanum drive for its increased maneuverability unless a definite need for tank drive was needed. Because the defensive advantage given by the advantage of tank was countered by the maneuverability of mecanum and the ability to get out of tight situations, and the settled upon intake had no need for the robot to be able to go inside the crater, the team decided to go with a mecanum drive. The team decided to stick with the intake design consisting of a rake that would extend over the crater wall and pull minerals toward the robot and a series of surgical-tubing whips to suck the minerals in from there. The active sorter using a color sensor was chosen because it would be more reliable when the robot was in motion, and the double cartridge design was chosen because it would allow the two mineral types to be scored independently. Finally, the team decided to use the custom lift rather than the x-rail based one because Oren was confident that he would have the time to manufacture it to the neccecary specifications, and Dan felt it was something that would be able to be made on the manual mill at GSS.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth, ]{06_10-08/images/robot[1].png}
+    \caption{Drive train CAD}
+    \label{Dive train CAD}
+\end{figure}\clearpage \newpage \section{Week \thesection} 
 \subsection{H1: Finish Designing the team marker}
 
 Shawn and Ben worked on developing a new team marker that was an anvil. Ben took the old anvil hat CAD from last year and derived the file and re-scaled it to fit in the proper dimensions. Ben then added a hook and for the mechanism and engraved the top of the anvil with the team marker. They then rendered the model. At the next meeting, they further developed the mechanism.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{07_10-15/images/REAL_anvil_marker.png}
+    \caption{Anvil Marker}
+    \label{fig:marker}
+\end{figure}
 
 \subsection{H2: Complete Sorter and Intake CAD}
 
@@ -513,21 +416,48 @@ Recently, the team received the Rev linear motion kits they ordered. To see how 
 
 \subsection{H4: CNC Milled Drive-Train }
 
-Oren, Ashlin, and Kelly worked with the Nu wood-shop teacher, to use their new CNC Laguna to cut out the 1/8 inch aluminum plates that make up the entirety of the drive-train. They had learn how to do auto tool changes and setting the X,Y and Z axis on the new tool as to allow them the most accurate product in the end\clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Work on the Business Notebook}
- There is much to be done for the BN, so work on it must start immediately.
-\subsection{Hardware Goals}
-\paragraph{H1: Design of The Deployment Mechanism}
- Making marker deployer.
-\paragraph{H2: Turn wheel inserts for the drivetrain}
- Fabricate the wheel inserts.
-\newpage
-\subsection{B1: Work on the Business Notebook}
+Oren, Ashlin, and Kelly worked with the Nu wood-shop teacher, to use their new CNC Laguna to cut out the 1/8 inch aluminum plates that make up the entirety of the drive-train. They had learn how to do auto tool changes and setting the X,Y and Z axis on the new tool as to allow them the most accurate product in the end.
 
-The team realized that there was a lot of work that needed to be done on the Business Notebook, so Emma decided to take on that task. The BN includes all of the team's outreach events, the sustainability plan, our goals and action plans, team bios, fundraising information, current sponsor list, etc. With so much to, Emma decided to start with the team bios as those just needed to be typed in \LaTeX . Although there were plenty of answers to questions she and Kelly had asked team members the week before, she only chose 4 or 5 for each bio so that they only filled one page and would leave room for a picture. After the bios were completed, Emma started to write up the outreach events ACME did at the end of last season and over the summer. ACME had been writing about four paragraphs about each outreach event, which Emma thought was a bit excessive. So, she came up with a new format. A picture from the event is at the top of the page followed by the title for the event. A short summary sentence is after that, then bullet points highlighting parts of the event that explain what the team did, how it effected the team and how it benefited the people who the team helped or presented to. She found this method to be much more concise and easy to read. Next week, Emma plans to continue work on the BN by finalizing the budget and writing up the teams goals and action plans. \subsection{H1: Design of The Deployment Mechanism}
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{07_10-15/images/drivetrain.JPG}
+    \caption{Drivetrain plates (assembled)}
+    \label{fig:plates}
+\end{figure}
+\subsection{B1: Decide what business tasks need to be completed before the Burlingame competition}
 
-Shawn and Ben worked on revising and iterating the marker deployment mechanism. They discussed the best way to easily drop the marker and came up with a bar and hook mechanism.This mechanism works by setting a hook on a bar and then rotating the bar so the hook slides of the end and into the depot.
+With the team's first competition confirmed, Emma thought it might be good to start figuring out what business tasks needed to be completed before hand. Using the business Jira board, Emma wrote up tasks that covered all areas of the business team. Such as, finishing fundraising letters, writing up the goals and action plan in the EN, and writing up ACME's outreach events in the EN. Having a list of tasks written out, whether on paper or on a screen, is better way to keep track of tasks rather than just having a running list in your head. Most of the tasks she created were specific to the EN and need to be completed before their first tournament. She will be working on several of these tasks in the weeks to come.
+
+\subsection{B2: Finalize the budget with the team captains}
+
+Finalizing the budget for the season was important to complete sooner rather than later because so many other tasks (especially business tasks) depended on it. Using the list of parts needed for the robot, the team was able to estimate how much all of the parts would cost (\$2500), including how many extras they were going to need to build spare parts just in case something broke on the robot. The team also left enough room in the budget to allow for iteration, if need be (\$1500). That total came out to be \$2,200. As an extra precaution, the team decided to add about 30\% of wiggle room onto that total, bringing the total number to \$6000. The team thinks that this is a very reasonable number and is planning to reach it by sending out fundraising letters to the community. As the team is not supported by any school, it is important to decide the budget as early as possible in order to send them out quickly.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{07_10-15/images/budget.JPG}
+    \caption{Final Budget}
+    \label{fig: budget}
+\end{figure}
+
+\subsection{B3: Print, sign, address, stamp and send the fundraising letters}
+
+Although the fundraising letters were already written, the team still needed to print them out, address them, and mail them. Emma printed out over 50 individually addressed letters. Then, she, Kelly, and Sean and Eli from ARES signed their names at the bottom of the letters. ACME believes that this looks professional and adds a bit of a personal touch to each letter.  Eli and Sean addressed each envelope and the mentors sent them out later that day, as you can see in figure \ref{fig:Letters}. Both teams are expecting funds to come in the coming weeks. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{07_10-15/images/letters.jpg}
+    \caption{Eli and Sean with the final letters}
+    \label{fig:Letters}
+\end{figure}
+
+\subsection{B4: Start interviewing team members for bios}
+
+As always, the most distracting task of the season has come again. This is of course, interviewing members for their bios in the Business Notebook. Why is it so distracting to people? Because listening to Emma and Kelly give an interview to each member is for some reason very entertaining. Besides that they were able to gather all of the information that they needed. Some of the questions asked were, "What is your wildest idea for a FTC challenge?" and "What is your favorite gracious professionalism story?" Emma plans to type these bios up in \LaTeX along with a photo of each team member, as shirts and jackets arrive. 
+
+\clearpage \newpage \section{Week \thesection} 
+\subsection{H1: Design of The Deployment Mechanism}
+
+Shawn and Ben worked on revising and iterating the marker deployment mechanism. They discussed the best way to easily drop the marker and came up with a bar and hook mechanism. This mechanism works by setting a hook on a bar and then rotating the bar so the hook slides of the end and into the depot.
 
 \subsection{H2: Turn wheel inserts for the drivetrain}
 
@@ -540,51 +470,25 @@ On Monday, Oren and Jon went to Datum Precision Machining to manufacture four wh
     \label{fig: Turning Inserts}
 \end{figure}
 
-\clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Continue work on the Business Notebook}
- Finish the budget, goals and action plan, and the finishing touches on outreach events.
-\subsection{Hardware Goals}
-\paragraph{H1: Print the Marker}
- Give Kelly the marker CAD to be printed.
-\paragraph{H2: Fabrication}
- Start to fabricate the parts for the robot.
-\paragraph{H3: Lift Fabrication}
- Lift bearing blocks.
-\subsection{Software Goals}
-\paragraph{S1: Change waypoint representations}
-subsection {Change waypoint representations}
-% Write a wrapper around roadrunner's path generation to facilitate more intuitive waypoint creation and path design
-Roadrunner (ACME's motion planning and control library), is designed to be usable by any team, regardless of their drivetrain type. For this reason, the default behaviour of the path generator is to keep the headnig of the robot consistant with the direction of travel, so that the paths are executable by a tank drive robot. Spline paths are created by calling \texttt{PathBuilder.splineTo (Pose2d pose)}, where the positional component of the pose represents the location of the endpoint of the spline, and the heading component represents the direction of travel on entering the point, which in a tank drive is the same as the heading of the robot. To facilitate holonomic drives, where the direction of travel is not neccecarily, and in fact idealy is not the same as the heading, an optional \texttt{HeadingInterpolator} can be passed, which could be constant, linear, or some other sort of more sophisticated interpolator. In most cases, a linear interpolator should be used, so that a single profile can be used for the entire path, and heading will vary linearly with displacement along the path. The problem then becomes an issue of code readabilty and path creation. To go to a point, \texttt{builder.splineTo (new Pose2d (x, y, entranceDirection), new LinearInterpolator (startHeading, endHeading))} must be called. If the start heading of one endpoint does not mach the endpoint of the last, a heading discontinuity results, making things tougher. Points with different entrance and exit directions are also more dificult to create.
+\subsection{B1: Work on the Business Notebook}
 
-To resolve this, Kelly created two new classes, a \texttt{Waypoint} class, and a \texttt{TrajectoryBuilder} class. A \texttt{Waypoint} contains a Pose2d to store the position of the robot at the Waypoint, as well as the entrance and exit angles of the waypoint. This allows a waypoint to be declared as such:
+The team realized that there was a lot of work that needed to be done on the Business Notebook, so Emma decided to take on that task. The BN includes all of the team's outreach events, the sustainability plan, our goals and action plans, team bios, fundraising information, current sponsor list, etc. With so much to, Emma decided to start with the team bios as those just needed to be typed in \LaTeX . Although there were plenty of answers to questions she and Kelly had asked team members the week before, she only chose 4 or 5 for each bio so that they only filled one page and would leave room for a picture. After the bios were completed, Emma started to write up the outreach events ACME did at the end of last season and over the summer. ACME had been writing about four paragraphs about each outreach event, which Emma thought was a bit excessive. So, she came up with a new format. A picture from the event is at the top of the page followed by the title for the event. A short summary sentence is after that, then bullet points highlighting parts of the event that explain what the team did, how it effected the team and how it benefited the people who the team helped or presented to. She found this method to be much more concise and easy to read. Next week, Emma plans to continue work on the BN by finalizing the budget and writing up the teams goals and action plans. \clearpage \newpage \section{Week \thesection} 
+\subsection{S1: Change waypoint representations}
 
- \lstinline{ Waypoint SAMPLE_RIGHT_DEPOT = new Waypoint(new Pose2d(48, 24, -PI / 4), PI / 4); }
-
-The entrance and exit poses required by Roadrunner's path generation can be accesed by \texttt{waypoint.getEnter()} and \texttt{waypoint.getExit()}. To construct a set of paths, a TrajectoryBuilder object is constructed, and then passed a series of waypoints. The headings are automaticaly taken care of, and multiple paths are created if the waypoints require the robot to come to a complete stop on its way to traverse them. 
-
-\begin{lstlisting}[language=Java]
-public TrajectoryBuilder to(Waypoint waypoint) {
-	currentPath.splineTo(waypoint.getEnter(), new LinearInterpolator(lastWaypoint.getHeading(), waypoint.getHeading()));
-	lastWaypoint = waypoint;
-	if (waypoint.getStop()) {
-		trajectories.add(new SplineTrajectory(currentPath.build()));
-		currentPath = new PathBuilder(waypoint.getExit());
-	}
-	return this;
-}
-\end{lstlisting}
-
-\newpage
-\subsection{B1: Continue work on the Business Notebook}
-
-It was very important to the team to print the Business Notebook at least 24 hours before the team left for the tournament. This meant that in order to meet that goal most of the big stuff that needed to be put into the Business Notebook (budget, goals and action plan, etc.) needed to be done quickly. Emma worked on writing up these things in the BN this week. First, she finalized the budget with the other team captains and mentors and added a few additional expenses such as the cost of the field. Then she put all of this information into a table that could be easily read and understood. For the goals and action plan Emma worked with Stephanie to come up with a new way to display the team's plans for the future. Basically, each goal is listed and given a short summary, then the plans to meet that goal are written in bullet form and then several paragraphs below that illustrate how the team is working to complete the goal or the results of that plan. Emma also added a section to the outreach events about future events that the team is planning. Such events include a presentation to the local Girls Who Code club, a meet up with a VEX robotics team in the county and a workshop with the Girl Scouts. (For more information on these events and other outreach events, please peruse the Business Notebook). \subsection{H1: Print the Marker}
+\subsection{H1: Print the Marker}
 
 This week Ben finished revising the model of the team marker in Inventor Pro 2018. He then converted the .iam file to an .stl file to be printed. Then, he gave Kelly the file to be printed. Towards the end of the meeting, Ben tapped about 10 churros to be used in the drive train. Figure \ref{fig:marker} shows the final marker. 
 
 \begin{figure}
     \centering
     \includegraphics[width=.6 \textwidth]{09_10-29/images/anvil_marker.jpg}
+    \caption{Anvil Marker}
+    \label{fig:marker}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{09_10-29/images/REAL_anvil_marker[1].png}
     \caption{Anvil Marker}
     \label{fig:marker}
 \end{figure}
@@ -604,75 +508,13 @@ Now that the team had most of the parts of the robot, they could begin fabricati
 \subsection{H3: Lift Fabrication}
 
 Oren went to GSS a sponsoring company to work with a one of there mechanical engineer, on milling custom bearing blocks for the lift. The team this year wanted to custom fabricated a lift that would be robust enough to hold and lift the in both the the beginning and end of the match. 
-\subsection{S1: Change waypoint representations}
+\subsection{B1: Continue work on the Business Notebook}
 
+It was very important to the team to print the Business Notebook at least 24 hours before the team left for the tournament. This meant that in order to meet that goal most of the big stuff that needed to be put into the Business Notebook (budget, goals and action plan, etc.) needed to be done quickly. Emma worked on writing up these things in the BN this week. First, she finalized the budget with the other team captains and mentors and added a few additional expenses such as the cost of the field. Then she put all of this information into a table that could be easily read and understood. For the goals and action plan Emma worked with Stephanie to come up with a new way to display the team's plans for the future. Basically, each goal is listed and given a short summary, then the plans to meet that goal are written in bullet form and then several paragraphs below that illustrate how the team is working to complete the goal or the results of that plan. Emma also added a section to the outreach events about future events that the team is planning. Such events include a presentation to the local Girls Who Code club, a meet up with a VEX robotics team in the county and a workshop with the Girl Scouts. (For more information on these events and other outreach events, please peruse the Business Notebook). 
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Add finishing touches to the Business Notebook}
- Finish the Appendices and do a final read through of the Business Notebook.
-\paragraph{B2: ACME Board}
- Finish the pit board that the team is going to take to the Burlingame tournament.
-\subsection{Hardware Goals}
-\paragraph{H1: Sorter Finalization}
- Complete last edits to the sorter.
-\paragraph{H2: Intake shield}
- Manufacture and make intake shield.
-\paragraph{H3: Drivetrain Assembly}
- Assemble the drivetrain.
-\subsection{Software Goals}
-\paragraph{S1: Investigate problem with motion profile generation}
- Investigate a problem that causes trapazoidal profiles to be returned instead of s-curve profiles in some cases.
-\newpage
-\subsection{B1: Add finishing touches to the Business Notebook}
-
-The final part of the Business Notebook was writing the Appendices. The Appendices are very important because they include all of the extra information that doesn't fit other sections in the notebook. For example the fundraising letters are put in to the appendix because they are very long and don't fit perfectly in the section where fundraising and sending the letters is mentioned. Therefore, they are referenced in those places but the real letters are at the back of the notebook. This is the same story for the budget details. There is a general budget in the budget section but the individual purchases are in the appendix. \\
-The final thing to do with the BN is to read through it once more, fix typos, add a few more photos and print the notebook. Emma took team and mentor photos for the bios and then a team photo for the "team" section. After that was done, she downloaded the BN PDF and printed the notebook. There are still a few things to add in order for the notebook to be completely done, such as write the summary page and space out the sections with dividers, but the goal to print the notebook at least a day before the tournament was met!
-
-\subsection{B2: ACME Board}
-
-This week, Ben was tasked with making the ACME board. To do this he typed up multiple short paragraphs about subsystems, outreach, and software. Then he printed them out along with photos that show a visual. In Figure \ref{fig:pitboard} you can see the sketch that Ben made of the layout of the board. 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6 \textwidth]{10_11-05/images/pit_board.jpg}
-    \caption{Pit Board Sketch}
-    \label{fig:pitboard}
-\end{figure}
-\subsection{H1: Sorter Finalization}
-
-The sorter needed to be printed as soon as possible so Ashlin and Aidan made some finalizing touches to the sorter so that it could print. First they split it the base design into two parts making the top be its own piece. They did this so that the top could be removed to allow for the swiveler to be put in the sorter and also so that the top piece could be printed separately to allow for the print to be easier. They also edited the top piece so that a bearing could fit into it tightly which would allow for the overall rotation of the sorter to be that much smoother. They printed the sorter on one of their sponsor's printers (see Figure \ref{}).
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6 \textwidth, angle=270 ]{10_11-05/images/sorter.JPG}
-    \caption{Sorter and Intake CAD}
-    \label{fig:Intake CAD}
-\end{figure}
-
-\subsection{H2: Intake shield}
-
-After the intake shield was cut Ashlin and Aidan heat bent the shield so that it would be shaped exactly as the 3D model. After the shield was bent they tested it to make sure it successfully in-took balls and cubes. The testing was successful and the shield worked  spectacularly.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6\textwidth, angle=270]{10_11-05/images/intake_shield.JPG}
-    \caption{Intake Shield}
-    \label{fig:Intake Shield}
-\end{figure}
-
-\subsection{H3: Drivetrain Assembly}
-
-This week Oren assembled all of the parts for the drive-train, there was some errors and misshapes. That include needed motor mounts, new more accurately cut cross members and some needed   screw holes for mounting things. The drive-train when completed functioned actually like we had planned and was very silent when running.    
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6 \textwidth]{10_11-05/images/drivetrain.JPG}
-    \caption{Drivetrain}
-    \label{fig:drivetrain}
-\end{figure}
 \subsection{S1: Investigate problem with motion profile generation}
 
-While testing pathing on the robot, Kelly found that under certain circumstances a trapazoidal profile would be returned instead of a s-curve profile. This increased error significantly by attempting to instantaniously change the acceleration of the robot, and made the motors sound wierd whern there were discontinuities in their pitch caused by the acceleration discontinuities. After testing Kelly determined that the problem occured when the profile was not long enough for the robot to achieve maximum acceleration. 
+While testing pathing on the robot, Kelly found that under certain circumstances a trapezoidal profile would be returned instead of a s-curve profile. This increased error significantly by attempting to instantaneously change the acceleration of the robot, and made the motors sound weird when there were discontinuities in their pitch caused by the acceleration discontinuities. After testing Kelly determined that the problem occurred when the profile was not long enough for the robot to achieve maximum acceleration. 
 
 
 \begin{lstlisting}
@@ -707,7 +549,7 @@ While testing pathing on the robot, Kelly found that under certain circumstances
 
 \end{lstlisting}
 
-In this code snippit, a binary search is used to compute the max velocity that will be reached in the case that the robot does not have enough time to reach its actual max velocity. This algorithm had been working last year, but when it was re-written in Kotlin over the summer in preperation for the public release of roadrunner, a mistake was made in these two lines:
+In this code snippit, a binary search is used to compute the max velocity that will be reached in the case that the robot does not have enough time to reach its actual max velocity. This algorithm had been working last year, but when it was re-written in Kotlin over the summer in preparation for the public release of Roadrunner, a mistake was made in these two lines:
 
 \begin{lstlisting}
                     val searchAccelProfile = generateAccelProfile(start, maximumVelocity, maximumAcceleration, maximumJerk)
@@ -715,23 +557,63 @@ In this code snippit, a binary search is used to compute the max velocity that w
                             .reversed()
 \end{lstlisting}
 
-Rather than generating the search profiles with \texttt{peakVel}, the valiable whose correct value is being searched for, the profiles were generated with \texttt{maximumAcceleration}, the constant constraint used to generate all the profiles. This meant that the search profile never actualy changed, so the thousand iterations of the search would be preformed to no avail, and then a backup trapazoidal profile returned. By changing those two  lines to generate the search profile using \texttt{peakVel} instead, the search would converge to within $10^{-10}$ in around thirty iterations, the same preformance as last year. 
+Rather than generating the search profiles with \texttt{peakVel}, the variable whose correct value is being searched for, the profiles were generated with \texttt{maximumAcceleration}, the constant constraint used to generate all the profiles. This meant that the search profile never actually changed, so the thousand iterations of the search would be preformed to no avail, and then a backup trapezoidal profile returned. By changing those two  lines to generate the search profile using \texttt{peakVel} instead, the search would converge to within $10^{-10}$ in around thirty iterations, the same performance as last year. 
 
+\subsection{H1: Sorter Finalization}
+
+The sorter needed to be printed as soon as possible so Ashlin and Aidan made some finalizing touches to the sorter so that it could print. First they split it the base design into two parts making the top be its own piece. They did this so that the top could be removed to allow for the swiveler to be put in the sorter and also so that the top piece could be printed separately to allow for the print to be easier. They also edited the top piece so that a bearing could fit into it tightly which would allow for the overall rotation of the sorter to be that much smoother. They printed the sorter on one of their sponsor's printers (see Figure \ref{}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth, ]{10_11-05/images/og_sorter[1].png}
+    \caption{Sorter CAD}
+    \label{fig:Sorter CAD}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth, angle=270 ]{10_11-05/images/sorter.JPG}
+    \caption{Sorter and Intake CAD}
+    \label{fig:Intake CAD}
+\end{figure}
+
+\subsection{H2: Intake shield}
+
+After the intake shield was cut Ashlin and Aidan heat bent the shield so that it would be shaped exactly as the 3D model. After the shield was bent they tested it to make sure it successfully in-took balls and cubes. The testing was successful and the shield worked  spectacularly.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6\textwidth, angle=270]{10_11-05/images/intake_shield.JPG}
+    \caption{Intake Shield}
+    \label{fig:Intake Shield}
+\end{figure}
+
+\subsection{H3: Drivetrain Assembly}
+
+This week Oren assembled all of the parts for the drive-train, there was some errors and misshapes. That include needed motor mounts, new more accurately cut cross members and some needed   screw holes for mounting things. The drive-train when completed functioned actually like we had planned and was very silent when running.    
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{10_11-05/images/drivetrain.JPG}
+    \caption{Drivetrain}
+    \label{fig:drivetrain}
+\end{figure}
+\subsection{B1: Add finishing touches to the Business Notebook}
+
+The final part of the Business Notebook was writing the Appendices. The Appendices are very important because they include all of the extra information that doesn't fit other sections in the notebook. For example the fundraising letters are put in to the appendix because they are very long and don't fit perfectly in the section where fundraising and sending the letters is mentioned. Therefore, they are referenced in those places but the real letters are at the back of the notebook. This is the same story for the budget details. There is a general budget in the budget section but the individual purchases are in the appendix. \\
+The final thing to do with the BN is to read through it once more, fix typos, add a few more photos and print the notebook. Emma took team and mentor photos for the bios and then a team photo for the "team" section. After that was done, she downloaded the BN PDF and printed the notebook. There are still a few things to add in order for the notebook to be completely done, such as write the summary page and space out the sections with dividers, but the goal to print the notebook at least a day before the tournament was met!
+
+\subsection{B2: ACME Board}
+
+This week, Ben was tasked with making the ACME board. To do this he typed up multiple short paragraphs about subsystems, outreach, and software. Then he printed them out along with photos that show a visual. In Figure \ref{fig:pitboard} you can see the sketch that Ben made of the layout of the board. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{10_11-05/images/pit_board.jpg}
+    \caption{Pit Board Sketch}
+    \label{fig:pitboard}
+\end{figure}
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Write the summary and cover pages for the Business and Engineering Notebooks}
- Finish up the BN by printing the summary and cover pages.
-\subsection{Hardware Goals}
-\paragraph{H1: Assembling Rev Linear Motion Slides for the Rake}
- Assembling and Attaching the Linear slides and Rake system.
-\paragraph{H2: Shield Attachment}
-Attaching the shield to the robot.
-\newpage
-\subsection{B1: Write the summary and cover pages for the Business and Engineering Notebooks}
-
-As the tournament draws closer, finishing the Business Notebook becomes ever more important. Even though the notebook itself was already printed, a cover page and summary page was still needed to complete the task. Emma worked on the summary page this year. The summary page is not only an introduction to the team's mission, it is where specific parts of the notebook worth noting can be found, as well as specific events. Emma adapted the summary page the team used last year by rewriting the team's story and mission for this year, altering the season highlights, and choosing specific topics of interest in the notebook. The season highlights are notable events that are exciting or great accomplishments of the team. The team's overlying goal for this year is to maintain the FIRST program in our community and train members on our team so that ACME can keep going in the future. The summary also mentioned goals on how the team wants to progress to Worlds again this year. With these things complete, the BN is now complete.  
-
-
 \subsection{H1: Assembling Rev Linear Motion Slides for the Rake}
 
 Continuing the manufacturing process, Jon and Aidan assembled the linear slides for the intake rake. The team wanted to create a four stage slide so that no matter where the robot was around the crater it could reach every cube or ball in the crater. However the team had only bought two linear slide kits which would only allow for a two stage slide. John and Aidan found extra parts from the previous years linear slide system. This allowed for there to be a three stage system which would give them enough length to reach to almost the back of the crater and get plenty of minerals. After constructing the slides, Jon and Aidan had to fine tune them to get them both to run smoothly and with little resistance because there was only going to be one motor powering both slides and if there was too much resistance the motor wouldn't be able to power them. After these were constructed, Aidan went on to build the rake portion of the slide and Jon attached the slides to the robot. Jon did this by using Tetrix L brackets and screwing them into the outside plate of the drive train. This made sure the slides were inside the 18 inches and were firmly attached to the robot in case they got bumped by another robot during competition. To create the rake Aidan needed to find a way to minimize the length it added to the robot. The rake had to sit low enough so that it could tuck under the intake system but it needed to be high enough so that it would pass over the crater wall. Aidan solved this by having the axle of the rake sit exactly 4 inches above the ground.
@@ -752,13 +634,12 @@ After the shield was built it needed to be attached to the robot. The attachment
     \includegraphics[width=.6 \textwidth]{11_11-12/images/rake.jpg}
     \caption{Rake Shield}
     \label{fig:rakeshield}
-\end{figure}\clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Attend the Burlingame Qualifier}
- Go to the Burlingame qualifying tournament to compete.
-\paragraph{B2: Post Match Retrospection}
- Have a retrospective with the team for the Burlingame tournament.
-\newpage
+\end{figure}\subsection{B1: Write the summary and cover pages for the Business and Engineering Notebooks}
+
+As the tournament draws closer, finishing the Business Notebook becomes ever more important. Even though the notebook itself was already printed, a cover page and summary page was still needed to complete the task. Emma worked on the summary page this year. The summary page is not only an introduction to the team's mission, it is where specific parts of the notebook worth noting can be found, as well as specific events. Emma adapted the summary page the team used last year by rewriting the team's story and mission for this year, altering the season highlights, and choosing specific topics of interest in the notebook. The season highlights are notable events that are exciting or great accomplishments of the team. The team's overlying goal for this year is to maintain the FIRST program in our community and train members on our team so that ACME can keep going in the future. The summary also mentioned goals on how the team wants to progress to Worlds again this year. With these things complete, the BN is now complete.  
+
+
+\clearpage \newpage \section{Week \thesection} 
 \subsection{B1: Attend the Burlingame Qualifier}
 
 This weekend, ACME Robotics attended the Burlingame qualifier. This was their first qualifier of the season and they were looking forward to seeing other robots teams had come up with, seeing how their robot performed and whether or not they would need to rethink their strategy for the next tournament.\\
@@ -775,43 +656,17 @@ After several more matches, that the team did put the robot on the field for, ju
 
 At the end of qualification matches, ACME placed 20th and ARES 18th. ACME was super proud of ARES and their performance. A few team members had to go home to work on homework, but a few stayed to watch finals and for the awards ceremony. The team was nominated for two awards, Control and Connect, which they were very proud of. However the best surprise came when the final awards winner was announced. ACME had won the Inspire Award! The team had never qualified for the Northern California Regionals at the first tournament and were very honored and relieved. This meant that the team only had to worry about making the robot as perfect as possible and not have to stress about qualifying. Everyone was super excited to win this award and could not have been happier. The team is looking forward to the next competitions to come!\\
 
-\subsection{B2: Post Match Retrospection}
+\subsection{B2: Post Match Retrospective}
 
 After such an eventful tournament for ACME, the team had a retrospective to assess their performance. This gives ACME a good sense of what they did wrong, what they did right, and how they can improve for next time. Helping ACME to decide exactly where they want to go next with the robot and the team as a whole, and how to get there. Some of the things the team thought they did well was judging, the business notebook, and the drivetrain was very solid. Some things they thought didn’t go well was the robot wasn’t nearly as functional as it needed to be, keeping up with EN entries, and, perhaps most importantly, they didn’t where tutus! After writing down and sorting all the reflections of the various team members; the team discussed them further and created goals for the upcoming Intel tournament. Goals are essential because they give the team something to work towards as well as keeping them focused on the important tasks. Some of the goals the team is now working towards are to deploy from, and re-latch to, the lander, create a hard deadline for EN entries, and finish the scouting app to streamline scouting. Overall the team was happy with how the retrospective went and excited to move forward and improve. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{12_11-19/images/retrospective.JPG}
+    \caption{Burlingame Retrospective}
+    \label{fig:retrospective}
+\end{figure}
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: Hardware Discussion}
- Have a team-wide discussion about the next steps for the hardware team.
-\paragraph{H2: Sorter Testing}
-Test the sorter to see if the team needs to reevaluate the sorting process.
-\paragraph{H3: Latch Design and Development}
- Design a latch to mount on the robot that will be used to latch onto the lander.
-\paragraph{H4: Testing of Rev linear slides}
- Test the REV linear slides the team uses for the rake.
-\subsection{Software Goals}
-\paragraph{S1: Pre-Tournament Scouting Application}
- Start working on an application that will use the Orange Alliance API to get information about other teams. 
-\paragraph{S2: Joystick ramping}
-Experiment with joystick profiles and speed ramping.
-\newpage
-\subsection{H1: Hardware Discussion}
-
-After the first competition the team's goals were reevaluated. The sorting mechanism was not functional and untested. The lift motor was not correctly mounted and its spool was causing issues. The rake mechanism for the intake used a pulley system that had a tendency to unspool and the REV friction slides were not working correctly, which resulted in each side retracting at different speeds. The team had a meeting to discuss what the next steps were. They listed priorities, such as the lift, intake and the sorting mechanism. These were the things that the team felt were vital to successfully compete in the next competition. The week was spent testing several concepts that the team didn't have time to test before the Burlingame tournament. \\
-
-The outcome of the discussion lead to a large change in the overall placement of specific subsystems, resulting in a great deal of CAD redesign. The team ended of changing the placement of the drivetrain's cross members to allow for the correct placement of the lift-motor. The team also realized that the design could be more streamlined and compact, by adding the intake's super-structure to the drivetrain's aluminum side-plates. Along with adding mounting holes for the subsystems that was not previously foreseen.  \\
-
-
-\subsection{H2: Sorter Testing}
-
-Aidan took on the project of testing the sorter. The team didn't have time to incorporate the sorter into the robot before the Burlingame tournament and still needed to be fully assembled and tested. Aidan and Ashlin tried to assemble the sorter specifically so that it would take up as little space as possible. They did this because there was limited space on the inside of the robot and the sorter, the cartridges, and the lift motor were all competing for this room. After fully assembling the sorter and testing the the team decided it took to much room and they wouldn't pursue it any further.
-
-\subsection{H3: Latch Design and Development}
-
-Ben and Shawn designed the latch to make the robot hang. They used a design where, if the robot was fully turned off, the robot would still latch. They designed it so that the servo pulls the axle back so they robot isn't latched anymore. They then prototyped this design with Tetrix and found that there were problems. Then they solved these problems and are going to try to find a way to manufacture a more professional looking latch.
-
-\subsection{H4: Testing of Rev linear slides}
-
-After the team's first qualifier where the rake did not function properly, ACME wanted to do some testing and see what the problem was. The rake system is crucial to ACME's current design so it was important that this was done ASAP. After Jon did some testing with the rake, he found that the problem lay with the Rev linear slides. There was too much friction in the slides and the string was spooled wrong and was causing the slides to move unevenly. He also found that the string had a tendency to become un-spooled. Jon and the rest of the team decided that removing one of the slides might remedy the problem. After Jon tested this some, he found that while somewhat better, the results where still far from satisfactory. This lead Jon to the conclusion that the Rev linear slides would have to be scrapped for some other form of linear motion. Jon then commenced brainstorming, researching, and testing for several other forms of linear motion. Nearly all the options Jon looked into did not fit for what ACME had in mind. For example, drawer slides were too heavy could not reach far to far crater wall. One that did look promising however was X-Rail. Jon thought X-Rail looked promising because it was similar to the Rev linear slides in function but could carry more weight, were sturdier, and used running bearings (making them smoother and removing friction). This made X-Rail the most practical and simple option. After presenting his findings to the team, ACME decided to give X-Rail a try. 
 \subsection{S1: Pre-Tournament Scouting Application}
 
 Emma has begun work on a new scouting tool that will aid the team before the tournament even begins. The main function of this app will be to get information about the teams they will be competing with, especially their match history, awards, rankings, etc. Having this information will be good going into a tournament because it gives the team a good idea of what they are up against and who they should be making connections with. Emma is using the Orange Alliance API to find this information. The Orange Alliance is a website that centralizes FTC team data so that all FTC teams can have access to it for scouting purposes. Their API can be used to get all of this data. The other uses for this pre-scouting app include having a match schedule with projected and actual scores, the projected best division based on OPR scores, and potentially simulated matches that would see how ACME would fare against other teams with ACME's top score and their top score. Majority of these things would happen in the future, as Emma's main goal right now is to get a simple console app that would get the data when requested. Eventually, Emma is hoping to integrate this into Kelly's scouting app so that all of the scouting fun would be in one place. 
@@ -835,44 +690,57 @@ The second option is an exponential function. It accomplishes the same thing as 
 After playing around with these functions, Kelly implemented them in a subclass of \texttt{Gamepad}. To transform the vector representing the position of the joystick into a vector representing the speed of the robot, it is separated into a heading and magnitude, the magnitude is scaled by the appropriate function (either linear, dual zone, or exponential), and then multiplied by the max speed of the robot. 
 
 The next teleop improvement Kelly worked on was power ramping. This would limit the acceleration of the robot and smooth out any sudden commands the driver applies. Each time the power was updated, a vector calculating the distance between the last commanded power and the desired command is calculated. If the magnitude of the vector is greater than the maximum change in velocity over the period of time since the last update occurred, it is clamped to the maximum allowed change, and then added to the last commanded velocity to get the new velocity to command. 
+\subsection{H1: Hardware Discussion}
+
+After the first competition the team's goals were reevaluated. The sorting mechanism was not functional and untested. The lift motor was not correctly mounted and its spool was causing issues. The rake mechanism for the intake used a pulley system that had a tendency to unspool and the REV friction slides were not working correctly, which resulted in each side retracting at different speeds. The team had a meeting to discuss what the next steps were. They listed priorities, such as the lift, intake and the sorting mechanism. These were the things that the team felt were vital to successfully compete in the next competition. The week was spent testing several concepts that the team didn't have time to test before the Burlingame tournament. \\
+
+The outcome of the discussion lead to a large change in the overall placement of specific subsystems, resulting in a great deal of CAD redesign. The team ended of changing the placement of the drivetrain's cross members to allow for the correct placement of the lift-motor. The team also realized that the design could be more streamlined and compact, by adding the intake's super-structure to the drivetrain's aluminum side-plates. Along with adding mounting holes for the subsystems that was not previously foreseen.  \\
+
+
+\subsection{H2: Sorter Testing}
+
+Aidan took on the project of testing the sorter. The team didn't have time to incorporate the sorter into the robot before the Burlingame tournament and still needed to be fully assembled and tested. Aidan and Ashlin tried to assemble the sorter specifically so that it would take up as little space as possible. They did this because there was limited space on the inside of the robot and the sorter, the cartridges, and the lift motor were all competing for this room. After fully assembling the sorter and testing the the team decided it took to much room and they wouldn't pursue it any further.
+
+\subsection{H3: Latch Design and Development}
+
+Ben and Shawn designed the latch to make the robot hang. They used a design where, if the robot was fully turned off, the robot would still latch. They designed it so that the servo pulls the axle back so they robot isn't latched anymore. They then prototyped this design with Tetrix and found that there were problems. Then they solved these problems and are going to try to find a way to manufacture a more professional looking latch.
+
+\subsection{H4: Testing of Rev linear slides}
+
+After the team's first qualifier where the rake did not function properly, ACME wanted to do some testing and see what the problem was. The rake system is crucial to ACME's current design so it was important that this was done ASAP. After Jon did some testing with the rake, he found that the problem lay with the Rev linear slides. There was too much friction in the slides and the string was spooled wrong and was causing the slides to move unevenly. He also found that the string had a tendency to become un-spooled. Jon and the rest of the team decided that removing one of the slides might remedy the problem. After Jon tested this some, he found that while somewhat better, the results where still far from satisfactory. This lead Jon to the conclusion that the Rev linear slides would have to be scrapped for some other form of linear motion. Jon then commenced brainstorming, researching, and testing for several other forms of linear motion. Nearly all the options Jon looked into did not fit for what ACME had in mind. For example, drawer slides were too heavy could not reach far to far crater wall. One that did look promising however was X-Rail. Jon thought X-Rail looked promising because it was similar to the Rev linear slides in function but could carry more weight, were sturdier, and used running bearings (making them smoother and removing friction). This made X-Rail the most practical and simple option. After presenting his findings to the team, ACME decided to give X-Rail a try. 
+
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Parts List}
- Assemble a parts list of orders needed for the next stage of building.
-\subsection{Hardware Goals}
-\paragraph{H1: Diverter}
-Prototyping an alternate sorting system.
-\paragraph{H2: Latching Hook}
- CADing and doing math for the hook.
-\paragraph{H3: Drive-Train Update}
- Re-CADing the Drive-Train.
-\paragraph{H4: }
-subsection{
-\subsection{Software Goals}
-\paragraph{S1: Make a GET Request from Orange Alliance API}
- Write out the basics of a GET request for the pre-scouting application.
-\newpage
-\subsection{B1: Parts List}
+\subsection{S1: Make a GET Request from Orange Alliance API}
 
-Since the team was planning a lot of revisions for the robot, Jon and Oren put together a parts list for all the parts they would need (figure ). It is important that the team stay organized and keep a clear record of all the parts they buy. This makes sure that ACME keeps track of their budget (both how much money they have and how much they have spent), which parts have been ordered and which have not, and which parts they need in the first place. It also helps whoever is ordering the parts to know exactly which parts to buy and where to get them. without doing things like this to keep organized, almost nothing would be done in a timely fashion. To create this list in the first place, ACME had a hardware meeting similar to the previous one to confirm and list all the changes that they wanted to make to the robot. As you can see in image . This ensured that everyone on the team was on the same page about what was changing on the robot, what needed to be bought and built to do so, and to give a basis for a parts list. It is important that all team members are on the same page so that time and resources are not wasted. If someone on the team is spending time and material building a mechanism that the team has decided does not need to be there, then that time and resources have been wasted. Keeping everyone on the same page about what is happening to the robot keeps everything running more efficiently.
+When you need to obtain data from an API, you can use a GET request. In order to request something from an API you need to have an API key and use specific routing commands. Since Emma is going to use Java for this she made a Java application using the IDE Intellij. She had never done a GET request before, let alone in Java, so this was an interesting experience for her. \\
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.6 \textwidth]{14_12-03/images/IMG_0422.JPG}
-    \caption{}
-    \label{fig: Parts list}
-\end{figure}
+Emma used a website called Mkyong.com that provided an example of a GET request that would return the version of the API. Although Emma could have just control C and control V-ed this into her application but, it was important that she knew how this code operated so that she could understand it for the future. Therefore, Emma spent a long time learning what each line of code did and how it was vital to getting a request. Finally, after fixing a couple of mistakes, the code did what it was supposed to do (yay!) and Emma, through lots of Googling, was able to thoroughly understand how it works. \\
 \subsection{H1: Diverter}
 
 After the Burlingame tournament the team realized how complicated their approach to sorting and depositing the minerals in the lander were. This was because the system had too many steps and required too many different parts and space. After the tournament, various members of the team started hypothesizing of alternative solutions to sorting. One solution that was thought up was a single cartridge for the balls and cubes to go into where they would be read by color sensors to determine the arrangement of balls or cubes. When dumped in the lander a diverter would be used to push the balls or cubes in the one direction or the other to allow for easily scoring ten points. Ashlin and Aidan took on the task of prototyping this diverter. A problem they noticed is that the if the combination of minerals had both a ball and a cube then both items would roll out so fast that the diverter wouldn't be fast enough to sort the minerals. They fixed this problem by implementing a gate that would separate the two minerals and cause a delay between them so the diverter would have time to re-position. Aidan and Kelly tested this the diverter and found it worked fairly accurately.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{14_12-03/images/cartridge1.JPG}
+    \caption{Cartridge prototype}
+    \label{fig:cartridge}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{14_12-03/images/cartridge3.JPG}
+    \caption{Cartridge prototype}
+    \label{fig:thing}
+\end{figure}
 
 \subsection{H2: Latching Hook}
 
 After Ben and Shawn prototyped the servo and pin latch mechanism, the team realized that a simpler design would be easier to control and manufacture. Ben started CADing the part and Kelly suggested they use math to find how thick they should make the aluminum. So Kelly, Ben, and Aidan started discussing it, they used a combination of physics and trigonometry to determine the stress as shown in figure \ref{fig:math} . Then they used the stress analysis tool in Inventor to see where the most stress was and were the aluminum would, in theory, bend or break as shown in fig \ref{fig:stress}. They found that the red was only around 1.5 ksi, so they looked up the max ksi before elastic deformation and found that it was around 40 ksi. So the aluminum was perfectly fine.
 
-|\subsection{H3: Drive-Train Update}
 
-After a rush finish for the drive-train, due to the Burlingame tournament. The team felt it was necessary to simplify the drive-train to allow for more room and more precise mounting of other mechanism to the drive base. Currently on the robot their is a separate aluminum plate that holds the intake to the drive-train (Insert Image), which is structurally  weak and allows for a lot of excess vibrations when the intake is running. As a result it was re-CADed so that the added on part was cut out with the inside plate as a whole (Insert Image) this allows for more room between each drive half, along with being more structurally sound. Another very important change is the placement of the rear cross brace closest to the linear lift. It was moved closer to the motors to allow for more room, so that the lift motor and spool can be mounted directly under the lift for the pull down string (Before Image)(After Image). 
+\subsection{H3: Drive-Train Update}
+
+After a rush finish for the drive-train, due to the Burlingame tournament. The team felt it was necessary to simplify the drive-train to allow for more room and more precise mounting of other mechanism to the drive base. Currently on the robot their is a separate aluminum plate that holds the intake to the drive-train, which is structurally  weak and allows for a lot of excess vibrations when the intake is running. As a result it was re-CADed so that the added on part was cut out with the inside plate as a whole this allows for more room between each drive half, along with being more structurally sound. Another very important change is the placement of the rear cross brace closest to the linear lift. It was moved closer to the motors to allow for more room, so that the lift motor and spool can be mounted directly under the lift for the pull down string. 
 
 \begin{figure}
     \centering
@@ -886,26 +754,29 @@ After a rush finish for the drive-train, due to the Burlingame tournament. The t
     \includegraphics[width=.6\textwidth]{14_12-03/images/Stress_Analysis.png}
     \caption{Stress Analysis}
     \label{fig:stress}
+\end{figure}\subsection{B1: Parts List}
+
+Since the team was planning a lot of revisions for the robot, Jon and Oren put together a parts list for all the parts they would need (figure \ref{fig: Parts list}). It is important that the team stay organized and keep a clear record of all the parts they buy. This makes sure that ACME keeps track of their budget (both how much money they have and how much they have spent), which parts have been ordered and which have not, and which parts they need in the first place. It also helps whoever is ordering the parts to know exactly which parts to buy and where to get them. without doing things like this to keep organized, almost nothing would be done in a timely fashion. To create this list in the first place, ACME had a hardware meeting similar to the previous one to confirm and list all the changes that they wanted to make to the robot. As you can see in image . This ensured that everyone on the team was on the same page about what was changing on the robot, what needed to be bought and built to do so, and to give a basis for a parts list. It is important that all team members are on the same page so that time and resources are not wasted. If someone on the team is spending time and material building a mechanism that the team has decided does not need to be there, then that time and resources have been wasted. Keeping everyone on the same page about what is happening to the robot keeps everything running more efficiently.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{14_12-03/images/IMG_0422.JPG}
+    \caption{}
+    \label{fig: Parts list}
 \end{figure}
-\subsection{H4: }
-}\subsection{S1: Make a GET Request from Orange Alliance API}
-
-When you need to obtain data from an API, you can use a GET request. In order to request something from an API you need to have an API key and use specific routing commands. Since Emma is going to use Java for this she made a Java application using the IDE Intellij. She had never done a GET request before, let alone in Java, so this was an interesting experience for her. \\
-
-Emma used a website called Mkyong.com that provided an example of a GET request that would return the version of the API. Although Emma could have just control C and control V-ed this into her application but, it was important that she knew how this code operated so that she could understand it for the future. Therefore, Emma spent a long time learning what each line of code did and how it was vital to getting a request. Finally, after fixing a couple of mistakes, the code did what it was supposed to do (yay!) and Emma, through lots of Googling, was able to thoroughly understand how it works. \\
-
-
-
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: Diverter}
-Creating a fully working diverter and mounting it to the robot
-\paragraph{H2: Testing X-Rail Slides}
- Testing and assembling the X-Rail slides.
-\subsection{Software Goals}
-\paragraph{S1: Set up a console for the Prescouter}
- Make a usable console for the prescouter.
-\newpage
+\subsection{S1: Set up a console for the Prescouter}
+
+The next step for the prescouter was to make it usable. This was accomplished by using a console. Emma chose to make a simple console application first, rather than tackling a full UI because it is easier to work out all the kinks of the code before adding the additional stress of a making a functional UI. So for now, having a console will satisfy the needs of the app. Since there are different commands for the Orange Alliance API, Emma needed to make it so that what the user typed in would be the URL that was sent to the API. She accomplished this by using a scanner. This was the first time Emma used a scanner and at first she thought it would be rather difficult but it turned out to be fairly simple. 
+
+Emma realized that it might be useful to keep the program running in a loop so that the user didn't have to play the project again and again. She used a while loop with a constant variable set to true, so that the program could run indefinitely. With this little addition done, the console was fully functional as seen in figure \ref{fig:console}. The next step for the prescouter is parsing the JSON response from the API so that it is easier to read. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{15_12-10/images/console.png}
+    \caption{The Console for the Prescouter}
+    \label{fig:console}
+\end{figure}
 \subsection{H1: Diverter}
 
 After the success of the prototype diverter the team decided to make it their primary sorting and depositing system. Ashlin and Aidan began to make a hopefully final version out of poly carbonate. They used poly carbonate because they knew that when they were depositing minerals they were only going to be able to tip the diverter at a small angle and so they needed a slippery material so the cubes wouldn't become stuck. The completed diverter is show in figure  \ref{fig:diverter}.
@@ -921,34 +792,33 @@ After the success of the prototype diverter the team decided to make it their pr
 
 Now that the X-rail had arrived from order, the team saw fit to construct a set of X-rail for testing. Jon, Ben, and Shawn took on this task. Given that the X-rail was as yet unproven, it was important to run it through its paces to ensure it was a good option. While on paper the X-rail was perhaps the best option for the horizontal linear motion the team was looking for, in practice things could be different. After Jon, Ben, and Shawn completed the X-rail kit, Jon began testing the X-rail slide. He tested that the surgical tubing was taught enough to pull blocks and balls back to the intake, he tested how and where it would be mounted, he tested the rigging, and he tested where the servo for the rake would mount. After testing all these qualities, Jon determined that the X-rail would be a good replacement for the Rev Linear slides. While the X-rail would function in almost the same way as the Rev linear slides; A couple things would have to be changed. The rake servo would have to be mounted lower, and the rake would have to rotate from side to side rather than up and down. Being that the X-rail is larger than the Rev slides, the rake servo would need to be mounted lower so the rake could be as close to the ground as possible. Even with the servo being mounted lower, it was still high enough off the ground that the rake would have to deploy in a different way. The team decided that having the rake swing down from the X-rail would not only be a more efficient use of space, reduce wobble and strain, but would also more easily allow the use of X-rail. This would require the design of a new rake which set to work on. 
 
-
-
-\subsection{S1: Set up a console for the Prescouter}
-
-The next step for the prescouter was to make it usable. This was accomplished by using a console. Emma chose to make a simple console application first, rather than tackling a full UI because it is easier to work out all the kinks of the code before adding the additional stress of a making a functional UI. So for now, having a console will satisfy the needs of the app. Since there are different commands for the Orange Alliance API, Emma needed to make it so that what the user typed in would be the URL that was sent to the API. She accomplished this by using a scanner. This was the first time Emma used a scanner and at first she thought it would be rather difficult but it turned out to be fairly simple. 
-
-Emma realized that it might be useful to keep the program running in a loop so that the user didn't have to play the project again and again. She used a while loop with a constant variable set to true, so that the program could run indefinitely. With this little addition done, the console was fully functional as seen in figure \ref{fig:console}. The next step for the prescouter is parsing the JSON response from the API so that it is easier to read. 
-
 \begin{figure}
     \centering
-    \includegraphics[width=.6 \textwidth]{15_12-10/images/console.png}
-    \caption{The Console for the Prescouter}
-    \label{fig:console}
+    \includegraphics[width=.6 \textwidth]{15_12-10/images/IMG_8107[1].jpg}
+    \caption{X-rail installation}
+    \label{fig:my_label}
 \end{figure}
+
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: Intake Gate}
- Creating a servo powered gate at the back of the intake.
-\paragraph{H2: Attaching the rake and testing the intake}
- Finding and testing a different way to attach the X-rail.
-\paragraph{H3: Building the pulley system for the lift}
-This week, Ben made the pulley system for the lift.
-\paragraph{H4: Deconstructing Robot}
- Take apart parts of the robot in preparation for the coming weeks. 
-\subsection{Software Goals}
-\paragraph{S1: Tune lift kinematics}
-Tune the control loops to run the lift automaticaly
-\newpage
+\subsection{S1: Tune lift kinematics}
+
+The lift needed to be motion profiled in order to run during auto (to get off of the lander, and then lower the lift back down), as well as to run it automatically during teleop, so the drivers only need to press a single button for the lift to automatically go to a set position. Because the two motors of the lift drive the same gearbox, it would not work to use the on board PIDF velocity control. If the Rev Hub commanded different voltages to each motor, they could end up fighting each other, and potentially burn out, or at least reduce the efficiency of the lift. To avoid this, Kelly decided to run the motors in an open loop mode, where the voltage applied to the motors will be commanded to the rev hub in a number between -1 and 1. This means that a feed forward constant will have to be used within the subsystem code, rather than on board the rev hub. This constant relates the speed commanded, on the interval of -1 to 1, to the actual velocity of the lift, in inches per second. If this were the drivetrain, a opmode could run the lift to collect the neccecary data, but since running the lift too far in any direction could potentially break the robot, Kelly did not feel comfortable running the lift autonomously until the control loop was tuned. Kelly instead ran the lift manually, moving it up and down with the joystick at various velocities and positions, while logging the data. 
+
+By preforming a regression on the data, Kelly determined $kF$ to be $0.0917$. Kelly also determined 14 m/s, 30 m/s/s, and 30 m/s/s/s to be reasonable values for $maxV$, $maxA$, and $maxJ$ respectively.
+
+Kelly then tuned the lift PID loop. Because the lift only has one degree of freedom error is not the end of the world, and smooth motion is the priority, so Kelly omitted D from the loop, and kept P and I low. After the loop was tuned the lift was able to run to a desired position at the press of a button during teleop.
+
+\begin {figure}
+\centering
+\begin{tikzpicture}
+\begin{axis} [xlabel=Command, ylabel=Actual]
+\addplot table [x=command, y=velocity, col sep=comma, only marks, blue, mark options={scale=.5}] {16_12-17/lift.csv};
+\addplot +[no marks, red, thick, domain = -1:1 ] {x / .0917} ;
+\end{axis}
+\end{tikzpicture}
+\caption {Actual vs. Commanded velocity}
+\label {fig:graph}
+\end{figure}
 \subsection{H1: Intake Gate}
 
 After completing the attachment of the diverter to the robot the entire intake was almost complete. Aidan realized that to meet the two materials maximum rule the intake was going to need another gate that would stop any more materials from going into the diverter. Previously the team had thought that this problem was already taken care of with the cartridge itself. The cartridge was supposed to be able to only hold two and then the gate at the top of the cartridge would close and stop any excess minerals. This was not going to work because the way that gate closed would actually pull in more minerals and get them caught in the robot. To fix this problem a gate needed to be created at the top of the intake. Shawn created this gate as shown in figure \ref{fig:gate}. This fixed the problem because it stopped any extra minerals from going into the diverter and the extra minerals could easily be repelled with the intake running reverse.
@@ -985,58 +855,17 @@ This week Ben worked on developing the pulley system for the lift. He started th
 \subsection{H4: Deconstructing Robot}
 
 After all the sub-systems had been tested Oren, Ben, Shawn, and Adian took apart the main portion of the robot, as to prepare for the coming week. They made sure to organize and keep all the necessary parts to make a smooth re-construction of version 2.0. There was a considerable amount of modifications made to fully built subsystems to make sure they would fit on the new drive-train. One of the changes that had to be made was to the intakes rollers length, due to the inner dimension of the aluminum plates increasing, which in turn increased the length of the rollers. 
-\subsection{S1: Tune lift kinematics}
-
-The lift needed to be motion profiled in order to run during auto (to get off of the lander, and then lower the lift back down), as well as to run it automaticaly during teleop, so the drivers only need to press a single button for the lift to automaticaly go to a set position. Because the two motors of the lift drive the same gearbox, it would not work to use the onboard PIDF velocity control. If the Rev Hub commanded different voltages to each motor, they could end up fighting each other, and potentialy burn out, or at least reduce the efficiency of the lift. To avoid this, Kelly decided to run the motors in an open loop mode, where the voltage applied to the motors will be commanded to the rev hub in a number between -1 and 1. This means that a feed forward constant will have to be used within the subsystem code, rather than onboard the rev hub. This constant relates the speed commanded, on the interval of -1 to 1, to the actual velocity of the lift, in inches per second. If this were the drivetrain, a opmode could run the lift to collect the neccecary data, but since running the lift too far in any direction could potentialy break the robot, Kelly did not feel comfortable running the lift autonomously until the control loop was tuned. Kelly instead ran the lift manualy, moving it up and down with the joystick at various velocities and positions, while logging the data. 
-
-By preforming a regression on the data, Kelly determined $kF$ to be $0.0917$. Kelly also determined 14 m/s, 30 m/s/s, and 30 m/s/s/s to be reasonable values for $maxV$, $maxA$, and $maxJ$ respectively.
-
-Kelly then tuned the lift PID loop. Because the lift only has one degree of freedom error is not the end of the world, and smooth motion is the priority, so Kelly omitted D from the loop, and kept P and I low. After the loop was tuned the lift was able to run to a desired position at the press of a button during teleop.
-
-\begin {figure}
-\centering
-\begin{tikzpicture}
-\begin{axis} [xlabel=Command, ylabel=Actual]
-\addplot table [x=command, y=velocity, col sep=comma, only marks, blue, mark options={scale=.5}] {16_12-17/lift.csv};
-\addplot +[no marks, red, thick, domain = -1:1 ] {x / .0917} ;
-\end{axis}
-\end{tikzpicture}
-\caption {Actual vs. Commanded velocity}
-\label {fig:graph}
-\end{figure}
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: X-Rail Mounting}
- Mount the X-Rail.
-\paragraph{H2: Cutting Drive plates}
-Setting up and cutting inside drive-plates
-\subsection{Software Goals}
-\paragraph{S1: AHHHHHHH}
-subsection {AHHHHHHH}
-AHHHHH
-
-\paragraph{S2: Characterize and tune the drive train}
- Empericaly determine the characteristics of the drivetrain, and use them to tune both the PIDF onboard velocity loop and the PID position loop for trajectory following during autonomous. 
-\newpage
-\subsection{H1: X-Rail Mounting}
-
-This week the inner drive plates were cut. However, since the outer plates were not cut, the X-rail could not be mounted. As such, a stop-gap method was used to mount the X-Rail. While technically the X-rail was mounted before on Tetrix, it hardly worked. This meant that if the team wanted to have a functioning robot, they would need to create one that worked better. ACME wanted to meet a deadline for having the robot able functioning so it was important to make this stop-gap solution. Jon was assigned to create this. The easiest way to do this seemed to be by drilling mounting holes into two sheets of aluminum and folding them. It was important that the mounting solution be simple and quick to make because the deadline that the team needed to have a functioning robot by was fast approaching. 
-
-\subsection{H2: Cutting Drive plates}
-
-For the cutting processed we decided to use a CNC laguna, for its precision and accuracy rather than by hand or CNC plasma cutter.The job set up was pretty simple since we had been waked through it the previous time. The set up entailed us, to cut out two pockets two feet by 1 foot so as to allow our aluminum when screwed down, to rest flush with the top of the spoil board. We then orientated the board so that the bottom left corner of the board was at the X \& Y zeros, to allow for an easy tool path set up in Aspire. As an extra precaution in Aspire we added tabs to the material that would be completely cut out, so that the router wouldn't throw the loose aluminum pieces. Since this plate was CADed to have precise mounting holes, it required us to make two tool changes, not hard to do in the program, but required us to learn a new step, Tool Touch offs. When we had finished the program portion of the set up we moved back to the Laguna, were we started with setting our X,Y \& Z zero's. The Z zero had to be set to the bottom of the pocket because the Laguna cuts from the bed surface not from the material. Those zeros are very important to get as accurately as possible, because the tool switches and touch offs are based on the first bit and the said zeros. After we made sure everything was set up to the best of our ability, we began cutting, about half through the first pass on the profile the 1/4 O-flute bit snapped due to depth and side impact on the bit. We quickly switched the bit and reset all our zeros and tool touch offs, then resumed the cut. We later talked to a professional, who told us that the bit we were using was for 1/16th inch aluminum not 1/8th, so we ended up buying a new one to replace theirs.  
-\subsection{S1: AHHHHHHH}
-
-\subsection{S2: Characterize and tune the drive train}
+\subsection{S1: Characterize and tune the drive train}
 
 
-Before the robot can be able to follow paths during auto, the control loops must be tuned. There are two cascading control loops that control the robot's position. The first is the PIDF velocity loop onbard the Rev Hub. Changes to the rev hub firmware this year mean that rather than commanding velocity in some unitless number between -1 and 1, velocity can actualy be commanded, in radians per second. This takes some of the complication out of the control system, because the constant that relates that unitless number to an actual velocity does not need to be found, but the onbard loop still has to be turned. 
+Before the robot can be able to follow paths during auto, the control loops must be tuned. There are two cascading control loops that control the robot's position. The first is the PIDF velocity loop on bard the Rev Hub. Changes to the rev hub firmware this year mean that rather than commanding velocity in some unit-less number between -1 and 1, velocity can actually be commanded, in radians per second. This takes some of the complication out of the control system, because the constant that relates that unitless number to an actual velocity does not need to be found, but the on board loop still has to be turned. 
 
-The first step is to turn off the feedback components of the controller, by setting $kP$, $kI$, and $kD$ all to zero. To tune the feedforward constant, $kF$, Kelly first set it to 1. Then he wrote a opMode that gradualy ramped the commanded velocity up while the robot hurtled down a long strip of field tiles, sheporded by Emma. The opMode logged both the commanded velocity and the actual velocity reported by the Rev Hub. The velocities were recorded in radians per second rather than inches per second, because the velocity loop works with individual motors rather than the velocity of the robot its self. The measured data is shown in figure \ref{fig:graph}. While it is obvious that the real line of best fit should be of the form $y=ax+b$, that would not translate to a usable $kF$ for the velocity control loop, as the Rev Hub has no option to set a $kStatic$. Because of this, static friction will have to be ignored, and the regression calcualted in the form $y=ax$, which would make $kF = \frac{1}{a}$. This form of the regression still leaves the coeficient of determination sufficiently high, and even if there is some leftover error, the feedback portion of the loop will take care of that. After preforming the regression, $kF$ is found to be $12.579$. If the mass of the robot significantly changes, this process will have to be preformed again to find the new coeficients.
+The first step is to turn off the feedback components of the controller, by setting $kP$, $kI$, and $kD$ all to zero. To tune the feedforward constant, $kF$, Kelly first set it to 1. Then he wrote a opMode that gradually ramped the commanded velocity up while the robot hurtled down a long strip of field tiles, shepherded by Emma. The opMode logged both the commanded velocity and the actual velocity reported by the Rev Hub. The velocities were recorded in radians per second rather than inches per second, because the velocity loop works with individual motors rather than the velocity of the robot its self. The measured data is shown in figure \ref{fig:graph}. While it is obvious that the real line of best fit should be of the form $y=ax+b$, that would not translate to a usable $kF$ for the velocity control loop, as the Rev Hub has no option to set a $kStatic$. Because of this, static friction will have to be ignored, and the regression calculated in the form $y=ax$, which would make $kF = \frac{1}{a}$. This form of the regression still leaves the coefficient of determination sufficiently high, and even if there is some leftover error, the feedback portion of the loop will take care of that. After preforming the regression, $kF$ is found to be $12.579$. If the mass of the robot significantly changes, this process will have to be preformed again to find the new coefficients.
 
-The next step in the tuning process is to determine the feedback components of the velocity control loop, but this is made easier by a reasonably tuned feedforward component. It is important to tune the feedback coeficients, because the default tunings are meant for an unloaded motor. The motors respond well then just a bare shaft is spinning, but the coeficients are much too low once they are moving around the mass of a 18kg robot. First $kP$ is tuned, by increasing it until the loop becomes unstable, and then backing off a bit. Then $kD$ is added to dampen the rest of the oscilations, and $kI$ to take up any remaining constand error. To tune these coeficients the robot follows a series of motion profiles to travel in a square in the middle of the field while Kelly watches on the dashboard, adjusting the coeficients as needed. Because changing the coefficients on the Rev Hubs requires stoping the motors and re-seting their run mode, the coeficients can only be updated between paths.
+The next step in the tuning process is to determine the feedback components of the velocity control loop, but this is made easier by a reasonably tuned feedforward component. It is important to tune the feedback coefficients, because the default tunings are meant for an unloaded motor. The motors respond well then just a bare shaft is spinning, but the coefficients are much too low once they are moving around the mass of a 18kg robot. First $kP$ is tuned, by increasing it until the loop becomes unstable, and then backing off a bit. Then $kD$ is added to dampen the rest of the oscillations, and $kI$ to take up any remaining constant error. To tune these coefficients the robot follows a series of motion profiles to travel in a square in the middle of the field while Kelly watches on the dashboard, adjusting the coefficients as needed. Because changing the coefficients on the Rev Hubs requires stopping the motors and re-setting their run mode, the coefficients can only be updated between paths.
 
-After finding a reasonable tuning for the velocity, Kelly tuned the positional PID. The same process was repated, driving the robot in a square around the middle of the field, but this time the positional coeficients were tuned. The corrections determined by the three positional PID loops, axial, lateral, and heading, are added to the velocity calculated from the trajectory to determine the velocity commaned to the drivetrain, which is turned into the velocity commanded to each motor. Because the velocity loops reduced the error quite a bit to begin with, only P terms were needed on the positional loops. 
+After finding a reasonable tuning for the velocity, Kelly tuned the positional PID. The same process was repeated, driving the robot in a square around the middle of the field, but this time the positional coefficients were tuned. The corrections determined by the three positional PID loops, axial, lateral, and heading, are added to the velocity calculated from the trajectory to determine the velocity commanded to the drivetrain, which is turned into the velocity commanded to each motor. Because the velocity loops reduced the error quite a bit to begin with, only P terms were needed on the positional loops. 
 
 With the control loops tuned, the robot was now ready to begin executing paths.
 
@@ -1051,37 +880,15 @@ With the control loops tuned, the robot was now ready to begin executing paths.
 \caption {Actual vs. Commanded velocity, with line of best fit}
 \label {fig:graph}
 \end{figure}
+\subsection{H1: X-Rail Mounting}
+
+This week the inner drive plates were cut. However, since the outer plates were not cut, the X-rail could not be mounted. As such, a stop-gap method was used to mount the X-Rail. While technically the X-rail was mounted before on Tetrix, it hardly worked. This meant that if the team wanted to have a functioning robot, they would need to create one that worked better. ACME wanted to meet a deadline for having the robot able functioning so it was important to make this stop-gap solution. Jon was assigned to create this. The easiest way to do this seemed to be by drilling mounting holes into two sheets of aluminum and folding them. It was important that the mounting solution be simple and quick to make because the deadline that the team needed to have a functioning robot by was fast approaching. 
+
+\subsection{H2: Cutting Drive plates}
+
+For the cutting processed we decided to use a CNC laguna, for its precision and accuracy rather than by hand or CNC plasma cutter.The job set up was pretty simple since we had been walked through it the previous time. The set up entailed us, to cut out two pockets two feet by 1 foot so as to allow our aluminum when screwed down, to rest flush with the top of the spoil board. We then orientated the board so that the bottom left corner of the board was at the X \& Y zeros, to allow for an easy tool path set up in Aspire. As an extra precaution in Aspire, tabs were added to the material that would be completely cut out, so that the router wouldn't throw the loose aluminum pieces. Since this plate was modeled to have precise mounting holes, it required us to make two tool changes, not hard to do in the program, but required us to learn a new step, Tool Touch offs. When we had finished the program portion of the set up we moved back to the Laguna, were we started with setting our X,Y \& Z zero's. The Z zero had to be set to the bottom of the pocket because the Laguna cuts from the bed surface not from the material. Those zeros are very important to get as accurately as possible, because the tool switches and touch offs are based on the first bit and the said zeros. After we made sure everything was set up to the best of our ability, we began cutting, about half through the first pass on the profile the 1/4 O-flute bit snapped due to depth and side impact on the bit. We quickly switched the bit and reset all our zeros and tool touch offs, then resumed the cut. We later talked to a professional, who told us that the bit we were using was for 1/16th inch aluminum not 1/8th, so we ended up buying a new one to replace theirs.  
+
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Writing Tournament Presentation}
- Present at the county writing tournament.
-\subsection{Hardware Goals}
-\paragraph{H1: X-rail mounting work around}
- Figure out a way to mount the X-rail.
-\paragraph{H2: Re-Constructing Robot}
- Re-constructing Robot version 2.0.
-\subsection{Software Goals}
-\paragraph{S1: Parse the JSON Response}
- Use a JSONArray to parse the JSON response from the API
-\newpage
-\subsection{B1: Writing Tournament Presentation}
-
-The writing tournament is an event in Nevada county for 6th and 7th graders. There are three parts to the tournament, the response to a presentation, the creative writing piece, and letter writing. They always have quest speakers and this year, ACME was asked to come. \\
-
-Emma and Kelly prepared a half an hour presentation about ACME, FIRST, and  their 2017-18 season. The presentation basically told the story of their journey to Worlds with important information like how their design process and how software works mixed in. The students participating in the event were given a prompt to respond to. The prompt this year was "What makes a robotics team successful?" ACME made sure to include multiple ways for this question to be answered. For example, a robotics team can be successful by being Gracious Professionals, but also by doing well during competition. \\
-
-The presentation went off without a hitch and the kids seemed to enjoy it as well. The participants were given a chance to ask Kelly and Emma questions after they were done with the presentation, and had several in depth questions that needed answering. After that, the students wrote their essays, which were later graded by a group of teacher judges. ACME got a chance to read the essays and include some of the winning ones in \textbf{Appendix D of the Business Notebook}. \\
-
-This presentation was a great way to connect with more students in the community, especially those that enjoy writing and could be potential recruits to facilitate the engineering and business notebooks in the future. \\
-
-
-\subsection{H1: X-rail mounting work around}
-
-With the new outside plates now cut, the team could begin the final stages of fabricating the robot. There was a problem however, the part that was supposed to be bent over to mount the X-rail from the outside drive plate had broken off during the bending process. This caused the team to learn the hard way that aluminum is not suited for 90 degree bends. To overcome this problem, Jon bolted two Tetrix brackets to the inside of the outside drive plate. This acted almost exactly as the originally mounts would have. Jon did it this way because it was quick, simple, and functional. With a "robot done" deadline fast approaching, this was likely the best solution. While this was neither an elegant or permanent solution, it was at least functional.
-
-\subsection{H2: Re-Constructing Robot}
-
-After the majority of the newly fabricated parts were completed, we began building version 2.0. The build process the second time around was much faster and went very smooth. We completed the reconstruction with in two meetings, and then began the long and tedious process of wiring everything up. As a team we have learned from past experience that wiring and organization is very important for a functional robot. Organization allows for easy fixes when necessary and creates no confusion when working through software and hardware issues, this is an area that in the past has been neglected. But we have dedicated time and effort to make sure that wiring is cosmetically pleasing and concise. 
 \subsection{S1: Parse the JSON Response}
 
 With the prescouter, the response from the API is in JSON, which is very difficult to read as it is all strung together. Since this app is specifically made to make prescouting easier, it was important to parse the information. As Emma had no experience parsing before, she spent some time researching the basics before attempting to write the code. She decided to use a JSONArray to parse the data since the response was an array. This array consists of the JSON response from the GET. Then, Emma made JSONObjects for each key then used the array to get the value. Finally she printed the result to the console. Here is the JSONArray that she used to parse the data. 
@@ -1095,16 +902,39 @@ System.out.println("Team Key: " + teamKey.get("team_key"));
 \end{lstlisting}
 
 Each key in the array has a separate JSONObject in order to parse it. As this is a lot of code to have in the Main class of her application, next Emma has decided to make each command she will use into a different class and then call it in Main when she needs that specific data parsed. 
+\subsection{H1: X-rail mounting work around}
+
+With the new outside plates now cut, the team could begin the final stages of fabricating the robot. There was a problem however, the part that was supposed to be bent over to mount the X-rail from the outside drive plate had broken off during the bending process. This caused the team to learn the hard way that aluminum is not suited for 90 degree bends. To overcome this problem, Jon bolted two Tetrix brackets to the inside of the outside drive plate. This acted almost exactly as the originally mounts would have. Jon did it this way because it was quick, simple, and functional. With a "robot done" deadline fast approaching, this was likely the best solution. While this was neither an elegant or permanent solution, it was at least functional.
+
+\begin{figure}
+    \centering
+    \includegraphics[height=6cm]{18_12-31/images/X-Rail Mount.JPG}
+    \caption{X-Rail Bracket Mounts}
+    \label{X-Rail Mounts}
+\end{figure}
+
+
+
+\subsection{H2: Re-Constructing Robot}
+
+After the majority of the newly fabricated parts were completed, we began building version 2.0. The build process the second time around was much faster and went very smooth. We completed the reconstruction with in two meetings, and then began the long and tedious process of wiring everything up. As a team we have learned from past experience that wiring and organization is very important for a functional robot. Organization allows for easy fixes when necessary and creates no confusion when working through software and hardware issues, this is an area that in the past has been neglected. But we have dedicated time and effort to make sure that wiring is cosmetically pleasing and concise. 
+\subsection{B1: Writing Tournament Presentation}
+
+The writing tournament is an event in Nevada county for 6th and 7th graders. There are three parts to the tournament, the response to a presentation, the creative writing piece, and letter writing. They always have quest speakers and this year, ACME was asked to come. \\
+
+Emma and Kelly prepared a half an hour presentation about ACME, FIRST, and  their 2017-18 season. The presentation basically told the story of their journey to Worlds with important information like how their design process and how software works mixed in. The students participating in the event were given a prompt to respond to. The prompt this year was "What makes a robotics team successful?" ACME made sure to include multiple ways for this question to be answered. For example, a robotics team can be successful by being Gracious Professionals, but also by doing well during competition. \\
+
+The presentation went off without a hitch and the kids seemed to enjoy it as well. The participants were given a chance to ask Kelly and Emma questions after they were done with the presentation, and had several in depth questions that needed answering. After that, the students wrote their essays, which were later graded by a group of teacher judges. ACME got a chance to read the essays and include some of the winning ones in \textbf{Appendix D of the Business Notebook}. \\
+
+This presentation was a great way to connect with more students in the community, especially those that enjoy writing and could be potential recruits to facilitate the engineering and business notebooks in the future. \\
+
+
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: Lift Cross brace and LED side plates}
- Discussing an alternative cross brace and decorative side plates.
-\paragraph{H2: Adjusting the angle of the diverter cartridge}
- The diverter cartridge angle needs to be changed to allow for cubes to fall out.
-\subsection{Software Goals}
-\paragraph{S1: Introduce OOP to the Prescouter}
- Use Object-Oriented Programming procedures to simplify the PreScouter.
-\newpage
+\subsection{S1: Introduce OOP to the Prescouter}
+
+In order to simplify the code in her Main class, Emma decided to use Object-Oriented Programming methods to call the different commands she intends to use while prescouting. She knew what object-oriented programming was, but decided to refresh her memory via the internet to make absolutely certain she understood the concept. \\
+
+After doing that, Emma picked out which commands from the API she wanted to use. She decided that she wanted to be able to get information about the team, their match performance, the awards they had won, the results of their tournaments, and the events that they attended. Emma thought that these commands would yield the most information about the team she would be prescouting. She made a class for each command at set to work. Emma used the exact same method to parsing the JSON response in each class and also set it up so that they could be easily called in the Main. After a lot of tweaking, Emma got it working. It is now very easy to call commands in Main and her code is a lot cleaner. It is very clear as to why OOP is very useful and an important tool to use while programming. 
 \subsection{H1: Lift Cross brace and LED side plates}
 
 Most of the lift had been completed and one of the only things left was to create the cross brace at the top of the lift. The cross brace was necessary because without it the entire lift would wobble five to ten degrees when at max height. While Aidan created the brackets on the side of the lift to hold the cross brace, Aidan, Kelly and Oren discussed what they wanted to make the cross brace to be made out of. They decided that instead of just the metal plate running across they wanted to make the cross brace out of cast acrylic so that they could engrave patterns into the acrylic and light it up with LED's.They decided to do this with the acrylic instead of poly-carbonate because the poly-carbonate would melt a little when engraved. They then realized that they could also create similar illuminated plates on the side of the robot. However before these plates could be cut the designs needed to be created. Since this might take a few days, Aidan created a temporary cross brace that would serve until then.
@@ -1119,33 +949,10 @@ When most of the intake had been completed, Kelly, Aidan and Oren decided to ful
     \caption{The cut to increase diverter angle}
     \label{fig:Cutout}
 \end{figure}
-\subsection{S1: Introduce OOP to the Prescouter}
-
-In order to simplify the code in her Main class, Emma decided to use Object-Oriented Programming methods to call the different commands she intends to use while prescouting. She knew what object-oriented programming was, but decided to refresh her memory via the internet to make absolutely certain she understood the concept. \\
-
-After doing that, Emma picked out which commands from the API she wanted to use. She decided that she wanted to be able to get information about the team, their match performance, the awards they had won, the results of their tournaments, and the events that they attended. Emma thought that these commands would yield the most information about the team she would be prescouting. She made a class for each command at set to work. Emma used the exact same method to parsing the JSON response in each class and also set it up so that they could be easily called in the Main. After a lot of tweaking, Emma got it working. It is now very easy to call commands in Main and her code is a lot cleaner. It is very clear as to why OOP is very useful and an important tool to use while programming. 
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: New Team Marker placement}
- Find a place to mount the team marker.
-\paragraph{H2: Wiring and Rev Hubs}
- Attaching the Rev Hubs, Battery, phone and wiring the robot.
-\subsection{Software Goals}
-\paragraph{S1: Deploy during auto}
- Use a proximity sensor and hall effect sensor to deploy during auto
-\newpage
-\subsection{H1: New Team Marker placement}
-
-After some testing, it was determined that the current placement for the team marker was unreliable. The team marker had previously been placed high on the rear of the robot which caused a great deal of deviation in where the marker landed. Ashlin and Jon were set to this task. They figured that since the problem was that the marker was too high, they would simply put it lower on the robot. This proved to be a little tricky as there was not much space on the lower portion of the robot. The entire right side was taken up by the X-Rail and the left side had both rev hubs on it. The only place that there was space was behind the rev hubs and in front of the lift. Now that they had a place to put it, Ashlin and Jon had to figure out how it would deploy. The original method of deployment (a vertical arm the marker would fall off of when it was swung down) would not work here as there was not enough space. They then came up with the idea of a kicker that push the marker off the side of the robot. They liked this idea because it allowed the servo to sit above the marker, saving space, and it would be more reliable than the previous method. The only problem with this method was that there was nothing stopping the marker from simply falling off the robot. To remediate this problem, Ashlin cut a V shaped fork into the arm that pushed the marker off. The fork could then slide over a section of the marker, holding it in place. This solved the problem, and after some testing the new deployment method worked reliably. 
-
-\subsection{H2: Wiring and Rev Hubs}
-
-After most of the subsystems were built the team could then find permanent positions for the rev hubs, battery and phone mount. The team decided to put the rev hubs over the left side wheels because that is where there was the most room and the lowest chance of them getting damaged. To do this Shawn created a poly carbonate sheet that attached to the aluminum side plates and served as a firm attachment place for the rev hubs. Oren then realized that the danger with the rev hubs being there is the chance that wires could get caught in the drive train. To prevent this he created an aluminum plate to attach over the left side drive train to prevent important wires from falling in. Once the rev hubs were mounted the next important thing was to wire all the servos, motors and sensors. The difficult part of this was how to get the wires from the diverter servos because the diverter moved around so much. Kelly fixed this problem by using a wire track that could hold the wires safely inside while matching the up and down motion of the lift. The wires still needed to be run to the other side of the robot and the intake shield attachment bar served as an ideal wire trail from the right side to the left. Once all the wiring was complete the battery and power button were mounted in easily accessible locations and a temporary phone mount was created.
-
-
 \subsection{S1: Deploy during auto}
 
-Kelly worked on deploying from the lander during auto. Because the exact position at at which the robot is initialized may vary, using the encoders would be an inconsistent way to deploy. To consistently determine the robot's distance from the ground, Kelly decided to use a IR proximity sensor mounted at the bottom of the robot. After mounting the sensor and verifying that the robot's full range of travel would be encompased by the sensor's usable range, Kelly took the sensor off to linearize. Because it is an ir sensor, it measures distance by the intensity of reflected IR light. This means that there is a nonlinear relationship between the voltage returned by the sensor and the distance between the sensor and the ground. Before a loop can sucessfuly be closed around this sensor, the reading must be linearized. Attempting to use a PID loop with a non-linear sensor yeilds different responses at different locations within the sensor's range. and can lead to either instability or inaccuracy. To determine this relationship Kelly and Aidan built a test rig that contained both the IR sensor and a linear potentiometer. The linear potentiometer would return a voltage porportional to the displacement of the stylus along its length. By logging the voltage returned by both the sensors, and offsetting the voltage returned by the potentiometer so that 0 corresponded to the IR sensor being in contact with the ground, Kelly found the relationship between voltage and distance. This distance is still unitless, but the important part is that it is linear.
+Kelly worked on deploying from the lander during auto. Because the exact position at at which the robot is initialized may vary, using the encoders would be an inconsistent way to deploy. To consistently determine the robot's distance from the ground, Kelly decided to use a IR proximity sensor mounted at the bottom of the robot. After mounting the sensor and verifying that the robot's full range of travel would be encompassed by the sensor's usable range, Kelly took the sensor off to linearize. Because it is an IR sensor, it measures distance by the intensity of reflected IR light. This means that there is a nonlinear relationship between the voltage returned by the sensor and the distance between the sensor and the ground. Before a loop can sucessfully be closed around this sensor, the reading must be linearized. Attempting to use a PID loop with a non-linear sensor yields different responses at different locations within the sensor's range. and can lead to either instability or inaccuracy. To determine this relationship Kelly and Aidan built a test rig that contained both the IR sensor and a linear potentiometer. The linear potentiometer would return a voltage proportional to the displacement of the stylus along its length. By logging the voltage returned by both the sensors, and offsetting the voltage returned by the potentiometer so that 0 corresponded to the IR sensor being in contact with the ground, Kelly found the relationship between voltage and distance. This distance is still unit-less, but the important part is that it is linear.
 
 After removing the unusable data at either end and preforming a regression, Kelly found the relationship to be $d=0.3928 v^{-1.66868}$. 
 
@@ -1163,16 +970,49 @@ Kelly then used this sensor to close a PID loop, consistently lowering the robot
 \caption {Distance reported by sensor vs actual distance}
 \label {fig:graph}
 \end{figure}
+\subsection{H1: New Team Marker placement}
+
+After some testing, it was determined that the current placement for the team marker was unreliable. The team marker had previously been placed high on the rear of the robot which caused a great deal of deviation in where the marker landed. Ashlin and Jon were set to this task. They figured that since the problem was that the marker was too high, they would simply put it lower on the robot. This proved to be a little tricky as there was not much space on the lower portion of the robot. The entire right side was taken up by the X-Rail and the left side had both rev hubs on it. The only place that there was space was behind the rev hubs and in front of the lift. Now that they had a place to put it, Ashlin and Jon had to figure out how it would deploy. The original method of deployment (a vertical arm the marker would fall off of when it was swung down) would not work here as there was not enough space. They then came up with the idea of a kicker that push the marker off the side of the robot. They liked this idea because it allowed the servo to sit above the marker, saving space, and it would be more reliable than the previous method. The only problem with this method was that there was nothing stopping the marker from simply falling off the robot. To mediate this problem, Ashlin cut a V shaped fork into the arm that pushed the marker off. The fork could then slide over a section of the marker, holding it in place. This solved the problem, and after some testing the new deployment method worked reliably.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{20_01-14/images/markerplacer.JPG}
+    \caption{Marker Placer}
+    \label{fig:markerplacer}
+\end{figure}
+
+\subsection{H2: Wiring and Rev Hubs}
+
+After most of the subsystems were built the team could then find permanent positions for the rev hubs, battery and phone mount. The team decided to put the rev hubs over the left side wheels because that is where there was the most room and the lowest chance of them getting damaged. To do this Shawn created a poly carbonate sheet that attached to the aluminum side plates and served as a firm attachment place for the rev hubs. Oren then realized that the danger with the rev hubs being there is the chance that wires could get caught in the drive train. To prevent this he created an aluminum plate to attach over the left side drive train to prevent important wires from falling in. Once the rev hubs were mounted the next important thing was to wire all the servos, motors and sensors. The difficult part of this was how to get the wires from the diverter servos because the diverter moved around so much. Kelly fixed this problem by using a wire track that could hold the wires safely inside while matching the up and down motion of the lift. The wires still needed to be run to the other side of the robot and the intake shield attachment bar served as an ideal wire trail from the right side to the left. Once all the wiring was complete the battery and power button were mounted in easily accessible locations and a temporary phone mount was created.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{20_01-14/images/wiring.jpg}
+    \caption{Wiring}
+    \label{fig:wiring}
+\end{figure}
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Business Goals}
-\paragraph{B1: Re-Organize the Outreach Section}
- Better organize the outreach section of the Business Notebook. 
-\subsection{Hardware Goals}
-\paragraph{H1: Cartridge Servo}
- Decreasing the load on the cartridge servo.
-\paragraph{H2: Lift Skids}
- Brainstorm ideas for the lift skids.
-\newpage
+\subsection{H1: Cartridge Servo}
+
+While Aidan and Kelly were testing the subsystems they saw that the cartridge servo was having trouble doing its full rotation. The servo especially had a problem when there was two cubes in the diverter because that is when it was carrying the most weight. The servo seemed to have trouble with the up part of its dump rotation as well as the up part of its reverse rotation. This caused a problem because it meant that whatever was used to help the servo needed to help it in both directions. Kelly and Aidan solved this by attaching a quadrupled up piece of surgical tubing to a stationary piece of the carriage and the other side to the servo horn. They connected it so that when the carriage was at its balancing point the surgical tubing had the least amount of tension. They did this so that when rotated farther clockwise then its balancing point the surgical tubing would help the servo in its reverse rotation and when rotated farther counterclockwise then its balancing point the tubing would help in the dump rotation. This helped the servo and allowed it to rotate in both directions with little difficulty.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{21_01-21/images/tubing.JPG}
+    \caption{Surgical Tubing}
+    \label{fig:tubing}
+\end{figure}
+
+\subsection{H2: Lift Skids}
+
+With the lift now in working order, the team conducted some tests with it to see if it was up to snuff. The team quickly found that the lift didn't quite have the robot hanging the full four inches off the floor. The team put Aidan, Ashlin, and Jon on the job to fix this issue. They found that the robot was angled in such a way that the front was lower than the back. This meant that even though the back of the robot was four inches off the ground, the front was not. This was because the top of the lift stuck out farther (because of the hook) than the bottom. The trio thought they could add a plate to the back of the robot to alleviate this problem. They thought if they put a plate that stuck out as far as the hook, the robot would be flush with the lander along the entire robot. This would also make sure none of the lift or back of the robot would get caught on the lander and would just overall smooth the lifting and lowering process. They realized however that there was no where to put the plate that would interfere with the lift. All the available attachment points either moved with the lift or were too close to the 18 inch limit. This is when the team got the idea for skids. These would essentially act as skis for the robot to slide up the lander with. These were also smaller and less obtrusive than the plate. They decided to construct them out of poly-carb because of their flexibility (meaning it would be hard to break them) and because they would be easier to shape.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{21_01-21/images/liftskids.JPG}
+    \caption{Lift Skids}
+    \label{fig:skids}
+\end{figure}
 \subsection{B1: Re-Organize the Outreach Section}
 
 ACME does a lot of outreach and the outreach section of the BN was looking a little bit disorganized. So, Kelly, Emma and Stephanie talked about how it could be better. They decided they needed clearer categories of outreach and came up with the following sections: 
@@ -1188,30 +1028,7 @@ They also realized that it would be good to explain what types of outreach event
 Emma took on the job of reorganizing. While in the process, she realized that Team Building needed to be split into two different section in order for it to make more sense. Before doing this, this section encompassed all of the events that helped build up the program in the county as well as events that the team does for fun. Thus, Emma created another section called Program Building, which housed all of the events that helped create a sustainable program in the community. Emma also added a ''Contents" section to the front page describing each category. She thought that it would be good to list what was in the category so that the judges could find things that seemed interesting to them. She made sure to order the Contents in the exact same order in which the individual events were listed for added easy accessibility. \\
 
 When finished, the outreach section was much more organized than it was before. It was easy to find things and the categories made sense for the events that were in them. 
-\subsection{H1: Cartridge Servo}
-
-While Aidan and Kelly were testing the subsystems they saw that the cartridge servo was having trouble doing its full rotation. The servo especially had a problem when there was two cubes in the diverter because that is when it was carrying the most weight. The servo seemed to have trouble with the up part of its dump rotation as well as the up part of its reverse rotation. This caused a problem because it meant that whatever was used to help the servo needed to help it in both directions. Kelly and Aidan solved this by attaching a quadrupled up piece of surgical tubing to a stationary piece of the carriage and the other side to the servo horn. They connected it so that when the carriage was at its balancing point the surgical tubing had the least amount of tension. They did this so that when rotated farther clockwise then its balancing point the surgical tubing would help the servo in its reverse rotation and when rotated farther counterclockwise then its balancing point the tubing would help in the dump rotation. This helped the servo and allowed it to rotate in both directions with little difficulty.
-
-\subsection{H2: Lift Skids}
-
-With the lift now in working order, the team conducted some tests with it to see if it was up to snuff. The team quickly found that the lift didn't quite have the robot hanging the full four inches off the floor. The team put Aidan, Ashlin, and Jon on the job to fix this issue. They found that the robot was angled in such a way that the front was lower than the back. This meant that even though the back of the robot was four inches off the ground, the front was not. This was because the top of the lift stuck out farther (because of the hook) than the bottom. The trio thought they could add a plate to the back of the robot to alleviate this problem. They thought if they put a plate that stuck out as far as the hook, the robot would be flush with the lander along the entire robot. This would also make sure none of the lift or back of the robot would get caught on the lander and would just overall smooth the lifting and lowering process. They realized however that there was no where to put the plate that would interfere with the lift. All the available attachment points either moved with the lift or were too close to the 18 inch limit. This is when the team got the idea for skids. These would essentially act as skis for the robot to slide up the lander with. These were also smaller and less obtrusive than the plate. They decided to construct them out of poly-carb because of their flexibility (meaning it would be hard to break them) and because they would be easier to shape.
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Software Goals}
-\paragraph{S1: Finish the console version of the PreScouter}
- Finish how the PreScouter will be used in the console.
-\paragraph{S2: Design double sampling paths}
-subsection {Design double sampling paths}
-%Design paths that sample both sets of minerals for extra points in autonomous
-
-While supporting ARES at one of their qualifiers, Kelly saw that many teams either had no auto, or had an auto that only deployed from the lander. Kelly decided that this would make a auto that could disturb both of the gold minerals would be really good to have. In the scenario where an alliance partner did not leave the lander during auto, the location they started at would not matter, so these paths would only have to be designed for ACME's prefered start location, next to the crater. After experimenting by pushing the robot around, Kelly found that there was not enough room between the parked robot and the sampling field to approach the sampling field from the lander side, so the robot would have to first enter the depot, and then push the gold mineral toward the parked robot. This also happened to be an easier modification to make, because it only required duplicating the depot waypoint where the robot dropped off its marker, and adding a waypoint between them to disturb the gold mineral. Kelly tested the paths and found that they worked!
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6\textwidth]{22_01-28/double.png}
-    \caption{Double sampling path (line thickness corresponds to robot velocity)}
-    \label{fig:double}
-\end{figure}
-\newpage
 \subsection{S1: Finish the console version of the PreScouter}
 
 This week, Emma finished the console version of the PreScouter. After calling each request class in Main and making sure that they were all working, Emma set about writing the code that would allow the user to make specific requests with ease. She decided to use a series of if else statements to accomplish this. First, the console asks the user what specific request they would like to make. There are only five requests a user can make because that is the only data that they need from the API. After making a request, Emma uses an if else function to prompt the user for the rest of the information needed in order to complete the URL to send to the API. Then, with the information from the user, Emma pieces together the URL and makes the GET request.\\
@@ -1221,14 +1038,26 @@ At the end of the sendGet() method, Emma used another if else function to print 
 
 \subsection{S2: Design double sampling paths}
 
+While supporting ARES at one of their qualifiers, Kelly saw that many teams either had no auto, or had an auto that only deployed from the lander. Kelly decided that this would make a auto that could disturb both of the gold minerals would be really good to have. In the scenario where an alliance partner did not leave the lander during auto, the location they started at would not matter, so these paths would only have to be designed for ACME's prefered start location, next to the crater. After experimenting by pushing the robot around, Kelly found that there was not enough room between the parked robot and the sampling field to approach the sampling field from the lander side, so the robot would have to first enter the depot, and then push the gold mineral toward the parked robot. This also happened to be an easier modification to make, because it only required duplicating the depot waypoint where the robot dropped off its marker, and adding a waypoint between them to disturb the gold mineral. Kelly tested the paths and found that they worked!
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6\textwidth]{22_01-28/images/double.png}
+    \caption{Double sampling path (line thickness corresponds to robot velocity)}
+    \label{fig:double}
+\end{figure}
+\subsection{H1: Lift String}
+
+After most of the robot was completed Kelly and Aidan ran a few practice matches to make sure that everything was working properly. One thing that kept happening was the pull down string on the lift kept breaking right in the middle. This showed that the string evidently was not strong enough. The string had a 200 lb rating but evidently the impulse of the robot when going up or down was much higher than this. Kelly decided that the team should order some higher rated string to ensure that this wouldn't happen again. The team ordered a 900 lb rated string from amazon that was 3 mm thick. The team didn't know if the change in thickness from 1 mm  to 3 mm was going to cause problems so Aidan used some left over rev slides string, that was also 3 mm thick with unknown rating, to test for adverse effects because of the change in thickness. Because of the thickness of the string more slack developed when the lift raised which caused the problem of the string jumping off the spool a few times. Aidan fixed this by wrapping extra coils around the spool for the pull up run which made it so less string was released per rotation for the pull down than the pull up which fixed the problem. When the new string arrived the team now knew how to use it without problem.
+
 \clearpage \newpage \section{Week \thesection} 
-\subsection{Hardware Goals}
-\paragraph{H1: Drive Practice}
- Run matches with the drive team. 
-\newpage
 \subsection{H1: Drive Practice}
 
-Over the week, the drive team ran practice matches to practice their driving skills. The drive team consists of Shawn and Aidan as the drivers and Emma as the drive coach. At the beginning of the week, they just ran the teleop part of a match, using a real FTC timer that they found on YouTube. They kept track of their scores and performance on the whiteboard, as seen in fig \ref{fig:chart}. For their first round of drive practice, they were averaging about 120 points during just teleop. 
+Over the week, the drive team ran practice matches to practice their driving skills. The drive team consists of Shawn and Aidan as the drivers and Emma as the drive coach. At the beginning of the week, they just ran the teleop part of a match, using a real FTC timer that they found on YouTube. They kept track of their scores and performance on the whiteboard, as seen in fig \ref{fig:chart}. For their first round of drive practice, they were averaging about 120 points during just teleop.
+
+\subsection{H2: Dumper Arm Replication}
+
+During the week, Ben and Shawn were tasked with replicated the dump arm due to it bending during matches. This was a problem so Ben and Shawn decided to make more. They ended up tracing the original profile and then cut out the holes with a drill press. Then, they used a hacksaw to cut out the shape and then filed it. 
 
 \begin{figure}
     \centering
@@ -1236,4 +1065,223 @@ Over the week, the drive team ran practice matches to practice their driving ski
     \caption{Score Keeping Chart}
     \label{fig:chart}
 \end{figure}
+
+
+\clearpage \newpage \section{Week \thesection} 
+\subsection{S1: Set up the UI for the pre-scouting app}
+
+Emma started working on the next part of the prescouting app which is to create a UI. Emma had some experience with creating UIs before as she worked on the scouting app last year. First, she sketched out the design of the UI and everything she would need to display the data, as you can see in Fig \ref{fig:sketch}. \\
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{24_02-11/images/sketchofUI.JPG}
+    \caption{Sketch of what UI will look like}
+    \label{fig:sketch}
+\end{figure}
+
+Next, Emma set to work identifying which components she needed to use to complete the UI. She decided for the request and the team number, she would use TextFields. For the year, she would use a Choice component that would allow the user to select a preset year. She used a Button for the submit button. Finally, she decided to make a Panel on top of her Frame in order to section off the TextArea were the data would be printed from the rest of the screen. \\
+
+Now, Emma needed to go about making this UI a reality and actually function properly. She began by setting up the aesthetic parts of the UI (Frame, TextFields, etc). Then she started to figure out how to get the submit button to actually do something. She decided to use an ActionListener for this. An ActionListener is how you tell in Java f a button has been pressed or not. If it has, an action occurs after that. That action that takes place after Emma's submit button is pressed is an if else statement figures out what is in the request TextField and what is in the team number field in order to piece together the URL. She managed to get that working, and is now trying to figure out how to send the GET request once the button has been pressed. Above is the current design the UI, as seen in Fig \ref{fig:UI}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{24_02-11/images/prescoutingapp.png}
+    \caption{Design of UI}
+    \label{fig:UI}
+\end{figure}
+
+\subsection{S2: Write tracking omni code}
+
+To use the omnidirectional tracking wheels installed on the robot Kelly needed to write software to translate their movements into robot movements. The kinematics to transform a relative robot pose update to a field pose up date could be reused from the existing localization code that used the drive motors, so the task was to translate tracking wheel deltas and a heading delta reported by the imu into a robot pose delta. 
+
+Because the drivetrain is holonomic, software assumes that the robot moves with constant positional and heading velocity each update cycle, rather than the traditional twists used by differential drives. 
+After drawing a diagram of the paths taken by two tracking wheels during a robot update, Kelly decided that the best course of action would be to first determine what part of each tracking omni delta was accounted for by the heading delta, and then transform the resulting vector from tracking omni space into robot space. 
+
+Accounting for the portion of a tracking omni delta caused by a heading delta is relatively simple. Given a heading delta $\theta$, the linear distance reported by a tracking omni will be $r \theta \sin\alpha$, where r is the distance from the tracking omni to the center of rotation of the robot and $\alpha$ is the angle between the radius and the axis of the tracking omni. While this value could be theoretically determined, Kelly doubted it would be accurate enough to base all robot localization off of, so they decided to determine it empirically. Because the value would be determined empirically, a new coefficient, $k$, can be defined to equal $r \sin\alpha$, eliminating the need to empirically determine more than one constant.
+
+Kelly wrote an opmode to turn the robot a set angle, and then measure the distance reported by each tracking omni. By dividing the distance reported by the heading delta reported by the imu, they empirically determined $k$. They found that $k$ was equal to 3500 ticks per radian for the axial tracking wheel, and zero for the lateral wheel. 
+
+The next step was to convert the two distances traveled by the tracking wheels into the robot coordinate system. This is a very simple problem if the tracking wheels are orthogonal to the robot, one of them is the x component and one of them is the y, and is still very simple if they are orthogonal to each other but rotated relative to the robot, because the vector representing their movement can just be rotated by their angle relative to the robot. However, the general case, for two tracking wheels oriented in arbitrary directions, proved to be much more difficult. 
+
+After a couple naive approaches that involved rotating vectors representing the vectors representing each wheel individually, and constructing equations that passed and were tangent to the vectors and then solving the system, Kelly came to the realization that the same general concepts used in all holonomic wheels could be applied. Most importantly, the dot product of a vector representing robot movement and a unit vector pointing in the direction of the rollers of a wheel is equal to the distance traveled by the rollers. If $\vec{r}$ is the robot position delta, and $\hat{a}$ and $\hat{b}$ are the unit vectors in the direction of the a and b rollers respectively, then $\vec{r} \cdot \hat{a} = |\vec{a}|$ and $\vec{r} \cdot \hat{b} = |\vec{b}|$. By rewriting this as matrix multiplication the following equation results: 
+
+$$\begin{bmatrix} |\vec{a}| & |\vec{b}| \end{bmatrix}^\top = \begin{bmatrix} \hat{a_x} & \hat{a_y} \\ \hat{b
+x} & \hat{b_y} \end{bmatrix} \vec{r}^\top$$
+
+and after solving for $\vec{r}$:
+
+$$\vec{r}^\top = \begin{bmatrix} \hat{a_x} & \hat{a_y} \\ \hat{b
+x} & \hat{b_y} \end{bmatrix}^{-1}  \begin{bmatrix} |\vec{a}| & |\vec{b}| \end{bmatrix}^\top $$
+
+To actually compute this, the inverse of the unit vectors are derived from angles representing the direction the rollers point, and the inverse matrix is pre-computed, and then each row represented as a vector, so the resulting vector can be represented as two dot products. This small utility class encapsulates this math:
+
+\begin{lstlisting}[language=Java]
+public class TrackingWheelKinematics {
+
+    private Vector2d r0, r1;
+
+    public TrackingWheelKinematics (double a0, double a1) {
+        if (a0 == a1) throw new IllegalArgumentException("you can't point them in the same direction silly!!!");
+        double a = Math.cos(a0);
+        double b = Math.sin(a0);
+        double c = Math.cos(a1);
+        double d = Math.sin(a1);
+        double determinant = a*d - b*c;
+        r0 = new Vector2d(d, -b).div(determinant);
+        r1 = new Vector2d(-c, a).div(determinant);
+    }
+
+    public Vector2d transform (Vector2d dist) {
+        return new Vector2d(r0.dot(dist), r1.dot(dist));
+    }
+
+}
+\end{lstlisting}
+
+\subsection{H1: Investigate Intake Whips}
+
+After the Napa tournament one evident problem was that the intake was to slow. One way the team thought that this could be fixed is if the stiffness of the whips was increased. Aidan and Ashlin were designated the task of investigating different whip materials. They wanted a material that was stiff enough that it could easily hit the balls and cubes up and through the intake, but they didn't want it to be too stiff that it would cause damage to the poly carbonate shield. Aidan went to the hardware store and bought a couple different types of gas tubing of varying stiffness. The team then tested the whips and determined that to maximize the intake the thicker whips should be put with three in the middle roller as shown in figure \ref{fig:whips} and on the outer four whips for the crater roller. Aidan also determined that if he placed the most outside whips 30 degrees ahead of the rest this would help directing the balls and cubes into the center of the whips.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{24_02-11/images/intakewhips.JPG}
+    \caption{Intake Whips}
+    \label{fig:whips}
+\end{figure}
+
+\subsection{H2: Lift Version 2.0}
+
+After the Napa tournament, it was evident that there was some issues and restrictions with the current design of the lift. The most notable ones being the inconstant lift height through out a match, and the over all lack of tolerances due to the bearing blocks assembling process. With both of these issues so closely affecting the over all performance, the hardware team set out with two plans to fix the problems. Oren set out re-CADing, and ordering new parts for a second lift, that would be able to easily be switched out for the current one when the time came. Meanwhile the other hardware members made parts and improvements to the current lift as a precaution in case the new lift wasn't made in time for NorCals. 
+
+
+\subsection{H3: Change the Lift String Standoffs}
+
+One recurring problem that was noticed prior and during the Napa tournament was that the pull up run length was very inconsistent. This was because the standoffs that held the pull up run bearings continued to bend which changed the overall length. Aidan was designated the task of creating more reliable standoffs. He decided that the best way to do this would be to manufacture custom pieces for each bearing location. He completed CAD drawing of each desired piece as shown in figure \ref{fig:PullUp1} and \ref{fig:PullUp2} and planned to cut the parts out the next week.
+
+\begin{figure}[h!]
+\begin{minipage}{.45\textwidth}
+    \centering
+    \includegraphics[height=3.5cm]{24_02-11/images/PullUpBlock1.PNG}
+    \caption{Pull Up Block 1}
+    \label{fig:PullUp1}
+\end{minipage}\hfill
+
+\begin{minipage}{.45\textwidth}
+\centering
+    \includegraphics[height=3.5cm]{24_02-11/images/PullUp2.PNG}
+    \caption{Pull Up Block 2}
+    \label{fig:PullUp2}
+    \end{minipage}
+\end{figure}
+\subsection{B1: Napa Tournament}
+
+ACME attended the Napa Qualifier. This was their last qualifying tournament, and since they had already qualified for the Northern California Regionals, this tournament was sort of a practice tournament and they didn't feel completely stressed out about matches. 
+
+They practiced judging bright and early and set up our pit area. This tournament they wanted to test out a new pre-scouting technique where a few scouters went around and asked their alliance partners to draw out their autonomous paths on a field diagram they had printed out. This worked quite well, as it allowed ACME to run different auto paths based on their partner's capabilities and paths. 
+
+The team's qualifying matches went very well! They won every one and placed third overall. Since they didn't need to qualify, they weren't interested in being alliance captain, so they decided to let the first place team pick them for their alliance. Although ACME went out in the semi-finals, they had a great time competing. 
+
+Another big accomplishment for this tournament was that every single group of judges came and talked to the team. This meant that they made the shortlist for every award. This was a first and they were very proud that their judging presentation made such a good impression on the judges. 
+
+ACME ended the day by winning the Control award for their software. They were really happy and had a fun and exciting day!
+\clearpage \newpage \section{Week \thesection} 
+\subsection{H1: Increase the Intake arm Length and Thickness}
+
+Ashlin and Aidan realized that another way to increase the speed and effectiveness of the intake was to increase the reach of the third intake roller (the one that flops down into the crater). They decided that if the whips were an inch longer this would significantly increase the reach of the whips while not slowing it down. In order for this to work the roller arm need to be increase an inch in length and positioned an inch higher so that the whips did not hit the ground or crater to much that they might cause unnecessary friction. New arms were cut out however a belt for the new length did not exist. So the team decided to not increase the arm or whip length, but did increase the arm thickness as shown in figure \ref{fig:arm} They did this because they knew from experience that the arms often had to absorb significant impact from collisions and previous arms had snapped because of this. The team believed that increasing the thickness would result in more durability. The new arms were cut and put on the robot, where they were tested and found to be very strong and durable.
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{25_02-18/images/Arm.jpg}
+    \caption{New Arm}
+    \label{fig:arm}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{25_02-18/images/phoneMount.png}
+    \caption{Phone Case Assembled}
+    \label{fig: phone case}
+\end{figure}
+
+\subsection{H2: Change lift gear ratio}
+
+After the Napa tournament, the team brainstormed ways to decrease the time it took to score one pair of minerals. 
+Because there is such a short distance between the crater and the lander, it takes barely any time to travel between them. 
+This meant that the drive team would often be waiting for the lift to reach the top before they could score.
+The lift can be made faster by changing the gear ratio of the lift gearbox, however this comes at the expense of torque and could potentially effect the ability of the robot to hang from the lander.
+The initial gear ratio had been picked with the conservative safety factors of a 20kg robot under an acceleration of 2g, and was more than enough to lift the robot. 
+Kelly re-calculated the ratio with reduced safety factors of a 20kg robot and a 1g acceleration. 
+This results in a force of 196 N, and when applied to the 1 in diameter spool this results in 2.483 Nm of torque at the gearbox output shaft.
+With the current reduction of 25:1, this resulted in 0.0975 Nm of torque at the motor output shaft
+Kelly found that by going to a 18:1 ratio, the torque at the motor output shaft would be .135Nm, which was under the stall torque of .15Nm.
+By assuming a new maximum velocity of 20 m/s, instead of the old 14 m/s, and recalculating the motion profiles for the lift, Kelly found that the lift would reach the top in 1.8s, rather than 2.6.
+The team ordered a 3:1 and 6:1 stage for the lift gearbox, and swapped it them out for the current reductions.
+After the modifications, they verified that the lift indeed did run much faster, while still being able to raise the robot off the ground. 
+
+
+\subsection{H3: CAD and Fabricate Lift Version 2.0}
+
+Oren finished the CAD over the weekend to give enough time for the fabricating process, the biggest improvement and change came in the form of the bearing blocks. The blocks were redesigned to be machined out of one bar of aluminum to increase the overall tolerances and strength. Due to the form factor and the assembly of the linear systems inner box frame; it required 2 different styles of blocks (PIC1) (PIC2). Another change that was sought after was the ability to find someone that could weld the inner frame to again strengthen and increase the tolerances. After asking around Oren ended up finding two potential welders, unfortunately the first welder Oren contacted was unable to help due to having a very badly broken leg. But the second contact Chris Kelly (Local Bike Welder) was able to help us, but was only available early next week. Oren then set out to machine all the parts at a sponsoring company GSS, with a team mentor Dan Philips. The machining process took 8 hours over a stint of 2 days to produce all the parts and cut the aluminum tubing, to prep for the welding process next week. 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth, angle=270]{25_02-18/images/machining.JPG}
+    \caption{Oren machining parts at GSS with Dan}
+    \label{fig: oren machining}
+\end{figure}
+
+
+
+\subsection{H4: New Phone case and  Mounting System}
+
+The old phone case suffered from constant DC's and the Micro USB port on the phones being worn out, leading to more DC's. Ashlin was tasked with making a new phone case that would house the phone permanently and provide a secure connection to the rev hubs. As well as be easily removable from the robot. To do this the case was designed to have a pin system that would allow for removal of the phone in seconds while keeping it secure and positioned correctly for sampling. In Figure \ref{fig: phone case} the top of the case has a bar that is secured with two bolts so that the phone can be removed if needed.
+\clearpage \newpage \section{Week \thesection} 
+\subsection{S1: Figure out how to send the GET request after a button press}
+
+Emma spent a lot of time trying to figure out how to get the GET request to wait until the user had pressed the submit button. This turned out to be a very frustrating problem, and one that took a lot of time to solve. At first, she tried to use an if statement to check whether or not the button was pressed. However, this sent her down a long rabbit hole of making the button static, because the if statement would only work in the main if the argument was static. Then she switched from a regular button to a JButton, and then to a JToggleButton, to try to use the same if statment solution. Then, after days of agony of trying to get it to work, Emma finally realized that she was being silly and could just use another ActionListener to tell when the button was pressed so that it would send the GET request. It didn't just work like magic, however, she still ran into a problem where the http.sendGet() was throwing and exception. To combat this, Emma used a try statement that caught the exception. Luckily, this worked and Emma could move on to the next challenge which is making the GET request print out to the TextArea.
+
+\subsection{S2: Finish the Pre-Scouting App}
+
+Emma needed to add the finishing touches to the prescouting app in order to get it operational. In order to do this, Emma needed to figure out how to get the GET request to print the data it gathers into the TextArea. This meant that she had to edit the individual request classes in order for it to properly parse the data. Emma decided to use a StringBuilder to accomplish this as it would give her the ability to string all of the data together in one place. After doing this for each class, she switched her focus to getting the data to print to the TextArea. She did this by checking the ''request" TextField for the request and then depending on what it is (using and if else statement), she prints the data into the TextArea. Below, is the code that accomplishes this: \\
+
+\begin{lstlisting}[language=Java]
+       if(requestField.getText().equals(team)) {
+            Team team = new Team();
+            team.setTeamArray(responseArray);
+            dataArea.setText(team.printTeamText());
+        } 
+\end{lstlisting}
+
+With the prescouting app complete, Emma is now looking forward to testing it out before a tournament. 
+\subsection{H1: Fabricate and Assemble Lift 2.0}
+
+Early in this week, Oren went to meet with the local welder to begin the process of setting up and welding both the box frame and the carriage for the new lift. He was hoping to complete the new lift by Tuesday, as to give the drivers enough time to practice, but unfortunately hit some complications and the lift wasn't completed in time. So Oren focused the rest of his time making sure the current lift was running as well as possible. Oren did end up completing the lift assembly later in the week with the intention to switch it out if the team makes it to Worlds. 
+
+\subsection{H2: Attaching a Second Pull Up Run}
+
+Another problem that had been pointed out after the Napa tournament was that the lift would tilt when at max height because of only having the one pull up run. To fix this, another pull up run needed to be created. Ashlin and Aidan had already made extra bearing standoffs that could work for the new pull up run. The only problem was that the wire run up sheath was placed right where the new pull up run needed to be. Oren fixed this by placing a piece of aluminum that ran upwards for the wire sheath but was offset for the left by a few inches as shown in Figure \ref{fig:PullUp}. This solution worked and the wires didn't get in the way. The second pull up run allowed the lift to maximize height without tilting.
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{26_02-25/images/PullUpRun2.jpg}
+    \caption{New Pull Up Run and Wire Run Up}
+    \label{fig:PullUp}
+\end{figure}
+
+
+\subsection{H3: Manufacturing and Installing the New Pull Up Run Standoffs}
+
+Once the CAD drawings were done, Aidan went to GSS to manufacture the parts. He did not complete them in one day because of overlap with Oren fabricating his parts for the lift. Ashlin then went and finished making the parts the next day. He and Aidan then attached them to the lift and made sure that the lift ran smoothly with them. Both parts worked perfectly and did not bend under high levels of stress. Kelly then identified that the bracket standoff also needed to be replaced because it was bending under the stress and flexed. The difficulty with the bracket is that it needed to be positioned to stop rotation on two different axis. Ashlin and Aidan then brainstormed ways to fix this. One idea that was produced was to use a steel bar to reduce this rotation as shown in figure \ref{fig: bracket} Ashlin then went and found the right sized steel and brought it the next meeting. The bracket worked without any bending, which completed the pull up runs.
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{26_02-25/images/Bracket.jpg}
+    \caption{Bracket drawing}
+    \label{fig: bracket}
+\end{figure}
+\subsection{B1: Refine the Business Notebook}
+
+There were a few things that needed improvement in the Business notebook, so Emma and Kelly set about fixing those things. Both of them needed to write up a few outreach events, including the Telestream Tech Talk and meeting up with Animatronics. Emma also needed to update a couple of goals and action plans with the progress and results that have taken place over the past couple of weeks. After fixing a couple of pictures, the BN was ready to go. ACME revisits their BN from time to time in order to keep it up to date. It is important to do this so that all data is relevant when they present their notebooks at a tournament. 
+
 \end{document}

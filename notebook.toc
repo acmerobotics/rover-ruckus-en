@@ -1,0 +1,134 @@
+\contentsline {section}{\numberline {1}Week 1}{C5}% 
+\contentsline {subsection}{B1: Write fundraising letters}{C5}% 
+\contentsline {subsection}{B2: Discuss the Engineering Notebook process with both teams}{C5}% 
+\contentsline {section}{\numberline {2}Week 2}{C6}% 
+\contentsline {subsection}{S1: Test vision software}{C6}% 
+\contentsline {subsection}{S2: Experiment with new motor controller features}{C6}% 
+\contentsline {subsection}{H1: Develop intake prototypes}{C7}% 
+\contentsline {subsection}{H2: Investigate possible drivetrain designs}{C8}% 
+\contentsline {subsection}{H3: Develop Drivetrain Prototypes}{C8}% 
+\contentsline {subsection}{B1: Develop a schedule for the first part of the season}{C8}% 
+\contentsline {subsection}{B2: Setup a task tracking system}{C9}% 
+\contentsline {section}{\numberline {3}Week 3}{C10}% 
+\contentsline {subsection}{H1: Work with intake prototypes}{C10}% 
+\contentsline {subsection}{H2: Develop a Team Marker}{C10}% 
+\contentsline {section}{\numberline {4}Week 4}{C11}% 
+\contentsline {subsection}{S1: Integrate the hub feedforward functionality into trajectory followers}{C11}% 
+\contentsline {subsection}{H1: Sorting Mechanism}{C12}% 
+\contentsline {subsection}{H2: Investigate potential lift designs}{C12}% 
+\contentsline {subsection}{H3: Design lift gearbox}{C14}% 
+\contentsline {section}{\numberline {5}Week 5}{C17}% 
+\contentsline {subsection}{S1: Start Working on Lift Kinematics}{C17}% 
+\contentsline {subsection}{H1: Continue Developing The Team Marker}{C17}% 
+\contentsline {subsection}{H2: Drivetrain decision}{C17}% 
+\contentsline {subsection}{H3: Develop X-rail based lift}{C18}% 
+\contentsline {subsection}{B1: Discuss Gracious Professionalism}{C19}% 
+\contentsline {section}{\numberline {6}Week 6}{C20}% 
+\contentsline {subsection}{S1: Continue working on lift kinematics}{C20}% 
+\contentsline {subsection}{H1: Sorter CAD}{C21}% 
+\contentsline {subsection}{H2: Develop custom lift}{C22}% 
+\contentsline {subsection}{H3: CAD Lander Clamp}{C22}% 
+\contentsline {subsection}{H4: Finalize robot design}{C22}% 
+\contentsline {section}{\numberline {7}Week 7}{C25}% 
+\contentsline {subsection}{H1: Finish Designing the team marker}{C25}% 
+\contentsline {subsection}{H2: Complete Sorter and Intake CAD}{C25}% 
+\contentsline {subsection}{H3: Testing Rev Linear Slide Kit}{C25}% 
+\contentsline {subsection}{H4: CNC Milled Drive-Train }{C26}% 
+\contentsline {subsection}{B1: Decide what business tasks need to be completed before the Burlingame competition}{C26}% 
+\contentsline {subsection}{B2: Finalize the budget with the team captains}{C27}% 
+\contentsline {subsection}{B3: Print, sign, address, stamp and send the fundraising letters}{C27}% 
+\contentsline {subsection}{B4: Start interviewing team members for bios}{C27}% 
+\contentsline {section}{\numberline {8}Week 8}{C30}% 
+\contentsline {subsection}{H1: Design of The Deployment Mechanism}{C30}% 
+\contentsline {subsection}{H2: Turn wheel inserts for the drivetrain}{C30}% 
+\contentsline {subsection}{B1: Work on the Business Notebook}{C30}% 
+\contentsline {section}{\numberline {9}Week 9}{C32}% 
+\contentsline {subsection}{S1: Change waypoint representations}{C32}% 
+\contentsline {subsection}{H1: Print the Marker}{C32}% 
+\contentsline {subsection}{H2: Fabrication}{C32}% 
+\contentsline {subsection}{H3: Lift Fabrication}{C33}% 
+\contentsline {subsection}{B1: Continue work on the Business Notebook}{C33}% 
+\contentsline {section}{\numberline {10}Week 10}{C34}% 
+\contentsline {subsection}{S1: Investigate problem with motion profile generation}{C34}% 
+\contentsline {subsection}{H1: Sorter Finalization}{C35}% 
+\contentsline {subsection}{H2: Intake shield}{C36}% 
+\contentsline {subsection}{H3: Drivetrain Assembly}{C36}% 
+\contentsline {subsection}{B1: Add finishing touches to the Business Notebook}{C36}% 
+\contentsline {subsection}{B2: ACME Board}{C38}% 
+\contentsline {section}{\numberline {11}Week 11}{C39}% 
+\contentsline {subsection}{H1: Assembling Rev Linear Motion Slides for the Rake}{C39}% 
+\contentsline {subsection}{H2: Shield Attachment}{C40}% 
+\contentsline {subsection}{B1: Write the summary and cover pages for the Business and Engineering Notebooks}{C40}% 
+\contentsline {section}{\numberline {12}Week 12}{C41}% 
+\contentsline {subsection}{B1: Attend the Burlingame Qualifier}{C41}% 
+\contentsline {subsection}{B2: Post Match Retrospective}{C42}% 
+\contentsline {section}{\numberline {13}Week 13}{C43}% 
+\contentsline {subsection}{S1: Pre-Tournament Scouting Application}{C43}% 
+\contentsline {subsection}{S2: Joystick ramping}{C43}% 
+\contentsline {subsection}{H1: Hardware Discussion}{C44}% 
+\contentsline {subsection}{H2: Sorter Testing}{C44}% 
+\contentsline {subsection}{H3: Latch Design and Development}{C44}% 
+\contentsline {subsection}{H4: Testing of Rev linear slides}{C45}% 
+\contentsline {section}{\numberline {14}Week 14}{C46}% 
+\contentsline {subsection}{S1: Make a GET Request from Orange Alliance API}{C46}% 
+\contentsline {subsection}{H1: Diverter}{C46}% 
+\contentsline {subsection}{H2: Latching Hook}{C46}% 
+\contentsline {subsection}{H3: Drive-Train Update}{C49}% 
+\contentsline {subsection}{B1: Parts List}{C50}% 
+\contentsline {section}{\numberline {15}Week 15}{C51}% 
+\contentsline {subsection}{S1: Set up a console for the Prescouter}{C51}% 
+\contentsline {subsection}{H1: Diverter}{C51}% 
+\contentsline {subsection}{H2: Testing X-Rail Slides}{C51}% 
+\contentsline {section}{\numberline {16}Week 16}{C54}% 
+\contentsline {subsection}{S1: Tune lift kinematics}{C54}% 
+\contentsline {subsection}{H1: Intake Gate}{C55}% 
+\contentsline {subsection}{H2: Attaching the rake and testing the intake}{C55}% 
+\contentsline {subsection}{H3: Building the pulley system for the lift}{C56}% 
+\contentsline {subsection}{H4: Deconstructing Robot}{C56}% 
+\contentsline {section}{\numberline {17}Week 17}{C58}% 
+\contentsline {subsection}{S1: Characterize and tune the drive train}{C58}% 
+\contentsline {subsection}{H1: X-Rail Mounting}{C59}% 
+\contentsline {subsection}{H2: Cutting Drive plates}{C59}% 
+\contentsline {section}{\numberline {18}Week 18}{C61}% 
+\contentsline {subsection}{S1: Parse the JSON Response}{C61}% 
+\contentsline {subsection}{H1: X-rail mounting work around}{C61}% 
+\contentsline {subsection}{H2: Re-Constructing Robot}{C61}% 
+\contentsline {subsection}{B1: Writing Tournament Presentation}{C62}% 
+\contentsline {section}{\numberline {19}Week 19}{C63}% 
+\contentsline {subsection}{S1: Introduce OOP to the Prescouter}{C63}% 
+\contentsline {subsection}{H1: Lift Cross brace and LED side plates}{C63}% 
+\contentsline {subsection}{H2: Adjusting the angle of the diverter cartridge}{C63}% 
+\contentsline {section}{\numberline {20}Week 20}{C65}% 
+\contentsline {subsection}{S1: Deploy during auto}{C65}% 
+\contentsline {subsection}{H1: New Team Marker placement}{C66}% 
+\contentsline {subsection}{H2: Wiring and Rev Hubs}{C66}% 
+\contentsline {section}{\numberline {21}Week 21}{C69}% 
+\contentsline {subsection}{H1: Cartridge Servo}{C69}% 
+\contentsline {subsection}{H2: Lift Skids}{C70}% 
+\contentsline {subsection}{B1: Re-Organize the Outreach Section}{C70}% 
+\contentsline {section}{\numberline {22}Week 22}{C72}% 
+\contentsline {subsection}{S1: Finish the console version of the PreScouter}{C72}% 
+\contentsline {subsection}{S2: Design double sampling paths}{C72}% 
+\contentsline {subsection}{H1: Lift String}{C72}% 
+\contentsline {section}{\numberline {23}Week 23}{C74}% 
+\contentsline {subsection}{H1: Drive Practice}{C74}% 
+\contentsline {subsection}{H2: Dumper Arm Replication}{C74}% 
+\contentsline {section}{\numberline {24}Week 24}{C75}% 
+\contentsline {subsection}{S1: Set up the UI for the pre-scouting app}{C75}% 
+\contentsline {subsection}{S2: Write tracking omni code}{C76}% 
+\contentsline {subsection}{H1: Investigate Intake Whips}{C78}% 
+\contentsline {subsection}{H2: Lift Version 2.0}{C78}% 
+\contentsline {subsection}{H3: Change the Lift String Standoffs}{C78}% 
+\contentsline {subsection}{B1: Napa Tournament}{C78}% 
+\contentsline {section}{\numberline {25}Week 25}{C81}% 
+\contentsline {subsection}{H1: Increase the Intake arm Length and Thickness}{C81}% 
+\contentsline {subsection}{H2: Change lift gear ratio}{C81}% 
+\contentsline {subsection}{H3: CAD and Fabricate Lift Version 2.0}{C82}% 
+\contentsline {subsection}{H4: New Phone case and Mounting System}{C82}% 
+\contentsline {section}{\numberline {26}Week 26}{C84}% 
+\contentsline {subsection}{S1: Figure out how to send the GET request after a button press}{C84}% 
+\contentsline {subsection}{S2: Finish the Pre-Scouting App}{C84}% 
+\contentsline {subsection}{H1: Fabricate and Assemble Lift 2.0}{C84}% 
+\contentsline {subsection}{H2: Attaching a Second Pull Up Run}{C85}% 
+\contentsline {subsection}{H3: Manufacturing and Installing the New Pull Up Run Standoffs}{C85}% 
+\contentsline {subsection}{B1: Refine the Business Notebook}{C86}% 

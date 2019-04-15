@@ -16,6 +16,7 @@ out.write('\n')
 out.writelines([r'\begin{document}', r'\tableofcontents', r'\newpage', r'\contentsfalse'])
 
 weekDirs = [x for x in os.listdir('.') if x[:2].isdigit()]
+weekDirs.sort()
 print weekDirs
 if not checkWeekPresence(weekDirs): sys.exit('week missing or misnamed')
 
@@ -61,7 +62,7 @@ for week in weekDirs:
             print 'week {} {} team is empty'.format(week, name)
             continue
 
-        out.write(r'\subsection{' + name + ' Goals}\n')
+        #out.write(r'\subsection{' + name + ' Goals}\n')
 
         end = start[1:] + [len(content)]
         ranges = [(x-1, y-1) for x, y in zip(start, end)]
@@ -77,12 +78,13 @@ for week in weekDirs:
             response = range[range.find('\n', range.find('%!')):]
             responses.append(response)
 
-            out.write(r'\paragraph{' + goal + '}\n')
-            out.write(description + '\n')
+            #out.write(r'\paragraph{' + goal + '}\n')
+            #out.write(description + '\n')
 
-    out.write(r'\newpage' + '\n')
     for goal, response in zip(goals, responses):
         out.write(r'\subsection{' + goal + '}\n')
+        if len(response) < 10:
+            print ("no response in week {} team {}". format(week, file))
         out.write(response)
 
 out.write(r'\end{document}')
