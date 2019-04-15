@@ -89,41 +89,28 @@ New motor functionality added with v4.0 of the SDK and the new Rev Expansion Hub
 
 After the whole team watched the game video, several members began prototyping mechanisms to intake and sort cubes. Because the game requires the robot to pick up minerals that are inside the crater, the robot either needs to be able to climb over the crater to intake the minerals, or extend some sort of intake over the crater wall. 
 
-Kelly decided to try developing an intake mechanism that would allow the robot to stay outside of the crater, and reach over the wall, which would allow the team to continue using a mecanum drivetrain, for its increased maneuverability. The first concept they thought of was to extend a rake in front of the robot, on linear slides, that would pull the minerals back to the robot and up the crater wall. The rake would have tines spaced a little bit under 2.75 in apart, so the silver minerals would be pulled back, but not the gold minerals. This would allow the robot to cycle back and fourth between the crater and the silver depot, to score minerals as fast as possible. When this prototype was tested, Kelly found that the gold minerals could still be pulled back, when a silver mineral would get stuck in the tines of the rake, so the rake concept would not work to sort out the minerals. 
+we decided to try developing an intake mechanism that would allow the robot to stay outside of the crater, and reach over the wall, which would allow the team to continue using a mecanum drivetrain, for its increased maneuverability. The first concept they thought of was to extend a rake in front of the robot, on linear slides, that would pull the minerals back to the robot and up the crater wall. The rake would have tines spaced a little bit under 2.75 in apart, so the silver minerals would be pulled back, but not the gold minerals. This would allow the robot to cycle back and fourth between the crater and the silver depot, to score minerals as fast as possible. When this prototype was tested, Kelly found that the gold minerals could still be pulled back, when a silver mineral would get stuck in the tines of the rake, so the rake concept would not work to sort out the minerals. 
 
 The next concept Kelly tested was a spinning surgical-tubing intake, similar to ACME's Velocity Vortex robot. By spinning the two stages of the intake in opposite directions, the minerals would first be pulled into the robot, and then pushed against the rake, expelling the gold minerals and allowing the silver to pass into the robot. This design relied on the fact that if the intake was extended over the outer boarder of the crater, any minerals in it would be inside the crater, and thus not subject to the two mineral maximum. This worked well to pull in the minerals once they were brought to the top of the crater wall by the rake, but the transition between the two counter-rotating brushes caused the minerals to get stuck, or rejected prematurely. 
 
 After watching videos of robots from Res-Q, the last FTC game to involve the same game elements, Kelly decided the surgical tubing intake was worth pursuing, because it could quickly bring minerals to the top of the robot one at a time, which would be necessary for sorting them out. Kelly built a new prototype that had the surgical tubing whips mounted directly over one another and rotating the same direction. Ashlin built a acrylic back plate and funnel that would guide the minerals up the intake, and allow only one to pass through the top at once. Kelly built a simple sorting system that consisted of two parallel bars mounted far enough apart to allow the gold to pass through, but not the silver. When this was combined with the spinning intake, the minerals would be sucked up into the robot, and then divided into gold and silver. 
 
 After Jon finished the prototype for the intake he began to find the optimum distances the needed to be from the ground, crater edge, and edge of the robot. This is because these measurements are vital for CADing and fabrication. Jon found that the optimum distance from the robot to the roller was 7 inches. While the optimum distance from the floor to the roller was 4 inches. 
-\begin{figure}
-    \centering
-    \includegraphics[width=.6\textwidth]{02_09-10/images/intakesketch.png}
-    \caption{Deploy-able intake dimensions}
-    \label{fig:intake}
-\end{figure}
-
-
 
 \subsection{H2: Investigate possible drivetrain designs}
 
 Given that a good drivetrain is vital for a successful robot, the team needed a solid design. The team decided there were two ways of going about creating a good drivetrain for the Rover Ruckus challenge. The first was to design a drivetrain capable of going inside the crater. The team thought this might be a good idea seeing as the intake design would be simpler and we could traverse all areas of play. This would need to be a drivetrain with very good traction, torque, and durability. For this purpose the team looked into a drop-center tank design (WCD) or a tracked design. Suspension was also considered. These were considered because both WCD and tracked designs are very effective at traversing rough or bumpy terrain. Like the crater rim. Jon did research in this area and found a simple suspension (bell crank) design and sketched a few ideas for a tracked drive train (fig 0.1). After discussing these together, and WCD, the team decided that going into the crater was probably not necessary. Thus, the team stopped development on these ideas and continued pursing the second way of going about designing a drive train.
 
+\subsection{H3: Develop Drivetrain Prototypes}
 
+Shawn and Ben worked on developing a rocker bogie drivetrain to test. The drivetrain used two different rotation points on both sides to be able to get over things, such as the crater wall. They used a picture from the Internet to assist in the construction of the drivetrain. After it was finished, the drivetrain worked as expected but wasn't quite within the size constraints. Sadly, the drivetrain had to be taken apart \ref{fig:Drive-Train}. 
 
 \begin{figure}
     \centering
-    \includegraphics[width=.6\textwidth]{02_09-10/images/IMG_0256.JPG}
-    \caption{Bell crank suspension and tracked drivetrain sketches}
-    \label{fig:drivetrain sketches}
+    \includegraphics[width=.6\textwidth]{02_09-10/images/Screenshot.png}
+    \caption{Early Drive train prototype}
+    \label{fig:Drive-Train}
 \end{figure}
-
-
-
-\subsection{H3: Develop Drivetrain Prototypes}
-
-Shawn and Ben worked on developing a rocker bogie drivetrain to test. The drivetrain used two different rotation points on both sides to be able to get over things, such as the crater wall. They used a picture from the Internet to assist in the construction of the drivetrain. After it was finished, the drivetrain worked as expected but wasn't quite within the size constraints. Sadly, the drivetrain had to be taken apart. 
-
 \subsection{B1: Develop a schedule for the first part of the season}
 
 After the Build Weekend, the team got together to discuss the schedule for the first part of the season. The schedule was based around the robot goals that members want to accomplish for the first qualifier. There were several other factors to consider as well, such as leaving time to fabricate, assemble, practice auto and driving. With these thoughts in mind, here is the schedule the team developed. 
@@ -252,11 +239,16 @@ Shawn and Ben hadn't quite finished the anvil when they realized that the marker
     \label{fig:cube}
 \end{figure}
 
-
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\textwidth]{05_10-01/images/Drive.JPG}
+    \caption{Design Matrix}
+    \label{fig:Metrix}
+\end{figure}
 
 \subsection{H2: Drivetrain decision}
 
-The entire team made a matrix to help weight the pro and cons of the prototype drive-trains and already proven styles. The matrix took a lot in to consideration, such as agility, size, strength, traction, and maneuverability. The results of the matrix was a mecanum style drive-train driven by orbital 20 gearbox and belts. We choose this style because of its high speed, agility, and maneuverability, the downside to this style drive-train is the traction, which in turn can make playing defense a lot hard, compared to a none mecanum drive-train.  
+The entire team made a matrix to help weight the pro and cons of the prototype drivetrains and already proven styles. The matrix took a lot in to consideration, such as traction, strength, maneuverability, and complexity. The results of the matrix was a mecanum style drivetrain driven by orbital 20 gearbox and belts. We choose this style because of its agility and maneuverability, the downside to this style drivetrain is the traction, which in turn can make playing defense a lot harder compared to a none mecanum drivetrains.  
 
 
 \subsection{H3: Develop X-rail based lift}
@@ -265,7 +257,7 @@ The entire team made a matrix to help weight the pro and cons of the prototype d
  
  \begin{figure}
      \centering
-     \includegraphics[width=.6\textwidth]{05_10-01/images/xrail.jpg}
+     \includegraphics[width=.6\textwidth,angle=90]{05_10-01/images/xrail.jpg}
      \caption{X-rail detail view}
      \label{fig:my_label}
  \end{figure}
@@ -417,7 +409,7 @@ Recently, the team received the Rev linear motion kits they ordered. To see how 
 
 \subsection{H4: CNC Milled Drive-Train }
 
-Oren, Ashlin, and Kelly worked with the Nu wood-shop teacher, to use their new CNC Laguna to cut out the 1/8 inch aluminum plates that make up the entirety of the drive-train. They had learn how to do auto tool changes and setting the X,Y and Z axis on the new tool as to allow them the most accurate product in the end.
+Oren, Ashlin, and Kelly worked with the Nevada Union wood-shop teacher, to use their new CNC Laguna to cut out the 1/8 inch aluminum plates that make up the entirety of the drive-train. They had learn how to do auto tool changes and setting the X,Y and Z axis on the new tool as to allow them the most accurate product in the end.
 
 \begin{figure}
     \centering
@@ -518,14 +510,23 @@ This week Ben finished revising the model of the team marker in Inventor Pro 201
 
 Now that the team had most of the parts of the robot, they could begin fabricating the robot. To assemble the intake and drivetrain, the metal cross beams and Vex rollers needed to be cut down to size. Jon had a chop saw and band saw at his house so he took the Vex rollers and cross beams home to be cut. To complete the rollers for the intake, holes had to be drilled in the rollers for the surgical tubing. After drilling a test piece, Jon had to rearrange the way the rollers were clamped in the vice. He then drilled the rest of the Vex rollers.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.6 \textwidth]{09_10-29/images/bearingblock.JPG}
-    \caption{Bearing Block}
-    \label{fig:bearingblock}
-\end{figure}
-
-
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{09_10-29/images/bearingblock.JPG}
+  \caption{Bearing Blocks}
+  \label{fig:Bearings}
+ \end{subfigure}
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{09_10-29/images/Drawings.jpg}
+  \caption{Bearing Block Drawing}
+  \label{fig:BearingDrawing}
+  \end{subfigure}
+  \caption{Manufacturing the Bearing Blocks}
+  \end{figure}
+  
 \subsection{H3: Lift Fabrication}
 
 Oren went to GSS a sponsoring company to work with a one of there mechanical engineer, on milling custom bearing blocks for the lift. The team this year wanted to custom fabricated a lift that would be robust enough to hold and lift the in both the the beginning and end of the match. 
@@ -582,7 +583,7 @@ Rather than generating the search profiles with \texttt{peakVel}, the variable w
 
 \subsection{H1: Sorter Finalization}
 
-The sorter needed to be printed as soon as possible so Ashlin and Aidan made some finalizing touches to the sorter so that it could print. First they split it the base design into two parts making the top be its own piece. They did this so that the top could be removed to allow for the swiveler to be put in the sorter and also so that the top piece could be printed separately to allow for the print to be easier. They also edited the top piece so that a bearing could fit into it tightly which would allow for the overall rotation of the sorter to be that much smoother. They printed the sorter on one of their sponsor's printers (see Figure \ref{}).
+The sorter needed to be printed as soon as possible so Ashlin and Aidan made some finalizing touches to the sorter so that it could print. First they split it the base design into two parts making the top be its own piece. They did this so that the top could be removed to allow for the swiveler to be put in the sorter and also so that the top piece could be printed separately to allow for the print to be easier. They also edited the top piece so that a bearing could fit into it tightly which would allow for the overall rotation of the sorter to be that much smoother. They printed the sorter on one of their sponsor's printers (see Figure \ref{fig:Sorter CAD}).
 
 \begin{figure}
     \centering
@@ -609,16 +610,32 @@ After the intake shield was cut Ashlin and Aidan heat bent the shield so that it
     \label{fig:Intake Shield}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth,angle=-90]{10_11-05/images/train.JPG}
+  \caption{Drive-train}
+  \label{fig:Drivetrain}
+ \end{subfigure}
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth,angle=-90]{10_11-05/images/FullDrive.JPG}
+  \caption{Full Drive-Train Assembly}
+  \label{fig:Drivetrain}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \Centering
+    \includegraphics[width=\textwidth]{10_11-05/images/drivetrain.JPG}
+    \caption{Drive-train on Field}
+    \label{Drive}
+  \end{subfigure}
+  \caption{Drive-Train Assembly}
+  \end{figure}
+  
 \subsection{H3: Drivetrain Assembly}
 
-This week Oren assembled all of the parts for the drive-train, there was some errors and misshapes. That include needed motor mounts, new more accurately cut cross members and some needed   screw holes for mounting things. The drive-train when completed functioned actually like we had planned and was very silent when running.    
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.6 \textwidth]{10_11-05/images/drivetrain.JPG}
-    \caption{Drivetrain}
-    \label{fig:drivetrain}
-\end{figure}
+This week Oren assembled all of the parts for the drive-train, there was some errors and misshapes. That include needed motor mounts, new more accurately cut cross members and some needed screw holes for mounting things. The drive-train, when completed functioned actually like we had planned and was very silent when running.    
 \subsection{B1: Add finishing touches to the Business Notebook}
 
 The final part of the Business Notebook was writing the Appendices. The Appendices are very important because they include all of the extra information that doesn't fit other sections in the notebook. For example the fundraising letters are put in to the appendix because they are very long and don't fit perfectly in the section where fundraising and sending the letters is mentioned. Therefore, they are referenced in those places but the real letters are at the back of the notebook. This is the same story for the budget details. There is a general budget in the budget section but the individual purchases are in the appendix. \\
@@ -720,16 +737,30 @@ The outcome of the discussion lead to a large change in the overall placement of
 
 \subsection{H2: Sorter Testing}
 
-Aidan took on the project of testing the sorter. The team didn't have time to incorporate the sorter into the robot before the Burlingame tournament and still needed to be fully assembled and tested. Aidan and Ashlin tried to assemble the sorter specifically so that it would take up as little space as possible. They did this because there was limited space on the inside of the robot and the sorter, the cartridges, and the lift motor were all competing for this room. After fully assembling the sorter and testing the the team decided it took to much room and they wouldn't pursue it any further.
+Aidan took on the project of testing the sorter. The team didn't have time to incorporate the sorter into the robot before the Burlingame tournament and still needed to be assembled and tested. Aidan and Ashlin tried to assemble the sorter specifically so that it would take up as little space as possible, as seen in Figure \ref{fig:sortertesting}. They did this because there was limited space on the inside of the robot and the sorter, the cartridges, and the lift motor were all competing for this room. After fully assembling the sorter and testing the the team decided it took to much room and they wouldn't pursue it any further.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{13_11-26/images/sorting.JPG}
+    \caption{Testing the Sorter}
+    \label{fig:sortertesting}
+\end{figure}
 
 \subsection{H3: Latch Design and Development}
 
-Ben and Shawn designed the latch to make the robot hang. They used a design where, if the robot was fully turned off, the robot would still latch. They designed it so that the servo pulls the axle back so they robot isn't latched anymore. They then prototyped this design with Tetrix and found that there were problems. Then they solved these problems and are going to try to find a way to manufacture a more professional looking latch.
+Ben and Shawn designed the latch to make the robot hang. They used a design where, if the robot was fully turned off, the robot would still latch. They designed it so that the servo pulls the axle back so they robot isn't latched anymore. They then prototyped this design with Tetrix and found that there were problems. Here is the latch on the lander in Figure \ref{fig:latch1}. Then they solved these problems and are going to try to find a way to manufacture a more professional looking latch.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{13_11-26/images/latchservo.JPG}
+    \caption{Latch}
+    \label{fig:latch1}
+\end{figure}
+
 
 \subsection{H4: Testing of Rev linear slides}
 
 After the team's first qualifier where the rake did not function properly, ACME wanted to do some testing and see what the problem was. The rake system is crucial to ACME's current design so it was important that this was done ASAP. After Jon did some testing with the rake, he found that the problem lay with the Rev linear slides. There was too much friction in the slides and the string was spooled wrong and was causing the slides to move unevenly. He also found that the string had a tendency to become un-spooled. Jon and the rest of the team decided that removing one of the slides might remedy the problem. After Jon tested this some, he found that while somewhat better, the results where still far from satisfactory. This lead Jon to the conclusion that the Rev linear slides would have to be scrapped for some other form of linear motion. Jon then commenced brainstorming, researching, and testing for several other forms of linear motion. Nearly all the options Jon looked into did not fit for what ACME had in mind. For example, drawer slides were too heavy could not reach far to far crater wall. One that did look promising however was X-Rail. Jon thought X-Rail looked promising because it was similar to the Rev linear slides in function but could carry more weight, were sturdier, and used running bearings (making them smoother and removing friction). This made X-Rail the most practical and simple option. After presenting his findings to the team, ACME decided to give X-Rail a try. 
-
 \clearpage \newpage \section{Week \thesection} 
 \subsection{S1: Make a GET Request from Orange Alliance API}
 
@@ -905,6 +936,23 @@ With the control loops tuned, the robot was now ready to begin executing paths.
 
 This week the inner drive plates were cut. However, since the outer plates were not cut, the X-rail could not be mounted. As such, a stop-gap method was used to mount the X-Rail. While technically the X-rail was mounted before on Tetrix, it hardly worked. This meant that if the team wanted to have a functioning robot, they would need to create one that worked better. ACME wanted to meet a deadline for having the robot able functioning so it was important to make this stop-gap solution. Jon was assigned to create this. The easiest way to do this seemed to be by drilling mounting holes into two sheets of aluminum and folding them. It was important that the mounting solution be simple and quick to make because the deadline that the team needed to have a functioning robot by was fast approaching. 
 
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth,angle=-90]{17_12-24/images/DrivePlates.JPG}
+  \caption{Drive-Plates}
+  \label{fig:Plates}
+ \end{subfigure}
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{17_12-24/images/Laguna.jpg}
+  \caption{Cutting Drive-Plates}
+  \label{fig:Cutting}
+  \end{subfigure}
+  \caption{Cutting New Drive-Train}
+  \end{figure}
+
 \subsection{H2: Cutting Drive plates}
 
 For the cutting processed we decided to use a CNC laguna, for its precision and accuracy rather than by hand or CNC plasma cutter.The job set up was pretty simple since we had been walked through it the previous time. The set up entailed us, to cut out two pockets two feet by 1 foot so as to allow our aluminum when screwed down, to rest flush with the top of the spoil board. We then orientated the board so that the bottom left corner of the board was at the X \& Y zeros, to allow for an easy tool path set up in Aspire. As an extra precaution in Aspire, tabs were added to the material that would be completely cut out, so that the router wouldn't throw the loose aluminum pieces. Since this plate was modeled to have precise mounting holes, it required us to make two tool changes, not hard to do in the program, but required us to learn a new step, Tool Touch offs. When we had finished the program portion of the set up we moved back to the Laguna, were we started with setting our X,Y \& Z zero's. The Z zero had to be set to the bottom of the pocket because the Laguna cuts from the bed surface not from the material. Those zeros are very important to get as accurately as possible, because the tool switches and touch offs are based on the first bit and the said zeros. After we made sure everything was set up to the best of our ability, we began cutting, about half through the first pass on the profile the 1/4 O-flute bit snapped due to depth and side impact on the bit. We quickly switched the bit and reset all our zeros and tool touch offs, then resumed the cut. We later talked to a professional, who told us that the bit we were using was for 1/16th inch aluminum not 1/8th, so we ended up buying a new one to replace theirs.  
@@ -925,11 +973,11 @@ System.out.println("Team Key: " + teamKey.get("team_key"));
 Each key in the array has a separate JSONObject in order to parse it. As this is a lot of code to have in the Main class of her application, next Emma has decided to make each command she will use into a different class and then call it in Main when she needs that specific data parsed. 
 \subsection{H1: X-rail mounting work around}
 
-With the new outside plates now cut, the team could begin the final stages of fabricating the robot. There was a problem however, the part that was supposed to be bent over to mount the X-rail from the outside drive plate had broken off during the bending process. This caused the team to learn the hard way that aluminum is not suited for 90 degree bends. To overcome this problem, Jon bolted two Tetrix brackets to the inside of the outside drive plate. This acted almost exactly as the originally mounts would have. Jon did it this way because it was quick, simple, and functional. With a "robot done" deadline fast approaching, this was likely the best solution. While this was neither an elegant or permanent solution, it was at least functional.
+With the new outside plates now cut, the team could begin the final stages of fabricating the robot. There was a problem however, the part that was supposed to be bent over to mount the X-rail from the outside drive plate had broken off during the bending process. This caused the team to learn the hard way that aluminum is not suited for 90 degree bends. To overcome this problem, Jon bolted two Tetrix brackets to the inside of the outside drive plate. This acted almost exactly as the originally mounts would have. Jon did it this way because it was quick, simple, and functional. While this was not elegant it was at least functional.
 
 \begin{figure}
     \centering
-    \includegraphics[height=6cm]{18_12-31/images/X-Rail Mount.JPG}
+    \includegraphics[height=6cm]{18_12-31/images/Xrail.JPG}
     \caption{X-Rail Bracket Mounts}
     \label{X-Rail Mounts}
 \end{figure}
@@ -1071,6 +1119,12 @@ While supporting ARES at one of their qualifiers, Kelly saw that many teams eith
 
 After most of the robot was completed Kelly and Aidan ran a few practice matches to make sure that everything was working properly. One thing that kept happening was the pull down string on the lift kept breaking right in the middle. This showed that the string evidently was not strong enough. The string had a 200 lb rating but evidently the impulse of the robot when going up or down was much higher than this. Kelly decided that the team should order some higher rated string to ensure that this wouldn't happen again. The team ordered a 900 lb rated string from amazon that was 3 mm thick. The team didn't know if the change in thickness from 1 mm  to 3 mm was going to cause problems so Aidan used some left over rev slides string, that was also 3 mm thick with unknown rating, to test for adverse effects because of the change in thickness. Because of the thickness of the string more slack developed when the lift raised which caused the problem of the string jumping off the spool a few times. Aidan fixed this by wrapping extra coils around the spool for the pull up run which made it so less string was released per rotation for the pull down than the pull up which fixed the problem. When the new string arrived the team now knew how to use it without problem.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=.6 \textwidth]{22_01-28/images/thing1.jpg}
+    \caption{Marker Placer}
+    \label{fig:markerplacer}
+\end{figure}
 \clearpage \newpage \section{Week \thesection} 
 \subsection{H1: Drive Practice}
 
@@ -1219,7 +1273,7 @@ Ashlin and Aidan realized that another way to increase the speed and effectivene
 
 \begin{figure}
     \centering
-    \includegraphics[width= 0.5 \textwidth]{25_02-18/images/phonemount.png}
+    \includegraphics[width= 0.5 \textwidth]{25_02-18/images/Phone.png}
     \caption{Phone Case Assembled}
     \label{fig: phone case}
 \end{figure}
@@ -1239,20 +1293,32 @@ By assuming a new maximum velocity of 20 m/s, instead of the old 14 m/s, and rec
 The team ordered a 3:1 and 6:1 stage for the lift gearbox, and swapped it them out for the current reductions.
 After the modifications, they verified that the lift indeed did run much faster, while still being able to raise the robot off the ground. 
 
-
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{25_02-18/images/Blocks.jpg}
+  \caption{Aluminum Bearing Blocks}
+  \label{fig:Blocks}
+ \end{subfigure}
+\begin{subfigure}{.45\textwidth}
+  \centering
+ \includegraphics[width=\textwidth]{25_02-18/images/Bearing.jpg}
+  \caption{Machining Bearing Blocks}
+  \label{fig:Bearing}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth,angle=-90]{25_02-18/images/Make.jpg}
+    \caption{Machining Bearing Blocks with Dan}
+    \label{fig:Machining}
+  \end{subfigure}
+  \caption{Fabricating the New lift}
+   \end{figure}
+   
 \subsection{H3: CAD and Fabricate Lift Version 2.0}
 
 Oren finished the CAD over the weekend to allow enough time for the fabricating process, the Largest improvement and change came in the form of the bearing blocks. The blocks were redesigned to be machined out of one bar of aluminum to increase the overall tolerances by .01 and allow for a more precise assembly. Due to the form factor and the assembly of the lift systems inner box frame; it required 2 different styles of bearing blocks (PIC1) (PIC2). Another change that was sought after was the ability to find someone that could weld the inner frame to again strengthen and increase the tolerances. After asking around Oren ended up finding two potential welders, unfortunately the first welder Oren contacted was unable to help due to having a very badly broken leg. But the second contact Chris Kelly (Local Bike Welder) was able to help us, but was not available for a week. Oren then set out to machine all the parts at a sponsoring company GSS, with the teams mentor Dan Philips. The machining process took 8 hours over a stint of 2 days to produce all the parts and cut the aluminum tubing, to prep for the welding process in the following week. 
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width= 0.5 \textwidth, angle=270]{25_02-18/images/machining.JPG}
-    \caption{Oren machining parts at GSS with Dan}
-    \label{fig: oren machining}
-\end{figure}
-
-
 
 \subsection{H4: New Phone case and  Mounting System}
 
@@ -1281,8 +1347,31 @@ Early in this week, Oren went to meet with the local welder to begin the process
 
 \subsection{H2: Attaching a Second Pull Up Run}
 
+Another problem that had been pointed out after the Napa tournament was that the lift would tilt when at max height because of only having the one pull up run. To fix this, another pull up run was needed to be created. Ashlin and Aidan had already made extra bearing standoffs that could work for the new pull up run. The only problem was that the wire run up sheath was placed right where the new pull up run needed to be. Oren fixed this by placing a piece of aluminum that ran upwards for the wire sheath but was offset for the left by a few inches as shown in Figure \ref{fig:PullUp}. This solution worked and the wires didn't get in the way. The second pull up run allowed the lift to maximize height without tilting.
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{26_02-25/images/PullUpRun2.jpg}
+    \caption{New Pull Up Run and Wire Run Up}
+    \label{fig:PullUp}
+\end{figure}
+
+
 \subsection{H3: Manufacturing and Installing the New Pull Up Run Standoffs}
 
+Once the CAD drawings were done, Aidan went to GSS to manufacture the parts. He did not complete them in one day because of overlap with Oren fabricating his parts for the lift. Ashlin then went and finished making the parts the next day. He and Aidan then attached them to the lift and made sure that the lift ran smoothly with them. Both parts worked perfectly and did not bend under high levels of stress. Kelly then identified that the bracket standoff also needed to be replaced because it was bending under the stress and flexed. The difficulty with the bracket is that it needed to be positioned to stop rotation on two different axis. Ashlin and Aidan then brainstormed ways to fix this. One idea that was produced was to use a steel bar to reduce this rotation as shown in figure \ref{fig: bracket} Ashlin then went and found the right sized steel and brought it the next meeting. The bracket worked without any bending, which completed the pull up runs as shown in figure \ref{fig: bracket2}.
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.4 \textwidth]{26_02-25/images/Bracket.jpg}
+    \caption{Bracket drawing}
+    \label{fig: bracket}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.3 \textwidth]{26_02-25/images/Bracket2.jpg}
+    \caption{Finished bracket standoff}
+    \label{fig: bracket2}
+\end{figure}
 \subsection{B1: Refine the Business Notebook}
 
 There were a few things that needed improvement in the Business notebook, so Emma and Kelly set about fixing those things. Both of them needed to write up a few outreach events, including the Telestream Tech Talk and meeting up with Animatronics. Emma also needed to update a couple of goals and action plans with the progress and results that have taken place over the past couple of weeks. After fixing a couple of pictures, the BN was ready to go. ACME revisits their BN from time to time in order to keep it up to date. It is important to do this so that all data is relevant when they present their notebooks at a tournament. 
@@ -1342,20 +1431,110 @@ The following listing shows the process for initializing the \texttt{VisionCamer
 \end{lstlisting}
 \subsection{H1: Cutting a New Latch Piece}
 
+During the team reflection after NorCals, one obvious recurring problem pointed out was the inconsistent initial latch height. The problem was that the robot was barely four inches off the ground at the start of the game. The original solution to this was to make skids that pressed the robot away from the lander, however these proved to only help a little because of the flex of the poly-carbonate on the lander. The skids couldn't be moved out farther since the robot was already near the 18.To fix this Ashlin created CAD of a latch that was an inch lower that would give the robot enough hanging height, without impacting the lifts over all throw as shown in figure \ref{fig:Latch}. The team discussed this with Dan and he agreed that this was the best solution, Ashlin then went to cut the piece out at GSS with Dan a few days later, as shown in figure  \ref{fig:Latchcut}. Once the piece was cut, Aidan and Oren put it on the new lift and tested it out. It proved to be very effective and raised the starting height to almost 5 inches and didn't impact the lift's movement or throw.
+
+
+  
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.34\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{27_03-04/images/Lift2.JPG}
+  \caption{Lift Assembly V.2}
+  \label{fig:lift2}
+ \end{subfigure}
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth,angle=-90]{27_03-04/images/Lift1.JPG}
+  \caption{Lift Assembly V.1}
+  \label{fig:lift1}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{27_03-04/images/Drill.JPG}
+    \caption{Drilling Out Bearing Holes}
+    \label{fig:DrillHoles}
+  \end{subfigure}
+  \caption{Lift Assemblies}
+  \end{figure}
+
 \subsection{H2: Lift Assembly 2.0}
+
+Since ACME qualified for Worlds, Oren went about assembling lift 2.0. After the NorCal tournament it became very evident that the new lift was very necessary, along with the addition of two new sensors to help during auto and teleop. These sensors were add with the intention to help zero the bottom position of the lift, along with helping find the set point for latching the robot. One sensor was mounted to the center carriage, the other to the bottom of the outside frame. The assembling process as a whole, was very straight forward due to fewer parts to the assembly and tighter manufacturing tolerances on all the moving components \ref{fig:lift2} \ref{fig:lift1}. When assembling it, the Oren noticed that there was a lot of friction between the bearings and the runners, this friction was caused by the machined part's tolerances that were based off CAD. Which in actuality was proven to be to tight, this was fixed by drilling out the bolt holes on all the bearing blocks 50 thousandths \ref{fig:DrillHoles} to ensure a smooth operation. Once completed the lift was ready to be easily bolted on to the robot and wired to run.         
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{27_03-04/images/rakemarker.JPG}
+    \caption{Proof of concept for marker deployment from rake}
+    \label{fig:Rake marker proof of concept}
+\end{figure}
 
 \subsection{H3: New Team Marker Placement}
 
+Even with the flawless auto performance at NorCals, the team still saw places of improvement. The team mainly wanted to cut down on the time it took to complete all the tasks in auto. The main reason being that ACME wanted to start cycling in auto. The team wanted to start cycling in auto because the further the team advanced in the season, the more every point count would count. To do this however, ACME would have to reduce the time it took to complete all tasks in auto if they wanted to begin auto cycling. One of the ways ACME thought they could save the most was a faster marker deployment method. If they could deploy their team marker without having to go to the depot and then to the crater; they could save a lot of time. The team thought that the best way to do this might be to have the rake deploy the marker; since it was the farthest extending horizontal appendage. This presented a challenge, however, because their was not much space to add mechanisms to accomplish this. Jon and Shawn took on this challenge and quickly began coming up with ideas to solve the issue. At first they tried using the existing hook on the team marker to simply attach it to the top of the rake in the stowed position. The idea being when the rake deployed, the marker would simply slide off. This proved to be unreliable and caused the marker to fall very close to the depot's edge, so it was scrapped. Shawn and Jon went through several other ideas until they finally settled on a design. The design they settled on was a bracket mounted on the X-rail that didn't allow the marker to fall off with an L bracket mounted to the rake that slid underneath the marker. When the rake began to rotate, the marker be pushed up and off the rake arm. After a proof of concept, Jon and Shawn decided it was reliable and set to building the final version.
 \subsection{B1: Attend the Northern California Regional Championships}
+
+The Northern California Regionals span two days. 56 teams from the Northern California League, which spans from Bakersfield to the California - Oregon border, compete for eight spots of advancement to Worlds. These eight winners are the winning alliance (consisting of three teams), then 2nd place alliance captain, 1st, 2nd, and 3rd place Inspire winners, and finally the Think award winner. That meant that ACME had to place high enough during the competition, or try to win Inspire or Think in order to qualify for the World Championship. \\
+
+Judging and inspection began on Saturday and then match play on Sunday. Their judging presentation was at 4:30 in the afternoon on Saturday. Their judging presentation went very well! Then, they went and set up their pit area and took the robot to inspection (which they passed). \\
+
+Sunday started bright and early with opening ceremonies and qualification matches. ACME played matches throughout the day and won 3 out 5 of them, placing them at 15th out of 28 teams in their division. During alliance selection they were picked to be on the third seed alliance. \\
+
+During elimination rounds they made it to our division finals. This meant they played against the first seed alliance. The first seed alliance ultimately beat them, but it was very fun to compete in the finals. \\
+
+Since they had not qualified through match play, they need to win one of the awards mentioned above. As each award passed, they became more and more discouraged as they hadn't been nominated for any. Then they announced the Think winner - and it was ACME Robotics! \\
+
+The team was so excited and ran down the bleachers to high-five all of the tournament officials, referees, and judges. The Think award winner has a guaranteed spot at the World Championship and they couldn't believe they had received it! \\
+
+They were so honored to have been given the Think award and are already planning their pit for the World Championship. \\
 
 \subsection{B2: Northern California Regional Championships retrospective}
 
+The team finds it refreshing if they take a meeting to reflect on the tournament they just participated in, and talk about how they can make their next tournament experience better. They also take the time to write an action plan for the weeks in between tournaments. \\
+
+The team has three different categories to place things in during the retrospective, which are each represented by a face. There is the good things, the okay things, and the not so great things that happened during the tournament. You can see a picture of ACME's retrospective as seen in Figure \ref{fig:retro}. \\
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{27_03-04/images/retrospective.JPG}
+    \caption{ACME's Retrospective}
+    \label{fig:retro}
+\end{figure}
+
+ACME also has a tradition of making goals and action plans to complete before the next tournament. Since their next tournament would be Worlds, they decided to make Worlds goals as well. One of the top goals for this year is to have fun at Worlds. This was because the last time they went to Worlds, the team became very stressed and disappointed by the end of the week, and that wasn't a lot of fun. They have decided for this year they should take the time to have fun because they don't know if they will be back in Houston next year. You can see the rest of the goals and action plans in Figure \ref{fig:goals}. \\
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{27_03-04/images/goalsandactionplan.JPG}
+    \caption{ACME's Goals and Action Plans for Worlds}
+    \label{fig:goals}
+\end{figure}
+
+Over the next couple of weeks, ACME will be working hard to meet these goals, especially the hardware deadlines and engineering notebook goals. \\
+
 \subsection{B3: Plan outreach events}
 
+ACME had a good section of time between the end of NorCals and Worlds. Since they were planning to have the robot done two weeks after NorCals, they would have four more weeks in which to do software, drive practice, and outreach events. The business team decided that they wanted to put on a few outreach events between now and Worlds. To do this they created a list of possible events and picked a few based off of how doable, fun, and interesting they would be. Here are the outreach events they were considering:
+
+\begin{itemize}
+    \item Hackathon
+    \item Host a movie night
+    \item Girl Scout Workshop
+    \item Expert Consultations
+    \item Vex Team Meet-Up
+\end{itemize}
+
+The team decided that a Hackathon sounded like something that could easily be done in the time span they had, and it seemed like a lot of fun. ACME has a connection with a member of the local Economic Resource Council, who recently hosted Hackathon for adults. The team asked Shavati Karki-Pearl if the ERC, specifically the Nevada County Tech Connection, would want to work with ACME to put on a shorter Hackathon for middle and high schoolers. She said that would be doable and agreed to work with the team! This week, ACME planned out the basic outline of how the day will go. Emma and Kelly decided the Hackathon would be 8 hours long, as they felt even that would be a very long time for the students to be focused on their task. It will be held at the ERC room in Nevada City. The ERC generously decided to provide lunch for the event. The team is planning on having the students bring their own computers, but will have a few of theirs in reserve just in case. Students do not have to have any coding experience to attend, in fact, ACME is planning on giving a hour long workshop using Scratch at the beginning of the day. Students will be working in groups to program a video game using Scratch, Java, JavaScript, Python, or whatever coding language they are familiar with or choose. Although they have not settle on a date yet, the event will take place sometime at the end of March or beginning of April. \\
+
+Another idea the team had was to invite business professionals from their sponsoring companies to give them advice on areas they needed improvement on. They decided to called this series of speakers their "expert consultations". ACME already has a meeting lined up with an employee at Telestream who is very well versed in color-spaces. The software team was working on developing mineral detection and thought that he could give them some advice on how to accomplish that. \\
+
+There is also the possibility of hosting and running another Girl Scouts workshop with another Girl Scouts troop. This will be great to do as the team already has one workshop under their belts. With a few improvements, the team could give a fairly comprehensive workshop for the girls by teaching them how to use the LEGO Mindstorms kits and software. \\
+
+All of these events will hopefully take place in the gap between the time of this entry and Worlds. ACME is really excited to start working on these events. \\
 \clearpage \newpage \section{Week \thesection} 
 \subsection{S1: Refactor Auto Actions}
 
-Kelly decided to refactor how actions were handled in autonomous to make it easier to have actions be triggered when certain conditions were met, or to have actions triggered by passing waypoints in trajectories. Because of the way the robot state machine works, all mutation functions within subsystems are non-blocking, they update the state of the subsystem but they do not actualy update the hardware. For the hardware to be updated, the \texttt{Robot\#update()} function must be called. This allows for easy code reuse between auto and teleop, subsystem mutator functions are called to trigger actions, either when a button is pressed during teleop or sequentialy during auto, and then the update function is repeatedly called. In auto, execution is controlled by having subsystems return whether they should currently be blocking new commands, and then waiting for all subsystems to stop blocking before starting the next operations. This provides an easy way to start several actions and then wait for them all to complete, or to preform one action after the next. For example, in the beginning of auto the first step is to call \texttt{Lift\#lower()}, which puts the lift into lowering mode. Then \texttt{Robot\#waitForAllSubsystems()} is called, which continually updates the robot until all subsystems cease blocking. Once the robot reaches the ground as detected by the sensor on the bottom of the robot, the lift switches into the finding latch mode, which uses a hall effect sensor to move the frame into a position that allows the robot to disengage from the latch. Once the lift has disengaged from the latch, the lift stops blocking, which allows the next action in the autonomous routine to execute, which is a trajectory that rotates the robot out from the latch. After this trajectory completes, the next trajectory is started, and the lift is told to lower and calibrate, which is not a blocking action and will happen asynchronously while the rest of auto runs. 
+Kelly decided to refactor how actions were handled in autonomous to make it easier to have actions be triggered when certain conditions were met, or to have actions triggered by passing waypoints in trajectories. Because of the way the robot state machine works, all mutation functions within subsystems are non-blocking, they update the state of the subsystem but they do not actually update the hardware. For the hardware to be updated, the \texttt{Robot\#update()} function must be called. This allows for easy code reuse between auto and teleop, subsystem mutator functions are called to trigger actions, either when a button is pressed during teleop or sequentially during auto, and then the update function is repeatedly called. In auto, execution is controlled by having subsystems return whether they should currently be blocking new commands, and then waiting for all subsystems to stop blocking before starting the next operations. This provides an easy way to start several actions and then wait for them all to complete, or to preform one action after the next. For example, in the beginning of auto the first step is to call \texttt{Lift\#lower()}, which puts the lift into lowering mode. Then \texttt{Robot\#waitForAllSubsystems()} is called, which continually updates the robot until all subsystems cease blocking. Once the robot reaches the ground as detected by the sensor on the bottom of the robot, the lift switches into the finding latch mode, which uses a hall effect sensor to move the frame into a position that allows the robot to disengage from the latch. Once the lift has disengaged from the latch, the lift stops blocking, which allows the next action in the autonomous routine to execute, which is a trajectory that rotates the robot out from the latch. After this trajectory completes, the next trajectory is started, and the lift is told to lower and calibrate, which is not a blocking action and will happen asynchronously while the rest of auto runs. 
 
 This system breaks down then a action needs to be triggered partway through another action. If it is something within a subsystem, e.g. moving a servo to a position to clear an obstacle when the lift reaches a particular height, it is easy to implement within that subsystem, but for an action to be triggered partway through a trajectory, for example to begin extending the rake before reaching the end, a larger restructuring was necessary. Kelly added an \texttt{AutoAction} interface to facilitate triggering actions. All auto actions are defined in the \texttt{AutoOpMode} class, which is an abstract class that handles things that are common to all auto routines, and are declared like such:
 
@@ -1454,14 +1633,80 @@ public class DoubleSampleAuto extends AutoOpMode {
 \end{lstlisting}
 \subsection{H1: Attaching New Lift}
 
+After the completion of the lift, Oren was able to easily bolt the lift to the robot, wire it and temporarily check it under load and observe it running during a match. It was quickly noticed that near the top end of the lift's throw, there was to much deviation of the outside rails. Causing the lift to bind and fall off the bearing runners (Picture), to fix this the cross plate holding the two outside rails would need to be remade, so that it would pull the rails closer together to ensure both were perpendicular to the drive train. 
+
 \subsection{H2: New cross plate}
+
+  A new cross plate needed to be made because the one ACME took to NorCals was made in the room and had many extraneous holes. The new lift was also being mounted at the same time and the cross plate needed to be refitted to reduce slop and increase the strength of the subsystem. The old plate was also ugly and made the over all design look very unprofessional. To improve this a new plate was manufactured with the team name engraved and mounting holes pre-drilled for accuracy. This improved the structural integrity of the lift and added to the custom look of the robot.
+  
+  \begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth, angle=270]{28_03-11/images/crossplate.JPG}
+    \caption{Finished Cross Plate on the Robot}
+    \label{fig:plate}
+\end{figure}
+
  \subsection{B1: Marketing the Hackathon}
 
+ACME decided to put on a free student hackathon for middle and high schoolers. In order to promote the Hackathon, Emma made flyers for ACME members to hand out. In order to spread the word, they created a list of groups that would be interested in participating. This included the Girls Who Code club, sending flyers to two middle school charter schools, emailing the kids who attended the LEGO Robotics camp, and contacting as many people as possible. The Nevada County Tech Connection, who is partnering with ACME to put on this event, also sent out the flyer to their contacts as well. On the flyer, Emma linked the registration so that kids who are interested can sign up to attend the Hackathon. 
 \clearpage \newpage \section{Week \thesection} 
+\subsection{S1: Write Mecanum Drive Code}
+
+As Emma will potentially be the only software person on ACME next year, she needs to learn as much as she can about the team's current software to prepare for next year. Emma has not done a lot of robot code in the past, but she was ready to give it a go. Along with that, Emma is also going to learn how Road Runner, the motion planning libraries the team developed, works. The team has a still assembled mecanum drive base from the Relic Recovery robot. This base is perfect for what Emma is trying to do. She decided that instead of jumping straight into figuring out motion planning, she should probably write a mecanum drive program to begin. Emma had written tank drive code before, but never mecanum. This seemed like an apt challenge for the time being. \\
+
+Emma did quite a bit of research on mecanum drive code before settling down to write hers. She found that there are a lot of different ways to write mecanum drive, some more complicated than others. She found an equation for mecanum drive, as seen in Figure \ref{fig:equation} that she thought she could work off of. Basically, the equation takes the desired robot speed, multiplies it times the sine/cosine of the desired robot angle minus pi over 4, and finally adds/subtracts that to the desired speed when the robot changes direction in order to get the actual speed of the robot. \\
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth, angle=90 ] {29_03-18/images/equation.JPG}
+    \caption{Equation Used for Mecanum Drive Code}
+    \label{fig:equation}
+\end{figure}
+
+To begin to put this into code, Emma wrote a TeleOp program. She found the hypotenuse of the left joystick's x and y position. Then she found the arc tangent of the left joystick's x and y position and subtracted pi over 4 from that. Finally, she made a double called ''turn" which took the value of the right joystick's x position (which is the control used to turn the robot). Using all of this information, she filled in the equation as see in Figure \ref{fig:equation}. Below, there is the code that controls the front left wheel and the front right wheel of the robot (the code for the back left and right wheels is the same). \\
+
+\newpage
+\begin{lstlisting}[language=Java]
+double speed = Math.hypot(gamepad1.left_stick_x, gamepad1.left_stick_y);
+double angle = Math.atan2(gamepad1.left_stick_y, gamepad1.left_stick_x);
+double turn = gamepad1.right_stick_x;
+
+final double lfPower = speed * Math.sin(angle) + turn;
+final double rfPower = speed * Math.cos(angle) - turn;
+
+leftFront.setPower(lfPower);
+rightFront.setPower(rfPower);
+\end{lstlisting}
+
+At the final meeting of this week, Emma wanted to test her code on the mecanum drive base. After doing some cable management and setting up the configuration, she ran the program. Emma ended reversing two of the motors in order to get them all going in the right direction when she pressed forward, but other than that the code worked perfectly! \\
+
 \subsection{H1: Re-wiring Robot}
+
+The team feels its a good practice to have wiring as organized and clear as possible to help with repair, and the over all aesthetics of the robot. This became very evident after an incident that happen last year at Super Regionals in Spokane. There, we ended up having an entire rev hub die due to static, and less than 40 minutes to replace it. But due to our poor wiring job and lack of labeling created a very panicked last minute switch rather than and easy one. \\
+
+Which is why after all the subsystems were on and tested on the current wiring, Oren stripped all the wiring to start over. Being sure to label both ends of all the wires, along with running similar wires as a group to help separate between servo wires, encoder wires, and motor wires. Oren also made sure to place wire connections/extensions in accessible locations, in the off chance they failed or needed to be tested. Oren also used sheathing to cover the wires so they wouldn't get caught by any moving component, along with creating a cleaner aesthetic for the over all robot. 
 
 \subsection{H2: Changing the Marker Deployment Mechanism}
 
+Since the teams goal for Worlds was to run cycles in auto, they needed to shorten the time required for claiming the depot. The easiest way to do this was to drop the marker from the end of the rake, allowing the robot to only get within four feet of the depot. This would significantly reduce the time allotted for claiming in auto, allowing for more cycles. To drop from the rake the mechanism needed to be reliable without possibly getting flung out of the depot. The problematic factor was that the space at the end of the rake was minimal because it was already almost at the 18 mark. To do this Kelly, Aidan, and Jon brainstormed possible solutions. The original result in week 27 proved to be ineffective. After more brainstorming the result was a three piece mechanism as shown in figure \ref{fig:MDM}. The mechanism involved a slide part mounted on the X-Rail slides, a key on the marker that fit into the slide, and a metal bar that was attached to the rake and ran through the key. When the rake was rotated down the key would no longer hold the marker up and the marker would fall from the slide piece. The team was satisfied with the mechanism because it held the marker in place with support from all directions and always dropped the marker in the desired spot without error.
+
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{29_03-18/images/marker.png}
+  \caption{Marker Deployment Mechanism CAD}
+  \label{fig:MDM}
+ \end{subfigure}
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.75\textwidth]{29_03-18/images/thing.jpg}
+  \caption{Marker Deployment Mechanism}
+  \label{fig:hub}
+  \end{subfigure}
+  \caption{Marker Deployment Mechanism}
+  \end{figure}
 \clearpage \newpage \section{Week \thesection} 
 \subsection{S1: Re-tune lift}
 
@@ -1505,19 +1750,67 @@ This listing shows the way this function is used within the profile following co
 
 \subsection{H1: Constructing the Pit}
 
-\subsection{H2: }
+With Worlds coming up quick, the team wanted to reconstruct and update their pit for Worlds. This included coming up with new swag and pit layout as well as putting the whole pit together to make sure they had all the pieces. ACME ended being very thankful they decided to this since they immediately ran into issues. As soon as they had gotten all the pieces of the pit ready to assemble, they realized no nobody remembered exactly how the pit was constructed. They had a basic idea of the structure, but not much beyond that. After much trial and error, diagram writing, organization, and pictures from last season, they finally figured how it all went together. To aid in construction and for future reference, the team made a diagram of what the pit should look like, as seen in Figure \ref{fig:diagram}. This whole process gave the team a lesson in documentation. If the team had just done some simple documentation when creating and constructing the pit last year, they could have avoided the issue entirely. This also made the team realize why its important to test and rehearse things. If the team hadn't checked to make sure everything was in order, they would have had some serious trouble at Worlds. Determined not make the same mistake twice, the team put Jon in charge of documentation and planning of the pit. To do this, Jon drew up a diagram of the pit with all the dimensions and the joint connector placements. This diagram was similar to the one made during reconstructing but with more detail and a simple top down view of the pit layout. As can be seen in Figure \ref{fig:pitone}. After constructing the pit itself, Jon, Aidan, and Ashlin, also labeled each part of the structure of the pit so it could hopefully be constructed without any diagrams. Finally Jon took pictures of the pit structure for redundancy. ACME hoped that this would be enough for anyone in future to construct the pit even without the help of someone who had done it before.
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{30_03-25/images/pitdiagram1.JPG}
+    \caption{Diagram of Pit parts}
+    \label{fig:pitone}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{30_03-25/images/pitdiagram2.JPG}
+    \caption{Diagram of Pit dimensions and layout}
+    \label{fig:finishedpit}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{30_03-25/images/pitpicture.JPG}
+    \caption{Picture of pit for documentation}
+    \label{fig:diagram}
+\end{figure}
+
+\subsection{H2: Wiring}
+
+Oren spent a lot of time directing the lift and rake wires that cross the drive-train to ensure that they didn't interfere with moving components and would be easy to swap out if necessary. This means that if in competition, it will be much easier to replace wires should the need arise. 
 
 \subsection{B1: Planning the Nevada County Student Hackathon}
 
+With the Hackathon not to far away, ACME needed to finalize their plans for the event. They resolved the schedule for the day, made certificates for the awards, bought prizes for the raffle, gathered ACME swag to hand out to the kids, checked out extra Chromebooks from the library, and talked to an employee from AJA about how to put on a Hackathon. \\
+
+ACME decided to have the Hackathon go from 9 A.M. to 5 P.M. Although this is not a very long time at all by some Hackathon's standards, the team figured this was probably as long as they could go before the kids started to lose interest. They decided to begin the day by having the kids pair up and brainstorm an idea for their game. Then, for the kids who already know Scratch or another language, they would begin to program. For the kids who came with no experience, they would have the choice to attend a Scratch workshop where Emma would teach them how to use Scratch. At noon, they would all have lunch, kindly provided by the Nevada County Tech Connection. Then the kids would keep working on their games until 3:45, where they would begin to prepare for their presentations. From 4 until 5, the kids would give their presentations and then the team would to the raffle and hand out awards. \\
+
+The team decided to have three award categories. The Fan Favorite, the Inspiration Award, and the Judges' Award. The Fan Favorite is a chance for the kids to vote for what their favorite game was. The Inspiration award is sort of like the most improved award for the kids that came into the day knowing nothing, and got a lot out of it. The Judges' Award is where all of the ACME members (and mentors) vote on which game they thought was the best. After deciding on these categories, Emma then made certificates for each award. Additionally, they decided to have a raffle. They bought some certificates to movie theater and for a local ice cream and candy parlor. \\
+
+Some of the kids mentioned in their registration that they wouldn't be able to bring their own computer to the Hackathon, so to make sure that everyone had a computer, ACME went to the local library and checked out Chromebooks, as Chromebooks can run Scratch on them. \\
+
+ACME also invited Garrit from AJA to talk to them about running a Hackathon. Garrit has run adult Hackathons for many years and ACME hoped he could give them some insight. Garrit came to an ACME meeting and talked to members about their schedule for the Hackathon, potentially having a theme for the kids to work off of, how to keep the kids expectations low - so they don't get disappointed when they can't program a first person shooter in Scratch - and overall how to help the kids brainstorm ideas. It was really helpful to talk to Garrit to get some more insight on running and Hackathon and what the team could expect from the day. \\
 \clearpage \newpage \section{Week \thesection} 
 \subsection{H1: Changing the Intake Arm Length and Whip Stiffness}
 
+The team had planned on increasing the intake arm length for a while because of the idea that it could allow for longer arms and a farther reach. The reason it wasn't done yet was because there was trouble with finding the right length belts for the changed length. Fortunately, Kelly found the right belts and ordered them. Meanwhile Ashlin manufactured the new arms, that were one inch longer, to work with the belts when they arrived. Once the belts arrived, Aidan and Ashlin got to work putting them on and testing. They found that they had to change the angle of the arms in order for the whips not to hit the ground. With the desired changes in place they tested the setup. Aidan also found that if they changed all the chips on the third roller to the thicker whip material intaking in auto would also become easier. You can see the cut out intake arms in Figure \ref{fig:intakearms} and the final whips and arms can be seen in Figure \ref{fig:arms}. The result was the intake was able to grab minerals a lot faster and whip them up with a greater velocity.
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{31_04-01/images/IMG_1934.JPG}
+    \caption{New Intake Arms and Whips}
+    \label{fig:arms}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{31_04-01/images/intakearms.jpg}
+    \caption{New Intake Arms}
+    \label{fig:intakearms}
+\end{figure}
 \subsection{B1: Work on the Business Notebook}
 
+As Worlds is just around the corner, Emma needed to update the Business Notebook with all of the outreach events the team had put on from NorCals til then. This included the Hackathon, the tour of GSS, the article in the local newspaper, and the Sponsor Series. She also found herself updating the Goals and Action Plans sections, as some of their goals had been completed since NorCals. It is important to keep the business notebook up to date with the events ACME has put on so that everything is current by the time they hand the notebooks to the judges. She also made sure to update the fundraising section for Worlds because the team set up a GoFundMe campaign in order to raise money for their trip to Houston. She wanted to make sure to acknowledge those sponsors that donated. 
 \clearpage \newpage \section{Week \thesection} 
 \subsection{H1: Latch Tuning}
-
-Once the team started drive practice for worlds a problem that Aidan noticed was that latching with the new latch was proving to be difficult. With the new modifications to the latch that raised it higher off the ground, there was less room to latch, making it harder. To fix this, the solution was to mill the inside face down to increase the gap used for latching. Oren ran several stress analyses in Inventor to ensure that the latch could still support the weight of the robot. With data from the stress analysis it was determined that removing 3/16 of an inch would be optimal for ease of use when latching and still strong enough to hold the full weight of the robot. Ashlin then went with Dan to GSS and did the desired modifications. Latching then became significantly easier for the drivers. 
 
 \begin{figure}
     \centering
@@ -1525,4 +1818,5 @@ Once the team started drive practice for worlds a problem that Aidan noticed was
     \caption{Ashlin Modifying the Latch}
     \label{fig:latch}
 \end{figure}
+Once the team started drive practice for worlds a problem that Aidan noticed, was that latching with was proving to be difficult. This was due to the fact that there was less room between the latch and the lift frame. To fix this, the solution was to mill the inside face down to increase the gap used for latching. Oren ran several stress analyses in Inventor to ensure that the latch could still support the weight of the robot \ref{fig:StressLatch}. With data from the stress analysis it was determined that removing 3/16 of an inch would be optimal for ease of use when latching and still strong enough to bear the full weight of the robot. Ashlin then went with Dan to GSS to machine downed the desired face of the latch. The latch was then mounted and tested; latching became significantly easier for the drive team.  
 \end{document}
