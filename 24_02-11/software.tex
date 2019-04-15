@@ -54,7 +54,7 @@
 \begin{document}
 \subsection{Set up the UI for the pre-scouting app}
 %! Move on to the next part of the prescouting app which is to set up the UI.
-Emma started working on the next part of the prescouting app which is to create a UI. Emma had some experience with creating UIs before as she worked on the scouting app last year. First, she sketched out the design of the UI and everything she would need to display the data, as you can see in Fig \ref{fig:sketch}. \\
+Emma started working on the next part of the prescouting app which is to create a UI. Emma had some experience with creating UIs before as she worked on the scouting app last year. First, she sketched out the design of the UI and everything she would need to display the data, as you can see in Fig \ref{fig:sketch}. 
 
 \begin{figure}
     \centering
@@ -63,7 +63,7 @@ Emma started working on the next part of the prescouting app which is to create 
     \label{fig:sketch}
 \end{figure}
 
-Next, Emma set to work identifying which components she needed to use to complete the UI. She decided for the request and the team number, she would use TextFields. For the year, she would use a Choice component that would allow the user to select a preset year. She used a Button for the submit button. Finally, she decided to make a Panel on top of her Frame in order to section off the TextArea were the data would be printed from the rest of the screen. \\
+Next, Emma set to work identifying which components she needed to use to complete the UI. She decided for the request and the team number, she would use TextFields. For the year, she would use a Choice component that would allow the user to select a preset year. She used a Button for the submit button. Finally, she decided to make a Panel on top of her Frame in order to section off the TextArea were the data would be printed from the rest of the screen. 
 
 Now, Emma needed to go about making this UI a reality and actually function properly. She began by setting up the aesthetic parts of the UI (Frame, TextFields, etc). Then she started to figure out how to get the submit button to actually do something. She decided to use an ActionListener for this. An ActionListener is how you tell in Java f a button has been pressed or not. If it has, an action occurs after that. That action that takes place after Emma's submit button is pressed is an if else statement figures out what is in the request TextField and what is in the team number field in order to piece together the URL. She managed to get that working, and is now trying to figure out how to send the GET request once the button has been pressed. Above is the current design the UI, as seen in Fig \ref{fig:UI}.
 

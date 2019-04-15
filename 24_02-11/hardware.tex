@@ -12,6 +12,8 @@
 
 \usepackage{listings}
 \usepackage{color}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -74,19 +76,22 @@ After the Napa tournament, it was evident that there was some issues and restric
 One recurring problem that was noticed prior and during the Napa tournament was that the pull up run length was very inconsistent. This was because the standoffs that held the pull up run bearings continued to bend which changed the overall length. Aidan was designated the task of creating more reliable standoffs. He decided that the best way to do this would be to manufacture custom pieces for each bearing location. He completed CAD drawing of each desired piece as shown in figure \ref{fig:PullUp1} and \ref{fig:PullUp2} and planned to cut the parts out the next week.
 
 \begin{figure}[h!]
-\begin{minipage}{.45\textwidth}
-    \centering
-    \includegraphics[height=3.5cm]{24_02-11/images/PullUpBlock1.PNG}
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[height=3.5cm]{24_02-11/images/PullUpBlock1.PNG}
     \caption{Pull Up Block 1}
     \label{fig:PullUp1}
-\end{minipage}\hfill
-
-\begin{minipage}{.45\textwidth}
-\centering
-    \includegraphics[height=3.5cm]{24_02-11/images/PullUp2.PNG}
+ \end{subfigure}
+\begin{subfigure}{.45\textwidth}
+  \centering
+     \includegraphics[height=3.5cm]{24_02-11/images/PullUp2.PNG}
     \caption{Pull Up Block 2}
     \label{fig:PullUp2}
-    \end{minipage}
-\end{figure}
+  \end{subfigure}
+  \caption{Drivetrain components}
+  \end{figure}
+
+
 
 \end{document} 
