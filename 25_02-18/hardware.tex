@@ -8,6 +8,8 @@
 \usepackage{caption}
 \usepackage{amsmath}
 \usepackage{rotating}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \usepackage{listings}
 \usepackage{color}
@@ -66,7 +68,7 @@ Ashlin and Aidan realized that another way to increase the speed and effectivene
 
 \begin{figure}
     \centering
-    \includegraphics[width= 0.5 \textwidth]{25_02-18/images/phonemount.png}
+    \includegraphics[width= 0.5 \textwidth]{25_02-18/images/Phone.png}
     \caption{Phone Case Assembled}
     \label{fig: phone case}
 \end{figure}
@@ -86,23 +88,35 @@ By assuming a new maximum velocity of 20 m/s, instead of the old 14 m/s, and rec
 The team ordered a 3:1 and 6:1 stage for the lift gearbox, and swapped it them out for the current reductions.
 After the modifications, they verified that the lift indeed did run much faster, while still being able to raise the robot off the ground. 
 
-
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{25_02-18/images/Blocks.jpg}
+  \caption{Aluminum Bearing Blocks}
+  \label{fig:Blocks}
+ \end{subfigure}
+\begin{subfigure}{.45\textwidth}
+  \centering
+ \includegraphics[width=\textwidth]{25_02-18/images/Bearing.jpg}
+  \caption{Machining Bearing Blocks}
+  \label{fig:Bearing}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=\textwidth,angle=-90]{25_02-18/images/Make.jpg}
+    \caption{Machining Bearing Blocks with Dan}
+    \label{fig:Machining}
+  \end{subfigure}
+  \caption{Fabricating the New lift}
+   \end{figure}
+   
 \subsection{CAD and Fabricate Lift Version 2.0}
-%! 
+%!Lift2.0
 Oren finished the CAD over the weekend to allow enough time for the fabricating process, the Largest improvement and change came in the form of the bearing blocks. The blocks were redesigned to be machined out of one bar of aluminum to increase the overall tolerances by .01 and allow for a more precise assembly. Due to the form factor and the assembly of the lift systems inner box frame; it required 2 different styles of bearing blocks (PIC1) (PIC2). Another change that was sought after was the ability to find someone that could weld the inner frame to again strengthen and increase the tolerances. After asking around Oren ended up finding two potential welders, unfortunately the first welder Oren contacted was unable to help due to having a very badly broken leg. But the second contact Chris Kelly (Local Bike Welder) was able to help us, but was not available for a week. Oren then set out to machine all the parts at a sponsoring company GSS, with the teams mentor Dan Philips. The machining process took 8 hours over a stint of 2 days to produce all the parts and cut the aluminum tubing, to prep for the welding process in the following week. 
 
-
-\begin{figure}
-    \centering
-    \includegraphics[width= 0.5 \textwidth, angle=270]{25_02-18/images/machining.JPG}
-    \caption{Oren machining parts at GSS with Dan}
-    \label{fig: oren machining}
-\end{figure}
-
-
-
 \subsection{New Phone case and  Mounting System}
-%!
+%!Phone
 The old phone case suffered from constant DC's and the Micro USB port on the phones being worn out, leading to more DC's. Ashlin was tasked with making a new phone case that would house the phone permanently and provide a secure connection to the rev hubs. As well as be easily removable from the robot. To do this the case was designed to have a pin system that would allow for removal of the phone in seconds while keeping it secure and positioned correctly for sampling. In Figure \ref{fig: phone case} the top of the case has a bar that is secured with two bolts so that the phone can be removed if needed.
 
 \end{document} 
