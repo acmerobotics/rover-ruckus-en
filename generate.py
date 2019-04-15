@@ -84,7 +84,7 @@ for week in weekDirs:
     for goal, response in zip(goals, responses):
         out.write(r'\subsection{' + goal + '}\n')
         if len(response) < 10:
-            print ("no response in week {} team {}". format(week, file))
+            print ("no response in week {} goal {}". format(week, goal))
         out.write(response)
 
 out.write(r'\end{document}')

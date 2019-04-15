@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{rotating}
 \usepackage{pgfplots}
+\usepackage{subcaption}
 
 \usepackage{listings}
 \usepackage{color}
@@ -474,6 +475,26 @@ On Monday, Oren and Jon went to Datum Precision Machining to manufacture four wh
 
 The team realized that there was a lot of work that needed to be done on the Business Notebook, so Emma decided to take on that task. The BN includes all of the team's outreach events, the sustainability plan, our goals and action plans, team bios, fundraising information, current sponsor list, etc. With so much to, Emma decided to start with the team bios as those just needed to be typed in \LaTeX . Although there were plenty of answers to questions she and Kelly had asked team members the week before, she only chose 4 or 5 for each bio so that they only filled one page and would leave room for a picture. After the bios were completed, Emma started to write up the outreach events ACME did at the end of last season and over the summer. ACME had been writing about four paragraphs about each outreach event, which Emma thought was a bit excessive. So, she came up with a new format. A picture from the event is at the top of the page followed by the title for the event. A short summary sentence is after that, then bullet points highlighting parts of the event that explain what the team did, how it effected the team and how it benefited the people who the team helped or presented to. She found this method to be much more concise and easy to read. Next week, Emma plans to continue work on the BN by finalizing the budget and writing up the teams goals and action plans. \clearpage \newpage \section{Week \thesection} 
 \subsection{S1: Change waypoint representations}
+
+Roadrunner (ACME's motion planning and control library), is designed to be usable by any team, regardless of their drivetrain type. For this reason, the default behaviour of the path generator is to keep the headnig of the robot consistant with the direction of travel, so that the paths are executable by a tank drive robot. Spline paths are created by calling \texttt{PathBuilder.splineTo (Pose2d pose)}, where the positional component of the pose represents the location of the endpoint of the spline, and the heading component represents the direction of travel on entering the point, which in a tank drive is the same as the heading of the robot. To facilitate holonomic drives, where the direction of travel is not neccecarily, and in fact idealy is not the same as the heading, an optional \texttt{HeadingInterpolator} can be passed, which could be constant, linear, or some other sort of more sophisticated interpolator. In most cases, a linear interpolator should be used, so that a single profile can be used for the entire path, and heading will vary linearly with displacement along the path. The problem then becomes an issue of code readabilty and path creation. To go to a point, \texttt{builder.splineTo (new Pose2d (x, y, entranceDirection), new LinearInterpolator (startHeading, endHeading))} must be called. If the start heading of one endpoint does not mach the endpoint of the last, a heading discontinuity results, making things tougher. Points with different entrance and exit directions are also more dificult to create.
+
+To resolve this, Kelly created two new classes, a \texttt{Waypoint} class, and a \texttt{TrajectoryBuilder} class. A \texttt{Waypoint} contains a Pose2d to store the position of the robot at the Waypoint, as well as the entrance and exit angles of the waypoint. This allows a waypoint to be declared as such:
+
+ \lstinline{ Waypoint SAMPLE_RIGHT_DEPOT = new Waypoint(new Pose2d(48, 24, -PI / 4), PI / 4); }
+
+The entrance and exit poses required by Roadrunner's path generation can be accesed by \texttt{waypoint.getEnter()} and \texttt{waypoint.getExit()}. To construct a set of paths, a TrajectoryBuilder object is constructed, and then passed a series of waypoints. The headings are automaticaly taken care of, and multiple paths are created if the waypoints require the robot to come to a complete stop on its way to traverse them. 
+
+\begin{lstlisting}[language=Java]
+public TrajectoryBuilder to(Waypoint waypoint) {
+	currentPath.splineTo(waypoint.getEnter(), new LinearInterpolator(lastWaypoint.getHeading(), waypoint.getHeading()));
+	lastWaypoint = waypoint;
+	if (waypoint.getStop()) {
+		trajectories.add(new SplineTrajectory(currentPath.build()));
+		currentPath = new PathBuilder(waypoint.getExit());
+	}
+	return this;
+}
+\end{lstlisting}
 
 \subsection{H1: Print the Marker}
 
@@ -1185,7 +1206,7 @@ Another big accomplishment for this tournament was that every single group of ju
 
 ACME ended the day by winning the Control award for their software. They were really happy and had a fun and exciting day!
 \clearpage \newpage \section{Week \thesection} 
-\subsection{H1: Increase the Intake arm Length and Thickness}
+\subsection{H1: Increasing the Intake arm Length and Thickness}
 
 Ashlin and Aidan realized that another way to increase the speed and effectiveness of the intake was to increase the reach of the third intake roller (the one that flops down into the crater). They decided that if the whips were an inch longer this would significantly increase the reach of the whips while not slowing it down. In order for this to work the roller arm need to be increase an inch in length and positioned an inch higher so that the whips did not hit the ground or crater to much that they might cause unnecessary friction. New arms were cut out however a belt for the new length did not exist. So the team decided to not increase the arm or whip length, but did increase the arm thickness as shown in figure \ref{fig:arm} They did this because they knew from experience that the arms often had to absorb significant impact from collisions and previous arms had snapped because of this. The team believed that increasing the thickness would result in more durability. The new arms were cut and put on the robot, where they were tested and found to be very strong and durable.
 
@@ -1198,7 +1219,7 @@ Ashlin and Aidan realized that another way to increase the speed and effectivene
 
 \begin{figure}
     \centering
-    \includegraphics[width= 0.5 \textwidth]{25_02-18/images/phoneMount.png}
+    \includegraphics[width= 0.5 \textwidth]{25_02-18/images/phonemount.png}
     \caption{Phone Case Assembled}
     \label{fig: phone case}
 \end{figure}
@@ -1221,7 +1242,7 @@ After the modifications, they verified that the lift indeed did run much faster,
 
 \subsection{H3: CAD and Fabricate Lift Version 2.0}
 
-Oren finished the CAD over the weekend to give enough time for the fabricating process, the biggest improvement and change came in the form of the bearing blocks. The blocks were redesigned to be machined out of one bar of aluminum to increase the overall tolerances and strength. Due to the form factor and the assembly of the linear systems inner box frame; it required 2 different styles of blocks (PIC1) (PIC2). Another change that was sought after was the ability to find someone that could weld the inner frame to again strengthen and increase the tolerances. After asking around Oren ended up finding two potential welders, unfortunately the first welder Oren contacted was unable to help due to having a very badly broken leg. But the second contact Chris Kelly (Local Bike Welder) was able to help us, but was only available early next week. Oren then set out to machine all the parts at a sponsoring company GSS, with a team mentor Dan Philips. The machining process took 8 hours over a stint of 2 days to produce all the parts and cut the aluminum tubing, to prep for the welding process next week. 
+Oren finished the CAD over the weekend to allow enough time for the fabricating process, the Largest improvement and change came in the form of the bearing blocks. The blocks were redesigned to be machined out of one bar of aluminum to increase the overall tolerances by .01 and allow for a more precise assembly. Due to the form factor and the assembly of the lift systems inner box frame; it required 2 different styles of bearing blocks (PIC1) (PIC2). Another change that was sought after was the ability to find someone that could weld the inner frame to again strengthen and increase the tolerances. After asking around Oren ended up finding two potential welders, unfortunately the first welder Oren contacted was unable to help due to having a very badly broken leg. But the second contact Chris Kelly (Local Bike Welder) was able to help us, but was not available for a week. Oren then set out to machine all the parts at a sponsoring company GSS, with the teams mentor Dan Philips. The machining process took 8 hours over a stint of 2 days to produce all the parts and cut the aluminum tubing, to prep for the welding process in the following week. 
 
 
 \begin{figure}
@@ -1254,34 +1275,254 @@ Emma needed to add the finishing touches to the prescouting app in order to get 
 \end{lstlisting}
 
 With the prescouting app complete, Emma is now looking forward to testing it out before a tournament. 
-\subsection{H1: Fabricate and Assemble Lift 2.0}
+\subsection{H1: Lift 2.0 Fabrication}
 
-Early in this week, Oren went to meet with the local welder to begin the process of setting up and welding both the box frame and the carriage for the new lift. He was hoping to complete the new lift by Tuesday, as to give the drivers enough time to practice, but unfortunately hit some complications and the lift wasn't completed in time. So Oren focused the rest of his time making sure the current lift was running as well as possible. Oren did end up completing the lift assembly later in the week with the intention to switch it out if the team makes it to Worlds. 
+Early in this week, Oren went to meet with the local welder to begin the process of setting up and welding both the box frame and the carriage for the new lift. He was hoping to complete the new lift by Tuesday, as to give the drivers enough time to practice, but unfortunately hit some complications and the lift wasn't completed in time. So Oren focused the rest of his time making sure the current lift was running as well as possible. Which required him to deconstruct the lift, sand down rough spots on the runners and change out broken bearing to allow for the lift to run. After which he assembled everything and bolted it back onto the robot ready for Norcals. 
 
 \subsection{H2: Attaching a Second Pull Up Run}
 
-Another problem that had been pointed out after the Napa tournament was that the lift would tilt when at max height because of only having the one pull up run. To fix this, another pull up run needed to be created. Ashlin and Aidan had already made extra bearing standoffs that could work for the new pull up run. The only problem was that the wire run up sheath was placed right where the new pull up run needed to be. Oren fixed this by placing a piece of aluminum that ran upwards for the wire sheath but was offset for the left by a few inches as shown in Figure \ref{fig:PullUp}. This solution worked and the wires didn't get in the way. The second pull up run allowed the lift to maximize height without tilting.
-
-\begin{figure}
-    \centering
-    \includegraphics[width= 0.5 \textwidth]{26_02-25/images/PullUpRun2.jpg}
-    \caption{New Pull Up Run and Wire Run Up}
-    \label{fig:PullUp}
-\end{figure}
-
-
 \subsection{H3: Manufacturing and Installing the New Pull Up Run Standoffs}
 
-Once the CAD drawings were done, Aidan went to GSS to manufacture the parts. He did not complete them in one day because of overlap with Oren fabricating his parts for the lift. Ashlin then went and finished making the parts the next day. He and Aidan then attached them to the lift and made sure that the lift ran smoothly with them. Both parts worked perfectly and did not bend under high levels of stress. Kelly then identified that the bracket standoff also needed to be replaced because it was bending under the stress and flexed. The difficulty with the bracket is that it needed to be positioned to stop rotation on two different axis. Ashlin and Aidan then brainstormed ways to fix this. One idea that was produced was to use a steel bar to reduce this rotation as shown in figure \ref{fig: bracket} Ashlin then went and found the right sized steel and brought it the next meeting. The bracket worked without any bending, which completed the pull up runs.
-
-\begin{figure}
-    \centering
-    \includegraphics[width= 0.5 \textwidth]{26_02-25/images/Bracket.jpg}
-    \caption{Bracket drawing}
-    \label{fig: bracket}
-\end{figure}
 \subsection{B1: Refine the Business Notebook}
 
 There were a few things that needed improvement in the Business notebook, so Emma and Kelly set about fixing those things. Both of them needed to write up a few outreach events, including the Telestream Tech Talk and meeting up with Animatronics. Emma also needed to update a couple of goals and action plans with the progress and results that have taken place over the past couple of weeks. After fixing a couple of pictures, the BN was ready to go. ACME revisits their BN from time to time in order to keep it up to date. It is important to do this so that all data is relevant when they present their notebooks at a tournament. 
 
+\clearpage \newpage \section{Week \thesection} 
+\subsection{S1: Switch to Camera 2}
+
+Until now the vision processing code for detecting the location of the gold mineral in the sampling field had used an outdated API for accessing the camera on the phone. As a result, camera code was unstable, and was prone to occasional random crashes, and would sometimes freeze and stop returning frames for processing, meaning that the drive team would need to restart the app before auto could successfully be run. Kelly decided to make a few changes to resolve this. First, the old way that vision pipelines could access the camera was through a singleton class that was tied to the life cycle of the entire robot controller app. When the app started, it would begin capturing frames from the camera, and these would be sent to a \texttt{FrameGrabber} class, which would then return the most recent frame to vision pipelines when needed. Because frames were always being captured using the old API, the system had some mysterious bugs, so Kelly decided to switch to a system that only captured frames when needed. Kelly also wanted to switch to the newer Camera 2 API, as well as provide a better system for multiple vision pipelines to be run at once, which would be necessary for a crater vision pipeline to aid in intaking during auto.
+
+The layout of the activity stayed the same, but Kelly updated the preview window to use the newer API. However, rather than the preview window being initialized when the activity started, it is initially hidden. Kelly then wrote a class \texttt{VisionCamera} that when created would retrieve the preview window from the activity layout, enable it, and attach itself a frame listener for the preview window. The  \texttt{VisionCamera} also attached itself as a listener to the \texttt{OpModeManagerNotifier}, which would allow it to automatically shut itself down when the opmode that created it stopped, even in the event of a crash within the opmode that prevented normal shutdown. The \texttt{VisionCamera} also handles asynchronous loading of the opencv libraries from a package seperately installed on the robot controller phone. This reduces the time it takes to deploy to the robot controller phone, because the opencv libraries never change, and does not initialize the libraries until they are actualy needed, reducing the startup time for the main robot controller activity. 
+
+To allow vision pipelines to access the camera frames, Kelly created a \texttt{VisionPipeline} interface that allows the \texttt{VisionCamera} to send captured frames to a set of pipelines. This also allows the actual vision processing to take place in a separate thread, so it does not slow down any other opmode activities. Kelly refactored the existing pipeline that detected the gold location to use this new process. 
+
+The following listing shows the process for initializing the \texttt{VisionCamera}
+
+\begin{lstlisting}[language=Java]
+    public VisionCamera () {
+        activity = AppUtil.getInstance().getActivity();
+        opModeManager = OpModeManagerImpl.getOpModeManagerOfActivity(activity);
+        opModeManager.registerListener(this);
+        trackers = new ArrayList<>();
+
+        final CountDownLatch countDownLatch = new CountDownLatch(1);
+
+        final BaseLoaderCallback baseLoaderCallback = new BaseLoaderCallback(activity) {
+            @Override
+            public void onManagerConnected(int status) {
+                if (status == LoaderCallbackInterface.SUCCESS) {
+                    Log.i(TAG, "opencv load successful");
+                    countDownLatch.countDown();
+                } else {
+                    Log.e(TAG, "error loading opencv");
+                }
+
+            }
+        };
+
+        AppUtil.getInstance().runOnUiThread(() -> 
+                OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_4_0, activity, baseLoaderCallback);
+        });
+
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            Log.e(TAG, "interrupted while loading opencv");
+        }
+
+        view = (JavaCamera2View) activity.findViewById(com.qualcomm.ftcrobotcontroller.R.id.cameraViewId);
+        view.setCvCameraViewListener(this);
+        AppUtil.getInstance().runOnUiThread(() -> {
+                view.enableView();
+                view.setVisibility(View.VISIBLE);
+            }
+        });
+
+    }
+\end{lstlisting}
+\subsection{H1: Cutting a New Latch Piece}
+
+\subsection{H2: Lift Assembly 2.0}
+
+\subsection{H3: New Team Marker Placement}
+
+\subsection{B1: Attend the Northern California Regional Championships}
+
+\subsection{B2: Northern California Regional Championships retrospective}
+
+\subsection{B3: Plan outreach events}
+
+\clearpage \newpage \section{Week \thesection} 
+\subsection{S1: Refactor Auto Actions}
+
+Kelly decided to refactor how actions were handled in autonomous to make it easier to have actions be triggered when certain conditions were met, or to have actions triggered by passing waypoints in trajectories. Because of the way the robot state machine works, all mutation functions within subsystems are non-blocking, they update the state of the subsystem but they do not actualy update the hardware. For the hardware to be updated, the \texttt{Robot\#update()} function must be called. This allows for easy code reuse between auto and teleop, subsystem mutator functions are called to trigger actions, either when a button is pressed during teleop or sequentialy during auto, and then the update function is repeatedly called. In auto, execution is controlled by having subsystems return whether they should currently be blocking new commands, and then waiting for all subsystems to stop blocking before starting the next operations. This provides an easy way to start several actions and then wait for them all to complete, or to preform one action after the next. For example, in the beginning of auto the first step is to call \texttt{Lift\#lower()}, which puts the lift into lowering mode. Then \texttt{Robot\#waitForAllSubsystems()} is called, which continually updates the robot until all subsystems cease blocking. Once the robot reaches the ground as detected by the sensor on the bottom of the robot, the lift switches into the finding latch mode, which uses a hall effect sensor to move the frame into a position that allows the robot to disengage from the latch. Once the lift has disengaged from the latch, the lift stops blocking, which allows the next action in the autonomous routine to execute, which is a trajectory that rotates the robot out from the latch. After this trajectory completes, the next trajectory is started, and the lift is told to lower and calibrate, which is not a blocking action and will happen asynchronously while the rest of auto runs. 
+
+This system breaks down then a action needs to be triggered partway through another action. If it is something within a subsystem, e.g. moving a servo to a position to clear an obstacle when the lift reaches a particular height, it is easy to implement within that subsystem, but for an action to be triggered partway through a trajectory, for example to begin extending the rake before reaching the end, a larger restructuring was necessary. Kelly added an \texttt{AutoAction} interface to facilitate triggering actions. All auto actions are defined in the \texttt{AutoOpMode} class, which is an abstract class that handles things that are common to all auto routines, and are declared like such:
+
+\begin{lstlisting}[language=Java] 
+    public AutoAction extendRake = () ->
+        setRakePosition(robot.config.getStartLocation() == StartLocation.CRATER
+                ? AutoPaths.RAKE_POSITION_CRATER
+                : AutoPaths.RAKE_POSITION_DEPOT);
+
+    public AutoAction deployMarker = () -> robot.intake.deployMarker();
+
+    public AutoAction retractRake = () -> {
+        robot.intake.setRakeRetractBlockingDistance(10);
+        robot.intake.retractRake();
+    };
+
+    public AutoAction startIntake = () -> robot.intake.setIntakePower(1);
+
+    public AutoAction reverseIntake = () -> robot.intake.setIntakePower(-1);
+
+    public AutoAction stopIntake = () -> {
+        robot.intake.setIntakePower(0);
+        robot.intake.groundIntakererIn();
+    };
+
+    public AutoAction groundIntake = () -> {
+        robot.intake.setIntakePower(.75);
+        robot.intake.groundIntakererOut();
+    };
+
+    public AutoAction blockingIntake = () -> robot.intake.intake();
+
+    public AutoAction raiseLift = () -> {
+        robot.lift.liftTop();
+        robot.lift.setAsynch(false);
+    };
+
+\end{lstlisting}
+
+If a particular auto routine needs to change the behavior of an action, it can by overwriting the variable. When an opmode creates an instance of \texttt{AutoPathsBuilder} (the class that dynamically builds paths based on a configuration), it passes \texttt{this}, allowing the builder to add a the opmode's actions to the trajectories it builds. For example, this function constructs a set of trajectories to move the robot to its parking position. The intake is stopped after reaching the first waypoint, and intake is started when the end is reached. 
+
+\begin{lstlisting}[language=Java] 
+     public ArrayList<Trajectory> toPark () {
+        TrajectoryBuilder builder = getBuilder();
+        if (location != GoldLocation.LEFT) builder.to(PARK_CLEAR_ONE);
+        builder.to(PARK_CLEAR_TWO)
+            .addActionOnCompletion(opMode.stopIntake);
+            .turnTo(PI);
+            .to(park())
+            .addActionOnCompletion(opMode.blockingIntake);
+        lastPosition = park();
+        return builder.build();
+    }
+
+\end{lstlisting}
+
+This function constructs a set of paths that sample the second mineral in a double sampling routine. It demonstrates how multiple actions can be added to a single segment, and how actions can be added part way through a segment. In particular, passing a negative number to \texttt{addAction} will trigger the action the specified number of seconds before reaching the end of the trajectory. To ensure that actions are not triggered if the robot is horribly out of positoin, a trajectory will not trigger an action until both the time requirement is met, and the total tracking error is less than a specified threshold, currently at one inch. 
+\begin{lstlisting}[language=Java]
+    public SuperArrayList<Trajectory> toSampleSecond () {
+        TrajectoryBuilder builder = getBuilder();
+        if (location != GoldLocation.RIGHT) builder.to(SAMPLE_SECOND_CLEAR);
+        builder.to(sampleSecond());
+            .addAction(-2.5, opMode.retractRake)
+            .addAction(-2, opMode.groundIntake);
+            .addActionOnCompletion(opMode.extendRake);
+        lastPosition = sampleSecond();
+        return builder.buld();
+    }
+\end{lstlisting}
+
+This system allows autonomous routines to be declared very easily:
+\begin{lstlisting}[language=Java]
+@Autonomous(name="doubleSample")
+public class DoubleSampleAuto extends AutoOpMode {
+
+    @Override
+    protected void run() {
+        this.extendRake = () -> robot.intake.goToPosition(30);
+        
+        AutoPaths paths = new AutoPaths(this, goldLocation, startLocation);
+        
+        robot.drive.setCurrentEstimatedPose(paths.start().pos());
+        robot.drive.followTrajectories(paths.startToRelease());
+
+        robot.drive.followTrajectories(paths.toSampleBoth());
+        
+        robot.intake.deployMarker();
+        robot.waitForAllSubsystems();
+        
+        robot.drive.followTrajectories(paths.toSampleBothReturn());
+        robot.pause(1000);
+        robot.drive.followTrajectories(paths.toIntake());
+    }
+}
+
+\end{lstlisting}
+\subsection{H1: Attaching New Lift}
+
+\subsection{H2: New cross plate}
+ \subsection{B1: Marketing the Hackathon}
+
+\clearpage \newpage \section{Week \thesection} 
+\subsection{H1: Re-wiring Robot}
+
+\subsection{H2: Changing the Marker Deployment Mechanism}
+
+\clearpage \newpage \section{Week \thesection} 
+\subsection{S1: Re-tune lift}
+
+Now that the new lift was on the robot, Kelly decided it was time to re-tune the lift. Because there is only one encoder between the two lift motors, it is not safe to use \texttt{RUN\_USING\_ENCODERS}, so the control loop needs a normal tuning, with $k_v$, $k_a$, and $k_{static}$. Kelly began by writing an opmode to gradualy ramp up the voltage applied to the lift motors until the lift reached either the top or the bottom, then stop the lift and revers. The opmode logged both the applied power and the actual velocity of the lift in a csv file, and because the lift was accelerating so gradualy it was safe to assume that the only acceleration on the lift was due to gravity. After running the opmode for a while and collecting a lot of data, Kelly pulled the file off the phones, and seperated them using a python script based on the direction the lift was moving, and the state of the sensor that detected the frame being at the bottom of its range of motion. The data from the lift moving down while the frame was at the bottom was super noisy, so Kelly threw it out and only considered the other three sets. The graph in figure \ref{fig:liftData} shows the collected data. As you can see, the slope of all three groups of data is the same, but the intercept is different. 
+
+Because the neccecary voltage to achieve a particular motion state in a linear mechanism is $$V = \omega k_v + \alpha k_a + k_static$$ 
+and the acceleration across all the runs is constant (gravitational acceleration, $386 in/sec^2$, the slope of all the graps is $\frac{1}{k_v}$, and the intercept is a combination of $k_a$ and $k_{static}$. Because $k_a$ is dependent on the mass of the thing that is moving (and in fact can be written as $k_a = m k_f$), it is important to compare lines with constant mass when calculating $k_static$. By comparing both states where both the carriage and the frame are moving (when the mass of the parts of the lift that are in motion are greatest), (shown in purple and blue in figure \ref{fig:liftData} $k_{static}$ and $k_a$ (for that mass, and by extension $k_f$) can be calculated. Because $k_a$ is going to be the same for both, and $k_{static}$ is going to have the same magnitude but opposite signs (because its sign is the same as the direction of travel), $k_a$ was found to be the midpoint between the two intercepts, and $k_static$ is one half of the distance between them. By dividing the calculated $k_a$ by the mass of the entire lift, Kelly found $k_f$. 
+
+The following listing shows the way a feedforward command is actualy calculated from a desired motion state and known mass.
+\begin{lstlisting}[language=Java]
+    public static double K_V = 0.0643202688898;
+    public static double K_STATIC = 0.118777073737;
+    public static double K_A = 0.000127390384279;
+    public static double MASS_ROBOT = -20;
+    public static double MASS_CARTRIGE = .75;
+    public static double MASS_FRAME = .75;
+    public static double G = 386;
+
+    private double getFeedForward (MotionState state, double mass) {
+        double ff = K_V * state.getV() + K_A * mass * (state.getA() - G);
+        if (Math.abs(ff) > 1e-4) ff +=  Math.copySign(K_STATIC, ff);
+        return ff;
+    }
+\end{lstlisting}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6\textwidth]{30_03-25/images/graph.png}
+    \caption{Collected lift data}
+    \label{fig:liftData}
+\end{figure}
+
+This listing shows the way this function is used within the profile following code.
+\begin{lstlisting}
+        MotionState target = profile.get(t);
+        double error = getPosition() - target.getX();
+        double correction = pidController.update(error);
+        double feedForward = getFeedForward(target, getMass());
+        internalSetVelocity(feedForward - correction);
+\end{lstlisting}
+
+\subsection{H1: Constructing the Pit}
+
+\subsection{H2: }
+
+\subsection{B1: Planning the Nevada County Student Hackathon}
+
+\clearpage \newpage \section{Week \thesection} 
+\subsection{H1: Changing the Intake Arm Length and Whip Stiffness}
+
+\subsection{B1: Work on the Business Notebook}
+
+\clearpage \newpage \section{Week \thesection} 
+\subsection{H1: Latch Tuning}
+
+Once the team started drive practice for worlds a problem that Aidan noticed was that latching with the new latch was proving to be difficult. With the new modifications to the latch that raised it higher off the ground, there was less room to latch, making it harder. To fix this, the solution was to mill the inside face down to increase the gap used for latching. Oren ran several stress analyses in Inventor to ensure that the latch could still support the weight of the robot. With data from the stress analysis it was determined that removing 3/16 of an inch would be optimal for ease of use when latching and still strong enough to hold the full weight of the robot. Ashlin then went with Dan to GSS and did the desired modifications. Latching then became significantly easier for the drivers. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width= 0.5 \textwidth]{32_04-08/images/ashlinmachining.jpg}
+    \caption{Ashlin Modifying the Latch}
+    \label{fig:latch}
+\end{figure}
 \end{document}

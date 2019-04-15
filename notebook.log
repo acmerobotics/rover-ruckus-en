@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.3.1)  1 MAR 2019 23:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.4.3)  14 APR 2019 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -550,24 +550,29 @@ File: tikzlibraryplotmarks.code.tex 2019/02/02 v3.1.1 (3.1.1)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2019/02/02 v3.1.1 (3.1.1)
-))) (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count134
+))) (/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+\c@subfigure=\count134
+\c@subtable=\count135
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count136
 \lst@gtempboxa=\box42
 \lst@token=\toks38
-\lst@length=\count135
+\lst@length=\count137
 \lst@currlwidth=\dimen189
-\lst@column=\count136
-\lst@pos=\count137
+\lst@column=\count138
+\lst@pos=\count139
 \lst@lostspace=\dimen190
 \lst@width=\dimen191
-\lst@newlines=\count138
-\lst@lineno=\count139
+\lst@newlines=\count140
+\lst@lineno=\count141
 \lst@maxwidth=\dimen192
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-\c@lstnumber=\count140
-\lst@skipnumbers=\count141
+\c@lstnumber=\count142
+\lst@skipnumbers=\count143
 \lst@framebox=\box43
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
@@ -613,18 +618,18 @@ LaTeX Warning: Label `fig:graph' multiply defined.
 )
 \openout1 = `notebook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -661,20 +666,20 @@ LaTeX Font Info:    ... okay on input line 56.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 56.
+LaTeX Info: Redefining \selectfont on input line 57.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count142
+\scratchcounter=\count144
 \scratchdimen=\dimen193
 \scratchbox=\box44
-\nofMPsegments=\count143
-\nofMParguments=\count144
+\nofMPsegments=\count145
+\nofMParguments=\count146
 \everyMPshowfont=\toks39
-\MPscratchCnt=\count145
+\MPscratchCnt=\count147
 \MPscratchDim=\dimen194
-\MPnumerator=\count146
-\makeMPintoPDFobject=\count147
+\MPnumerator=\count148
+\makeMPintoPDFobject=\count149
 \everyMPtoPDFconversion=\toks40
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -738,9 +743,9 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 56.
+ on input line 57.
 
-\c@lstlisting=\count148
+\c@lstlisting=\count150
 (./notebook.toc
 Overfull \hbox (1.72221pt too wide) detected at line 13
  []\OT1/cmr/m/n/10 C10
@@ -885,352 +890,352 @@ Overfull \hbox (1.72221pt too wide) detected at line 46
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 47
- []\OT1/cmr/m/n/10 C32
+ []\OT1/cmr/m/n/10 C33
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 48
- []\OT1/cmr/m/n/10 C32
+ []\OT1/cmr/m/n/10 C33
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 49
- []\OT1/cmr/m/n/10 C33
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 50
- []\OT1/cmr/m/n/10 C33
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 52
  []\OT1/cmr/m/n/10 C34
  []
 
 
-Overfull \hbox (1.72221pt too wide) detected at line 53
+Overfull \hbox (1.72221pt too wide) detected at line 50
+ []\OT1/cmr/m/n/10 C34
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 52
  []\OT1/cmr/m/n/10 C35
  []
 
 
-Overfull \hbox (1.72221pt too wide) detected at line 54
+Overfull \hbox (1.72221pt too wide) detected at line 53
  []\OT1/cmr/m/n/10 C36
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 54
+ []\OT1/cmr/m/n/10 C37
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 55
- []\OT1/cmr/m/n/10 C36
+ []\OT1/cmr/m/n/10 C37
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 56
- []\OT1/cmr/m/n/10 C36
+ []\OT1/cmr/m/n/10 C37
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 57
- []\OT1/cmr/m/n/10 C38
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 59
  []\OT1/cmr/m/n/10 C39
  []
 
 
+Overfull \hbox (1.72221pt too wide) detected at line 59
+ []\OT1/cmr/m/n/10 C40
+ []
+
+
 Overfull \hbox (1.72221pt too wide) detected at line 60
- []\OT1/cmr/m/n/10 C40
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 61
- []\OT1/cmr/m/n/10 C40
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 63
  []\OT1/cmr/m/n/10 C41
  []
 
 
-Overfull \hbox (1.72221pt too wide) detected at line 64
+Overfull \hbox (1.72221pt too wide) detected at line 61
+ []\OT1/cmr/m/n/10 C41
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 63
  []\OT1/cmr/m/n/10 C42
  []
 
 
-Overfull \hbox (1.72221pt too wide) detected at line 66
+Overfull \hbox (1.72221pt too wide) detected at line 64
  []\OT1/cmr/m/n/10 C43
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 66
+ []\OT1/cmr/m/n/10 C44
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 67
- []\OT1/cmr/m/n/10 C43
+ []\OT1/cmr/m/n/10 C44
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 68
- []\OT1/cmr/m/n/10 C44
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 69
- []\OT1/cmr/m/n/10 C44
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 70
- []\OT1/cmr/m/n/10 C44
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 71
  []\OT1/cmr/m/n/10 C45
  []
 
 
-Overfull \hbox (1.72221pt too wide) detected at line 73
+Overfull \hbox (1.72221pt too wide) detected at line 69
+ []\OT1/cmr/m/n/10 C45
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 70
+ []\OT1/cmr/m/n/10 C45
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 71
  []\OT1/cmr/m/n/10 C46
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 73
+ []\OT1/cmr/m/n/10 C47
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 74
- []\OT1/cmr/m/n/10 C46
+ []\OT1/cmr/m/n/10 C47
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 75
- []\OT1/cmr/m/n/10 C46
+ []\OT1/cmr/m/n/10 C47
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 76
- []\OT1/cmr/m/n/10 C49
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 77
  []\OT1/cmr/m/n/10 C50
  []
 
 
-Overfull \hbox (1.72221pt too wide) detected at line 79
+Overfull \hbox (1.72221pt too wide) detected at line 77
  []\OT1/cmr/m/n/10 C51
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 79
+ []\OT1/cmr/m/n/10 C52
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 80
- []\OT1/cmr/m/n/10 C51
+ []\OT1/cmr/m/n/10 C52
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 81
- []\OT1/cmr/m/n/10 C51
+ []\OT1/cmr/m/n/10 C52
  []
 
 [2]
 Overfull \hbox (1.72221pt too wide) detected at line 83
- []\OT1/cmr/m/n/10 C54
+ []\OT1/cmr/m/n/10 C55
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 84
- []\OT1/cmr/m/n/10 C55
+ []\OT1/cmr/m/n/10 C56
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 85
- []\OT1/cmr/m/n/10 C55
+ []\OT1/cmr/m/n/10 C56
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 86
- []\OT1/cmr/m/n/10 C56
+ []\OT1/cmr/m/n/10 C57
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 87
- []\OT1/cmr/m/n/10 C56
+ []\OT1/cmr/m/n/10 C57
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 89
- []\OT1/cmr/m/n/10 C58
+ []\OT1/cmr/m/n/10 C59
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 90
- []\OT1/cmr/m/n/10 C59
+ []\OT1/cmr/m/n/10 C60
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 91
- []\OT1/cmr/m/n/10 C59
+ []\OT1/cmr/m/n/10 C60
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 93
- []\OT1/cmr/m/n/10 C61
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 94
- []\OT1/cmr/m/n/10 C61
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 95
- []\OT1/cmr/m/n/10 C61
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 96
  []\OT1/cmr/m/n/10 C62
  []
 
 
-Overfull \hbox (1.72221pt too wide) detected at line 98
+Overfull \hbox (1.72221pt too wide) detected at line 94
+ []\OT1/cmr/m/n/10 C62
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 95
+ []\OT1/cmr/m/n/10 C62
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 96
  []\OT1/cmr/m/n/10 C63
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 98
+ []\OT1/cmr/m/n/10 C64
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 99
- []\OT1/cmr/m/n/10 C63
+ []\OT1/cmr/m/n/10 C64
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 100
- []\OT1/cmr/m/n/10 C63
+ []\OT1/cmr/m/n/10 C64
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 102
- []\OT1/cmr/m/n/10 C65
+ []\OT1/cmr/m/n/10 C66
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 103
- []\OT1/cmr/m/n/10 C66
+ []\OT1/cmr/m/n/10 C67
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 104
- []\OT1/cmr/m/n/10 C66
+ []\OT1/cmr/m/n/10 C67
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 106
- []\OT1/cmr/m/n/10 C69
+ []\OT1/cmr/m/n/10 C70
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 107
- []\OT1/cmr/m/n/10 C70
+ []\OT1/cmr/m/n/10 C71
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 108
- []\OT1/cmr/m/n/10 C70
+ []\OT1/cmr/m/n/10 C71
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 110
- []\OT1/cmr/m/n/10 C72
+ []\OT1/cmr/m/n/10 C73
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 111
- []\OT1/cmr/m/n/10 C72
+ []\OT1/cmr/m/n/10 C73
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 112
- []\OT1/cmr/m/n/10 C72
+ []\OT1/cmr/m/n/10 C73
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 114
- []\OT1/cmr/m/n/10 C74
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 115
- []\OT1/cmr/m/n/10 C74
- []
-
-
-Overfull \hbox (1.72221pt too wide) detected at line 117
  []\OT1/cmr/m/n/10 C75
  []
 
 
-Overfull \hbox (1.72221pt too wide) detected at line 118
+Overfull \hbox (1.72221pt too wide) detected at line 115
+ []\OT1/cmr/m/n/10 C75
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 117
  []\OT1/cmr/m/n/10 C76
  []
 
 
+Overfull \hbox (1.72221pt too wide) detected at line 118
+ []\OT1/cmr/m/n/10 C77
+ []
+
+
 Overfull \hbox (1.72221pt too wide) detected at line 119
- []\OT1/cmr/m/n/10 C78
+ []\OT1/cmr/m/n/10 C79
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 120
- []\OT1/cmr/m/n/10 C78
+ []\OT1/cmr/m/n/10 C79
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 121
- []\OT1/cmr/m/n/10 C78
+ []\OT1/cmr/m/n/10 C79
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 122
- []\OT1/cmr/m/n/10 C78
+ []\OT1/cmr/m/n/10 C79
  []
 
 [3]
 Overfull \hbox (1.72221pt too wide) detected at line 124
- []\OT1/cmr/m/n/10 C81
+ []\OT1/cmr/m/n/10 C82
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 125
- []\OT1/cmr/m/n/10 C81
+ []\OT1/cmr/m/n/10 C82
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 126
- []\OT1/cmr/m/n/10 C82
+ []\OT1/cmr/m/n/10 C83
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 127
- []\OT1/cmr/m/n/10 C82
+ []\OT1/cmr/m/n/10 C83
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 129
- []\OT1/cmr/m/n/10 C84
+ []\OT1/cmr/m/n/10 C85
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 130
- []\OT1/cmr/m/n/10 C84
+ []\OT1/cmr/m/n/10 C85
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 131
- []\OT1/cmr/m/n/10 C84
+ []\OT1/cmr/m/n/10 C85
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 132
- []\OT1/cmr/m/n/10 C85
+ []\OT1/cmr/m/n/10 C86
  []
 
 
 Overfull \hbox (1.72221pt too wide) detected at line 133
- []\OT1/cmr/m/n/10 C85
+ []\OT1/cmr/m/n/10 C86
  []
 
 
@@ -1238,12 +1243,112 @@ Overfull \hbox (1.72221pt too wide) detected at line 134
  []\OT1/cmr/m/n/10 C86
  []
 
+
+Overfull \hbox (1.72221pt too wide) detected at line 136
+ []\OT1/cmr/m/n/10 C87
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 137
+ []\OT1/cmr/m/n/10 C88
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 138
+ []\OT1/cmr/m/n/10 C88
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 139
+ []\OT1/cmr/m/n/10 C88
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 140
+ []\OT1/cmr/m/n/10 C88
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 141
+ []\OT1/cmr/m/n/10 C88
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 142
+ []\OT1/cmr/m/n/10 C88
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 144
+ []\OT1/cmr/m/n/10 C89
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 145
+ []\OT1/cmr/m/n/10 C91
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 146
+ []\OT1/cmr/m/n/10 C91
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 147
+ []\OT1/cmr/m/n/10 C91
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 149
+ []\OT1/cmr/m/n/10 C92
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 150
+ []\OT1/cmr/m/n/10 C92
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 152
+ []\OT1/cmr/m/n/10 C93
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 153
+ []\OT1/cmr/m/n/10 C94
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 154
+ []\OT1/cmr/m/n/10 C94
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 155
+ []\OT1/cmr/m/n/10 C94
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 157
+ []\OT1/cmr/m/n/10 C95
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 158
+ []\OT1/cmr/m/n/10 C95
+ []
+
+
+Overfull \hbox (1.72221pt too wide) detected at line 160
+ []\OT1/cmr/m/n/10 C96
+ []
+
 )
 \tf@toc=\write4
 \openout4 = `notebook.toc'.
 
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
@@ -1254,7 +1359,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 File: 02_09-10/images/originalcameraposition.png Graphic file (type png)
 <use 02_09-10/images/originalcameraposition.png>
 Package pdftex.def Info: 02_09-10/images/originalcameraposition.png  used on in
-put line 78.
+put line 79.
 (pdftex.def)             Requested size: 238.49342pt x 238.87663pt.
  [6
 
@@ -1263,30 +1368,30 @@ put line 78.
 File: 02_09-10/images/intakesketch.png Graphic file (type png)
 <use 02_09-10/images/intakesketch.png>
 Package pdftex.def Info: 02_09-10/images/intakesketch.png  used on input line 1
-00.
+01.
 (pdftex.def)             Requested size: 238.49342pt x 134.14954pt.
  [7]
 <02_09-10/images/IMG_0256.JPG, id=36, 642.4pt x 481.8pt>
 File: 02_09-10/images/IMG_0256.JPG Graphic file (type jpg)
 <use 02_09-10/images/IMG_0256.JPG>
-Package pdftex.def Info: 02_09-10/images/IMG_0256.JPG  used on input line 115.
+Package pdftex.def Info: 02_09-10/images/IMG_0256.JPG  used on input line 116.
 (pdftex.def)             Requested size: 238.49342pt x 178.86604pt.
  [8 <./02_09-10/images/intakesketch.png>]
 <02_09-10/images/jiradash.png, id=41, 1010.27437pt x 446.41782pt>
 File: 02_09-10/images/jiradash.png Graphic file (type png)
 <use 02_09-10/images/jiradash.png>
-Package pdftex.def Info: 02_09-10/images/jiradash.png  used on input line 136.
+Package pdftex.def Info: 02_09-10/images/jiradash.png  used on input line 137.
 (pdftex.def)             Requested size: 238.49342pt x 105.38503pt.
  [9 <./02_09-10/images/IMG_0256.JPG> <./02_09-10/images/jiradash.png>]
 <03_09-17/images/IMG_0262.JPG, id=45, 642.4pt x 481.8pt>
 File: 03_09-17/images/IMG_0262.JPG Graphic file (type jpg)
 <use 03_09-17/images/IMG_0262.JPG>
-Package pdftex.def Info: 03_09-17/images/IMG_0262.JPG  used on input line 147.
+Package pdftex.def Info: 03_09-17/images/IMG_0262.JPG  used on input line 148.
 (pdftex.def)             Requested size: 238.49342pt x 178.86604pt.
  [10
 
  <./03_09-17/images/IMG_0262.JPG>]
-Overfull \hbox (1.45528pt too wide) in paragraph at lines 165--167
+Overfull \hbox (1.45528pt too wide) in paragraph at lines 166--168
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -1296,30 +1401,30 @@ Overfull \hbox (1.45528pt too wide) in paragraph at lines 165--167
 <04_09-24/images/sorter.jpg, id=53, 3276.24pt x 2457.18pt>
 File: 04_09-24/images/sorter.jpg Graphic file (type jpg)
 <use 04_09-24/images/sorter.jpg>
-Package pdftex.def Info: 04_09-24/images/sorter.jpg  used on input line 186.
+Package pdftex.def Info: 04_09-24/images/sorter.jpg  used on input line 187.
 (pdftex.def)             Requested size: 238.49342pt x 178.844pt.
 <04_09-24/images/sorter2.png, id=54, 879.285pt x 1038.12843pt>
 File: 04_09-24/images/sorter2.png Graphic file (type png)
 <use 04_09-24/images/sorter2.png>
-Package pdftex.def Info: 04_09-24/images/sorter2.png  used on input line 193.
+Package pdftex.def Info: 04_09-24/images/sorter2.png  used on input line 194.
 (pdftex.def)             Requested size: 238.49342pt x 281.56566pt.
 <04_09-24/images/lift.jpg, id=55, 2457.18pt x 3276.24pt>
 File: 04_09-24/images/lift.jpg Graphic file (type jpg)
 <use 04_09-24/images/lift.jpg>
-Package pdftex.def Info: 04_09-24/images/lift.jpg  used on input line 203.
+Package pdftex.def Info: 04_09-24/images/lift.jpg  used on input line 204.
 (pdftex.def)             Requested size: 298.11374pt x 397.4811pt.
  [12 <./04_09-24/images/sorter.jpg>] [13 <./04_09-24/images/sorter2.png>]
 <04_09-24/images/math.jpg, id=63, 3276.24pt x 2457.18pt>
 File: 04_09-24/images/math.jpg Graphic file (type jpg)
 <use 04_09-24/images/math.jpg>
-Package pdftex.def Info: 04_09-24/images/math.jpg  used on input line 214.
+Package pdftex.def Info: 04_09-24/images/math.jpg  used on input line 215.
 (pdftex.def)             Requested size: 397.485pt x 298.11081pt.
 
 [14] [15 <./04_09-24/images/lift.jpg>] [16 <./04_09-24/images/math.jpg>]
 <05_10-01/images/cube.jpg, id=73, 2423.0525pt x 2407.99625pt>
 File: 05_10-01/images/cube.jpg Graphic file (type jpg)
 <use 05_10-01/images/cube.jpg>
-Package pdftex.def Info: 05_10-01/images/cube.jpg  used on input line 249.
+Package pdftex.def Info: 05_10-01/images/cube.jpg  used on input line 250.
 (pdftex.def)             Requested size: 238.49342pt x 236.99245pt.
 
 [17
@@ -1328,7 +1433,7 @@ Package pdftex.def Info: 05_10-01/images/cube.jpg  used on input line 249.
 <05_10-01/images/xrail.jpg, id=80, 3276.24pt x 2457.18pt>
 File: 05_10-01/images/xrail.jpg Graphic file (type jpg)
 <use 05_10-01/images/xrail.jpg>
-Package pdftex.def Info: 05_10-01/images/xrail.jpg  used on input line 267.
+Package pdftex.def Info: 05_10-01/images/xrail.jpg  used on input line 268.
 (pdftex.def)             Requested size: 238.49342pt x 178.844pt.
  [19 <./05_10-01/images/xrail.jpg>]
 [20
@@ -1337,30 +1442,30 @@ Package pdftex.def Info: 05_10-01/images/xrail.jpg  used on input line 267.
 <06_10-08/images/latch1.JPG, id=91, 642.4pt x 481.8pt>
 File: 06_10-08/images/latch1.JPG Graphic file (type jpg)
 <use 06_10-08/images/latch1.JPG>
-Package pdftex.def Info: 06_10-08/images/latch1.JPG  used on input line 369.
+Package pdftex.def Info: 06_10-08/images/latch1.JPG  used on input line 370.
 (pdftex.def)             Requested size: 238.49342pt x 178.86604pt.
 <06_10-08/images/latch.png, id=92, 1927.2pt x 1084.05pt>
 File: 06_10-08/images/latch.png Graphic file (type png)
 <use 06_10-08/images/latch.png>
-Package pdftex.def Info: 06_10-08/images/latch.png  used on input line 376.
+Package pdftex.def Info: 06_10-08/images/latch.png  used on input line 377.
 (pdftex.def)             Requested size: 238.49342pt x 134.14954pt.
  [22] [23 <./06_10-08/images/latch1.JPG> <./06_10-08/images/latch.png>]
 <06_10-08/images/robot[1].png, id=100, 1445.4pt x 813.0375pt>
 File: 06_10-08/images/robot[1].png Graphic file (type png)
 <use 06_10-08/images/robot[1].png>
-Package pdftex.def Info: 06_10-08/images/robot[1].png  used on input line 387.
+Package pdftex.def Info: 06_10-08/images/robot[1].png  used on input line 388.
 (pdftex.def)             Requested size: 238.49342pt x 134.1454pt.
  [24 <./06_10-08/images/robot[1].png>]
 <07_10-15/images/REAL_anvil_marker.png, id=104, 507.39563pt x 377.15906pt>
 File: 07_10-15/images/REAL_anvil_marker.png Graphic file (type png)
 <use 07_10-15/images/REAL_anvil_marker.png>
 Package pdftex.def Info: 07_10-15/images/REAL_anvil_marker.png  used on input l
-ine 397.
+ine 398.
 (pdftex.def)             Requested size: 238.49342pt x 177.27629pt.
 <07_10-15/images/IntakeCAD.png, id=105, 435.12563pt x 291.33844pt>
 File: 07_10-15/images/IntakeCAD.png Graphic file (type png)
 <use 07_10-15/images/IntakeCAD.png>
-Package pdftex.def Info: 07_10-15/images/IntakeCAD.png  used on input line 408.
+Package pdftex.def Info: 07_10-15/images/IntakeCAD.png  used on input line 409.
 
 (pdftex.def)             Requested size: 238.49342pt x 159.6854pt.
  [25
@@ -1369,467 +1474,501 @@ Package pdftex.def Info: 07_10-15/images/IntakeCAD.png  used on input line 408.
 <07_10-15/images/drivetrain.JPG, id=110, 4047.12pt x 3035.34pt>
 File: 07_10-15/images/drivetrain.JPG Graphic file (type jpg)
 <use 07_10-15/images/drivetrain.JPG>
-Package pdftex.def Info: 07_10-15/images/drivetrain.JPG  used on input line 423
+Package pdftex.def Info: 07_10-15/images/drivetrain.JPG  used on input line 424
 .
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
  [26 <./07_10-15/images/IntakeCAD.png> <./07_10-15/images/drivetrain.JPG>]
 <07_10-15/images/budget.JPG, id=114, 3035.34pt x 4047.12pt>
 File: 07_10-15/images/budget.JPG Graphic file (type jpg)
 <use 07_10-15/images/budget.JPG>
-Package pdftex.def Info: 07_10-15/images/budget.JPG  used on input line 437.
+Package pdftex.def Info: 07_10-15/images/budget.JPG  used on input line 438.
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
 <07_10-15/images/letters.jpg, id=115, 3035.34pt x 4047.12pt>
 File: 07_10-15/images/letters.jpg Graphic file (type jpg)
 <use 07_10-15/images/letters.jpg>
-Package pdftex.def Info: 07_10-15/images/letters.jpg  used on input line 448.
+Package pdftex.def Info: 07_10-15/images/letters.jpg  used on input line 449.
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
  [27] [28 <./07_10-15/images/budget.JPG>] [29 <./07_10-15/images/letters.jpg>]
 <08_10-22/images/IMG_0330.JPG, id=125, 4047.12pt x 3035.34pt>
 File: 08_10-22/images/IMG_0330.JPG Graphic file (type jpg)
 <use 08_10-22/images/IMG_0330.JPG>
-Package pdftex.def Info: 08_10-22/images/IMG_0330.JPG  used on input line 468.
+Package pdftex.def Info: 08_10-22/images/IMG_0330.JPG  used on input line 469.
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
  [30
 
  <./08_10-22/images/IMG_0330.JPG>] [31]
-<09_10-29/images/anvil_marker.jpg, id=133, 2842.62pt x 1760.5775pt>
+Overfull \hbox (5.98636pt too wide) in paragraph at lines 481--482
+[]\OT1/cmr/m/n/10 To re-solve this, Kelly cre-ated two new classes, a \OT1/cmtt
+/m/n/10 Waypoint \OT1/cmr/m/n/10 class, and a \OT1/cmtt/m/n/10 TrajectoryBuilde
+r
+ []
+
+
+Overfull \hbox (4.48796pt too wide) in paragraph at lines 483--484
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][]
+ []
+
+[32
+
+]
+<09_10-29/images/anvil_marker.jpg, id=137, 2842.62pt x 1760.5775pt>
 File: 09_10-29/images/anvil_marker.jpg Graphic file (type jpg)
 <use 09_10-29/images/anvil_marker.jpg>
-Package pdftex.def Info: 09_10-29/images/anvil_marker.jpg  used on input line 4
-84.
+Package pdftex.def Info: 09_10-29/images/anvil_marker.jpg  used on input line 5
+05.
 (pdftex.def)             Requested size: 238.49342pt x 147.69945pt.
-<09_10-29/images/REAL_anvil_marker[1].png, id=134, 507.39563pt x 377.15906pt>
+<09_10-29/images/REAL_anvil_marker[1].png, id=138, 507.39563pt x 377.15906pt>
 File: 09_10-29/images/REAL_anvil_marker[1].png Graphic file (type png)
 <use 09_10-29/images/REAL_anvil_marker[1].png>
 Package pdftex.def Info: 09_10-29/images/REAL_anvil_marker[1].png  used on inpu
-t line 491.
+t line 512.
 (pdftex.def)             Requested size: 238.49342pt x 177.27629pt.
- [32
-
- <./09_10-29/images/anvil_marker.jpg> <./09_10-29/images/REAL_anvil_marker[1].p
-ng>]
-<09_10-29/images/bearingblock.JPG, id=138, 4047.12pt x 3035.34pt>
+<09_10-29/images/bearingblock.JPG, id=139, 4047.12pt x 3035.34pt>
 File: 09_10-29/images/bearingblock.JPG Graphic file (type jpg)
 <use 09_10-29/images/bearingblock.JPG>
 Package pdftex.def Info: 09_10-29/images/bearingblock.JPG  used on input line 5
-02.
+23.
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
- [33 <./09_10-29/images/bearingblock.JPG>] [34
+ [33 <./09_10-29/images/anvil_marker.jpg> <./09_10-29/images/REAL_anvil_marker[
+1].png>] [34 <./09_10-29/images/bearingblock.JPG>] [35
 
 ]
 
-LaTeX Warning: Reference `' on page C35 undefined on input line 564.
+LaTeX Warning: Reference `' on page C36 undefined on input line 585.
 
-<10_11-05/images/og_sorter[1].png, id=145, 980.91469pt x 1035.11719pt>
+<10_11-05/images/og_sorter[1].png, id=149, 980.91469pt x 1035.11719pt>
 File: 10_11-05/images/og_sorter[1].png Graphic file (type png)
 <use 10_11-05/images/og_sorter[1].png>
 Package pdftex.def Info: 10_11-05/images/og_sorter[1].png  used on input line 5
-68.
+89.
 (pdftex.def)             Requested size: 238.49342pt x 251.6711pt.
-<10_11-05/images/sorter.JPG, id=146, 4047.12pt x 3035.34pt>
+<10_11-05/images/sorter.JPG, id=150, 4047.12pt x 3035.34pt>
 File: 10_11-05/images/sorter.JPG Graphic file (type jpg)
 <use 10_11-05/images/sorter.JPG>
-Package pdftex.def Info: 10_11-05/images/sorter.JPG  used on input line 575.
+Package pdftex.def Info: 10_11-05/images/sorter.JPG  used on input line 596.
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
-[35 <./10_11-05/images/og_sorter[1].png>]
-<10_11-05/images/intake_shield.JPG, id=152, 4047.12pt x 3035.34pt>
+[36 <./10_11-05/images/og_sorter[1].png>]
+<10_11-05/images/intake_shield.JPG, id=155, 4047.12pt x 3035.34pt>
 File: 10_11-05/images/intake_shield.JPG Graphic file (type jpg)
 <use 10_11-05/images/intake_shield.JPG>
 Package pdftex.def Info: 10_11-05/images/intake_shield.JPG  used on input line 
-586.
+607.
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
-<10_11-05/images/drivetrain.JPG, id=153, 4047.12pt x 3035.34pt>
+<10_11-05/images/drivetrain.JPG, id=156, 4047.12pt x 3035.34pt>
 File: 10_11-05/images/drivetrain.JPG Graphic file (type jpg)
 <use 10_11-05/images/drivetrain.JPG>
-Package pdftex.def Info: 10_11-05/images/drivetrain.JPG  used on input line 597
+Package pdftex.def Info: 10_11-05/images/drivetrain.JPG  used on input line 618
 .
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
- [36 <./10_11-05/images/sorter.JPG>]
-[37 <./10_11-05/images/intake_shield.JPG> <./10_11-05/images/drivetrain.JPG>]
-<10_11-05/images/pit_board.jpg, id=161, 2578.63374pt x 2003.485pt>
+ [37 <./10_11-05/images/sorter.JPG>]
+[38 <./10_11-05/images/intake_shield.JPG> <./10_11-05/images/drivetrain.JPG>]
+<10_11-05/images/pit_board.jpg, id=164, 2578.63374pt x 2003.485pt>
 File: 10_11-05/images/pit_board.jpg Graphic file (type jpg)
 <use 10_11-05/images/pit_board.jpg>
-Package pdftex.def Info: 10_11-05/images/pit_board.jpg  used on input line 612.
+Package pdftex.def Info: 10_11-05/images/pit_board.jpg  used on input line 633.
 
 (pdftex.def)             Requested size: 238.49342pt x 185.2889pt.
 
-[38 <./10_11-05/images/pit_board.jpg>]
-<11_11-12/images/rake_slides.JPG, id=165, 4047.12pt x 3035.34pt>
+[39 <./10_11-05/images/pit_board.jpg>]
+<11_11-12/images/rake_slides.JPG, id=168, 4047.12pt x 3035.34pt>
 File: 11_11-12/images/rake_slides.JPG Graphic file (type jpg)
 <use 11_11-12/images/rake_slides.JPG>
-Package pdftex.def Info: 11_11-12/images/rake_slides.JPG  used on input line 62
-3.
+Package pdftex.def Info: 11_11-12/images/rake_slides.JPG  used on input line 64
+4.
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
- [39
+ [40
 
  <./11_11-12/images/rake_slides.JPG>]
-<11_11-12/images/rake.jpg, id=169, 3035.34pt x 2180.145pt>
+<11_11-12/images/rake.jpg, id=172, 3035.34pt x 2180.145pt>
 File: 11_11-12/images/rake.jpg Graphic file (type jpg)
 <use 11_11-12/images/rake.jpg>
-Package pdftex.def Info: 11_11-12/images/rake.jpg  used on input line 634.
+Package pdftex.def Info: 11_11-12/images/rake.jpg  used on input line 655.
 (pdftex.def)             Requested size: 238.49342pt x 171.28813pt.
-[40 <./11_11-12/images/rake.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 645--646
+[41 <./11_11-12/images/rake.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 649--650
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--652
+Underfull \hbox (badness 10000) in paragraph at lines 672--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--654
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 655--656
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
-[41
+[42
 
 ]
-<12_11-19/images/retrospective.JPG, id=176, 4047.12pt x 3035.34pt>
+<12_11-19/images/retrospective.JPG, id=179, 4047.12pt x 3035.34pt>
 File: 12_11-19/images/retrospective.JPG Graphic file (type jpg)
 <use 12_11-19/images/retrospective.JPG>
 Package pdftex.def Info: 12_11-19/images/retrospective.JPG  used on input line 
-665.
+686.
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
- [42 <./12_11-19/images/retrospective.JPG>] [43
+ [43 <./12_11-19/images/retrospective.JPG>] [44
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 695--696
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 697--698
+Underfull \hbox (badness 10000) in paragraph at lines 718--719
 
  []
 
-[44] [45]
-Underfull \hbox (badness 10000) in paragraph at lines 715--716
+[45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 717--718
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
-<14_12-03/images/cartridge1.JPG, id=195, 3035.34pt x 4047.12pt>
+<14_12-03/images/cartridge1.JPG, id=198, 3035.34pt x 4047.12pt>
 File: 14_12-03/images/cartridge1.JPG Graphic file (type jpg)
 <use 14_12-03/images/cartridge1.JPG>
-Package pdftex.def Info: 14_12-03/images/cartridge1.JPG  used on input line 724
+Package pdftex.def Info: 14_12-03/images/cartridge1.JPG  used on input line 745
 .
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
-<14_12-03/images/cartridge3.JPG, id=196, 3035.34pt x 4047.12pt>
+<14_12-03/images/cartridge3.JPG, id=199, 3035.34pt x 4047.12pt>
 File: 14_12-03/images/cartridge3.JPG Graphic file (type jpg)
 <use 14_12-03/images/cartridge3.JPG>
-Package pdftex.def Info: 14_12-03/images/cartridge3.JPG  used on input line 731
+Package pdftex.def Info: 14_12-03/images/cartridge3.JPG  used on input line 752
 .
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
-[46
+[47
 
-] [47 <./14_12-03/images/cartridge1.JPG>] [48 <./14_12-03/images/cartridge3.JPG
+] [48 <./14_12-03/images/cartridge1.JPG>] [49 <./14_12-03/images/cartridge3.JPG
 >]
-<14_12-03/images/Math.jpg, id=206, 2615.7725pt x 2142.0025pt>
+<14_12-03/images/Math.jpg, id=210, 2615.7725pt x 2142.0025pt>
 File: 14_12-03/images/Math.jpg Graphic file (type jpg)
 <use 14_12-03/images/Math.jpg>
-Package pdftex.def Info: 14_12-03/images/Math.jpg  used on input line 747.
+Package pdftex.def Info: 14_12-03/images/Math.jpg  used on input line 768.
 (pdftex.def)             Requested size: 238.49342pt x 195.28859pt.
-<14_12-03/images/Stress_Analysis.png, id=207, 1028.34187pt x 545.78906pt>
+<14_12-03/images/Stress_Analysis.png, id=211, 1028.34187pt x 545.78906pt>
 File: 14_12-03/images/Stress_Analysis.png Graphic file (type png)
 <use 14_12-03/images/Stress_Analysis.png>
 Package pdftex.def Info: 14_12-03/images/Stress_Analysis.png  used on input lin
-e 754.
+e 775.
 (pdftex.def)             Requested size: 238.49342pt x 126.57817pt.
- [49 <./14_12-03/images/Math.jpg> <./14_12-03/images/Stress_Analysis.png>]
-<14_12-03/images/IMG_0422.JPG, id=213, 642.4pt x 481.8pt>
+ [50 <./14_12-03/images/Math.jpg> <./14_12-03/images/Stress_Analysis.png>]
+<14_12-03/images/IMG_0422.JPG, id=217, 642.4pt x 481.8pt>
 File: 14_12-03/images/IMG_0422.JPG Graphic file (type jpg)
 <use 14_12-03/images/IMG_0422.JPG>
-Package pdftex.def Info: 14_12-03/images/IMG_0422.JPG  used on input line 763.
+Package pdftex.def Info: 14_12-03/images/IMG_0422.JPG  used on input line 784.
 (pdftex.def)             Requested size: 238.49342pt x 178.86604pt.
-[50 <./14_12-03/images/IMG_0422.JPG>]
-<15_12-10/images/console.png, id=218, 785.18344pt x 441.90094pt>
+[51 <./14_12-03/images/IMG_0422.JPG>]
+<15_12-10/images/console.png, id=221, 785.18344pt x 441.90094pt>
 File: 15_12-10/images/console.png Graphic file (type png)
 <use 15_12-10/images/console.png>
-Package pdftex.def Info: 15_12-10/images/console.png  used on input line 776.
+Package pdftex.def Info: 15_12-10/images/console.png  used on input line 797.
 (pdftex.def)             Requested size: 238.49342pt x 134.2233pt.
-<15_12-10/images/Diverter.jpg, id=219, 3035.34pt x 4047.12pt>
+<15_12-10/images/Diverter.jpg, id=222, 3035.34pt x 4047.12pt>
 File: 15_12-10/images/Diverter.jpg Graphic file (type jpg)
 <use 15_12-10/images/Diverter.jpg>
-Package pdftex.def Info: 15_12-10/images/Diverter.jpg  used on input line 786.
+Package pdftex.def Info: 15_12-10/images/Diverter.jpg  used on input line 807.
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
- [51
+ [52
 
  <./15_12-10/images/console.png>]
-[52 <./15_12-10/images/Diverter.jpg>]
-<15_12-10/images/IMG_8107[1].jpg, id=227, 3035.34pt x 4047.12pt>
+[53 <./15_12-10/images/Diverter.jpg>]
+<15_12-10/images/IMG_8107[1].jpg, id=230, 3035.34pt x 4047.12pt>
 File: 15_12-10/images/IMG_8107[1].jpg Graphic file (type jpg)
 <use 15_12-10/images/IMG_8107[1].jpg>
-Package pdftex.def Info: 15_12-10/images/IMG_8107[1].jpg  used on input line 79
-7.
+Package pdftex.def Info: 15_12-10/images/IMG_8107[1].jpg  used on input line 81
+8.
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
- [53 <./15_12-10/images/IMG_8107[1].jpg>]
+ [54 <./15_12-10/images/IMG_8107[1].jpg>]
 PGFPlots: reading {16_12-17/lift.csv}
 
-[54
+[55
 
 ]
-<16_12-17/images/gate.jpg, id=234, 3035.34pt x 4047.12pt>
+<16_12-17/images/gate.jpg, id=238, 3035.34pt x 4047.12pt>
 File: 16_12-17/images/gate.jpg Graphic file (type jpg)
 <use 16_12-17/images/gate.jpg>
-Package pdftex.def Info: 16_12-17/images/gate.jpg  used on input line 828.
+Package pdftex.def Info: 16_12-17/images/gate.jpg  used on input line 849.
 (pdftex.def)             Requested size: 128.01604pt x 170.71652pt.
- [55 <./16_12-17/images/gate.jpg>]
-<16_12-17/images/x-rail_mount.JPG, id=239, 642.4pt x 481.8pt>
+ [56 <./16_12-17/images/gate.jpg>]
+<16_12-17/images/x-rail_mount.JPG, id=242, 642.4pt x 481.8pt>
 File: 16_12-17/images/x-rail_mount.JPG Graphic file (type jpg)
 <use 16_12-17/images/x-rail_mount.JPG>
 Package pdftex.def Info: 16_12-17/images/x-rail_mount.JPG  used on input line 8
-39.
+60.
 (pdftex.def)             Requested size: 227.6174pt x 170.71652pt.
-<16_12-17/images/mount_proto.JPG, id=240, 642.4pt x 481.8pt>
+<16_12-17/images/mount_proto.JPG, id=243, 642.4pt x 481.8pt>
 File: 16_12-17/images/mount_proto.JPG Graphic file (type jpg)
 <use 16_12-17/images/mount_proto.JPG>
-Package pdftex.def Info: 16_12-17/images/mount_proto.JPG  used on input line 84
-6.
+Package pdftex.def Info: 16_12-17/images/mount_proto.JPG  used on input line 86
+7.
 (pdftex.def)             Requested size: 227.6174pt x 170.71652pt.
- [56 <./16_12-17/images/x-rail_mount.JPG>] [57 <./16_12-17/images/mount_proto.J
+ [57 <./16_12-17/images/x-rail_mount.JPG>] [58 <./16_12-17/images/mount_proto.J
 PG>]
 PGFPlots: reading {17_12-24/fftuner.csv}
- [58
+ [59
 
-] [59] [60]
+] [60] [61]
 
 LaTeX Warning: File `18_12-31/images/X-Rail Mount.JPG' not found on input line 
-911.
+932.
 
-<18_12-31/images/X-Rail Mount.JPG, id=256, 642.4pt x 481.8pt>
+<18_12-31/images/X-Rail Mount.JPG, id=260, 642.4pt x 481.8pt>
 File: 18_12-31/images/X-Rail Mount.JPG Graphic file (type jpg)
 <use 18_12-31/images/X-Rail Mount.JPG>
 Package pdftex.def Info: 18_12-31/images/X-Rail Mount.JPG  used on input line 9
-11.
+32.
 (pdftex.def)             Requested size: 227.6174pt x 170.71652pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 923--924
+Underfull \hbox (badness 10000) in paragraph at lines 944--945
 
  []
 
-[61
+[62
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 925--926
+Underfull \hbox (badness 10000) in paragraph at lines 946--947
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 927--928
+Underfull \hbox (badness 10000) in paragraph at lines 948--949
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 929--930
+Underfull \hbox (badness 10000) in paragraph at lines 950--951
 
  []
 
-[62 <./18_12-31/images/X-Rail Mount.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 935--936
+[63 <./18_12-31/images/X-Rail Mount.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 956--957
 
  []
 
-<19_01-07/images/DiverterAngleCut.jpg, id=264, 3035.34pt x 4047.12pt>
+<19_01-07/images/DiverterAngleCut.jpg, id=267, 3035.34pt x 4047.12pt>
 File: 19_01-07/images/DiverterAngleCut.jpg Graphic file (type jpg)
 <use 19_01-07/images/DiverterAngleCut.jpg>
 Package pdftex.def Info: 19_01-07/images/DiverterAngleCut.jpg  used on input li
-ne 948.
+ne 969.
 (pdftex.def)             Requested size: 128.01604pt x 170.71652pt.
-[63
+[64
 
-] [64 <./19_01-07/images/DiverterAngleCut.jpg>]
+] [65 <./19_01-07/images/DiverterAngleCut.jpg>]
 PGFPlots: reading {20_01-14/linearization.csv}
- [65
+ [66
 
 ]
-<20_01-14/images/markerplacer.JPG, id=274, 3035.34pt x 4047.12pt>
+<20_01-14/images/markerplacer.JPG, id=277, 3035.34pt x 4047.12pt>
 File: 20_01-14/images/markerplacer.JPG Graphic file (type jpg)
 <use 20_01-14/images/markerplacer.JPG>
-Package pdftex.def Info: 20_01-14/images/markerplacer.JPG  used on input line 9
-79.
+Package pdftex.def Info: 20_01-14/images/markerplacer.JPG  used on input line 1
+000.
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
-<20_01-14/images/wiring.jpg, id=275, 3035.34pt x 2777.37625pt>
+<20_01-14/images/wiring.jpg, id=278, 3035.34pt x 2777.37625pt>
 File: 20_01-14/images/wiring.jpg Graphic file (type jpg)
 <use 20_01-14/images/wiring.jpg>
-Package pdftex.def Info: 20_01-14/images/wiring.jpg  used on input line 990.
+Package pdftex.def Info: 20_01-14/images/wiring.jpg  used on input line 1011.
 (pdftex.def)             Requested size: 238.49342pt x 218.21098pt.
- [66] [67 <./20_01-14/images/markerplacer.JPG>] [68 <./20_01-14/images/wiring.j
+ [67] [68 <./20_01-14/images/markerplacer.JPG>] [69 <./20_01-14/images/wiring.j
 pg>]
-<21_01-21/images/tubing.JPG, id=286, 3035.34pt x 4047.12pt>
+<21_01-21/images/tubing.JPG, id=289, 3035.34pt x 4047.12pt>
 File: 21_01-21/images/tubing.JPG Graphic file (type jpg)
 <use 21_01-21/images/tubing.JPG>
-Package pdftex.def Info: 21_01-21/images/tubing.JPG  used on input line 1001.
+Package pdftex.def Info: 21_01-21/images/tubing.JPG  used on input line 1022.
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
- [69
+ [70
 
  <./21_01-21/images/tubing.JPG>]
-<21_01-21/images/liftskids.JPG, id=290, 3035.34pt x 4047.12pt>
+<21_01-21/images/liftskids.JPG, id=293, 3035.34pt x 4047.12pt>
 File: 21_01-21/images/liftskids.JPG Graphic file (type jpg)
 <use 21_01-21/images/liftskids.JPG>
-Package pdftex.def Info: 21_01-21/images/liftskids.JPG  used on input line 1012
+Package pdftex.def Info: 21_01-21/images/liftskids.JPG  used on input line 1033
 .
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1021
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1042
 .
  (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1021.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1042.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1026--1027
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1028--1029
-
- []
-
-[70] [71 <./21_01-21/images/liftskids.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1034--1035
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1048
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1050
 
  []
 
-<22_01-28/images/double.png, id=297, 1290.8225pt x 1290.8225pt>
+[71] [72 <./21_01-21/images/liftskids.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1056
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1058
+
+ []
+
+<22_01-28/images/double.png, id=300, 1290.8225pt x 1290.8225pt>
 File: 22_01-28/images/double.png Graphic file (type png)
 <use 22_01-28/images/double.png>
-Package pdftex.def Info: 22_01-28/images/double.png  used on input line 1045.
+Package pdftex.def Info: 22_01-28/images/double.png  used on input line 1066.
 (pdftex.def)             Requested size: 238.49342pt x 238.48328pt.
-[72
+[73
 
-] [73 <./22_01-28/images/double.png>]
-<23_02-04/images/IMG_1512.JPG, id=306, 4047.12pt x 3035.34pt>
+] [74 <./22_01-28/images/double.png>]
+<23_02-04/images/IMG_1512.JPG, id=309, 4047.12pt x 3035.34pt>
 File: 23_02-04/images/IMG_1512.JPG Graphic file (type jpg)
 <use 23_02-04/images/IMG_1512.JPG>
-Package pdftex.def Info: 23_02-04/images/IMG_1512.JPG  used on input line 1064.
+Package pdftex.def Info: 23_02-04/images/IMG_1512.JPG  used on input line 1085.
 
 (pdftex.def)             Requested size: 238.49342pt x 178.82414pt.
- [74
+ [75
 
  <./23_02-04/images/IMG_1512.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1073--1074
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1095
 
  []
 
-<24_02-11/images/sketchofUI.JPG, id=310, 3035.34pt x 4047.12pt>
+<24_02-11/images/sketchofUI.JPG, id=313, 3035.34pt x 4047.12pt>
 File: 24_02-11/images/sketchofUI.JPG Graphic file (type jpg)
 <use 24_02-11/images/sketchofUI.JPG>
-Package pdftex.def Info: 24_02-11/images/sketchofUI.JPG  used on input line 107
-7.
+Package pdftex.def Info: 24_02-11/images/sketchofUI.JPG  used on input line 109
+8.
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1082--1083
+Underfull \hbox (badness 10000) in paragraph at lines 1103--1104
 
  []
 
-[75
+[76
 
  <./24_02-11/images/sketchofUI.JPG>]
-<24_02-11/images/prescoutingapp.png, id=314, 739.26187pt x 545.78906pt>
+<24_02-11/images/prescoutingapp.png, id=317, 739.26187pt x 545.78906pt>
 File: 24_02-11/images/prescoutingapp.png Graphic file (type png)
 <use 24_02-11/images/prescoutingapp.png>
 Package pdftex.def Info: 24_02-11/images/prescoutingapp.png  used on input line
- 1088.
+ 1109.
 (pdftex.def)             Requested size: 238.49342pt x 176.07182pt.
- [76 <./24_02-11/images/prescoutingapp.png>] [77]
-<24_02-11/images/intakewhips.JPG, id=321, 3035.34pt x 4047.12pt>
+ [77 <./24_02-11/images/prescoutingapp.png>] [78]
+<24_02-11/images/intakewhips.JPG, id=324, 3035.34pt x 4047.12pt>
 File: 24_02-11/images/intakewhips.JPG Graphic file (type jpg)
 <use 24_02-11/images/intakewhips.JPG>
 Package pdftex.def Info: 24_02-11/images/intakewhips.JPG  used on input line 11
-47.
+68.
 (pdftex.def)             Requested size: 238.49342pt x 317.97134pt.
-<24_02-11/images/PullUpBlock1.PNG, id=322, 305.64188pt x 299.61937pt>
+<24_02-11/images/PullUpBlock1.PNG, id=325, 305.64188pt x 299.61937pt>
 File: 24_02-11/images/PullUpBlock1.PNG Graphic file (type png)
 <use 24_02-11/images/PullUpBlock1.PNG>
 Package pdftex.def Info: 24_02-11/images/PullUpBlock1.PNG  used on input line 1
-164.
+185.
 (pdftex.def)             Requested size: 101.58499pt x 99.58464pt.
-<24_02-11/images/PullUp2.PNG, id=323, 372.64218pt x 274.02374pt>
+<24_02-11/images/PullUp2.PNG, id=326, 372.64218pt x 274.02374pt>
 File: 24_02-11/images/PullUp2.PNG Graphic file (type png)
 <use 24_02-11/images/PullUp2.PNG>
-Package pdftex.def Info: 24_02-11/images/PullUp2.PNG  used on input line 1171.
+Package pdftex.def Info: 24_02-11/images/PullUp2.PNG  used on input line 1192.
 (pdftex.def)             Requested size: 135.42476pt x 99.58464pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[78] [79 <./24_02-11/images/intakewhips.JPG>] [80 <./24_02-11/images/PullUpBloc
+[79] [80 <./24_02-11/images/intakewhips.JPG>] [81 <./24_02-11/images/PullUpBloc
 k1.PNG> <./24_02-11/images/PullUp2.PNG>]
-<25_02-18/images/Arm.jpg, id=336, 2457.18pt x 3276.24pt>
+<25_02-18/images/Arm.jpg, id=339, 2457.18pt x 3276.24pt>
 File: 25_02-18/images/Arm.jpg Graphic file (type jpg)
 <use 25_02-18/images/Arm.jpg>
-Package pdftex.def Info: 25_02-18/images/Arm.jpg  used on input line 1194.
+Package pdftex.def Info: 25_02-18/images/Arm.jpg  used on input line 1215.
 (pdftex.def)             Requested size: 198.7425pt x 264.95406pt.
-<25_02-18/images/phoneMount.png, id=337, 1445.4pt x 813.0375pt>
-File: 25_02-18/images/phoneMount.png Graphic file (type png)
-<use 25_02-18/images/phoneMount.png>
-Package pdftex.def Info: 25_02-18/images/phoneMount.png  used on input line 120
-1.
+<25_02-18/images/phonemount.png, id=340, 1445.4pt x 813.0375pt>
+File: 25_02-18/images/phonemount.png Graphic file (type png)
+<use 25_02-18/images/phonemount.png>
+Package pdftex.def Info: 25_02-18/images/phonemount.png  used on input line 122
+2.
 (pdftex.def)             Requested size: 198.7425pt x 111.7899pt.
- [81
+ [82
 
  <./25_02-18/images/Arm.jpg>]
-<25_02-18/images/machining.JPG, id=341, 4047.12pt x 3035.34pt>
+<25_02-18/images/machining.JPG, id=344, 4047.12pt x 3035.34pt>
 File: 25_02-18/images/machining.JPG Graphic file (type jpg)
 <use 25_02-18/images/machining.JPG>
-Package pdftex.def Info: 25_02-18/images/machining.JPG  used on input line 1229
+Package pdftex.def Info: 25_02-18/images/machining.JPG  used on input line 1250
 .
 (pdftex.def)             Requested size: 198.7425pt x 149.04327pt.
 
-[82 <./25_02-18/images/phoneMount.png>] [83 <./25_02-18/images/machining.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1246--1247
+[83 <./25_02-18/images/phoneMount.png>] [84 <./25_02-18/images/machining.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1267--1268
 
  []
 
-[84
+[85
+
+] [86] [87
 
 ]
-<26_02-25/images/PullUpRun2.jpg, id=351, 3035.34pt x 4047.12pt>
-File: 26_02-25/images/PullUpRun2.jpg Graphic file (type jpg)
-<use 26_02-25/images/PullUpRun2.jpg>
-Package pdftex.def Info: 26_02-25/images/PullUpRun2.jpg  used on input line 126
-7.
+Overfull \hbox (1.45528pt too wide) in paragraph at lines 1333--1334
+[][][][][][][][][][][][][][][][][][]  
+ []
+
+[88] [89
+
+] [90] [91] [92
+
+]
+Overfull \hbox (6.04681pt too wide) in paragraph at lines 1468--1469
+\OT1/cmr/m/n/10 there is only one en-coder be-tween the two lift mo-tors, it is
+ not safe to use \OT1/cmtt/m/n/10 RUN[]USING[]ENCODERS\OT1/cmr/m/n/10 ,
+ []
+
+<30_03-25/images/graph.png, id=377, 1171.37625pt x 795.97375pt>
+File: 30_03-25/images/graph.png Graphic file (type png)
+<use 30_03-25/images/graph.png>
+Package pdftex.def Info: 30_03-25/images/graph.png  used on input line 1492.
+(pdftex.def)             Requested size: 238.49342pt x 162.05827pt.
+[93
+
+] [94 <./30_03-25/images/graph.png>] [95
+
+]
+<32_04-08/images/ashlinmachining.jpg, id=387, 3035.34pt x 4047.12pt>
+File: 32_04-08/images/ashlinmachining.jpg Graphic file (type jpg)
+<use 32_04-08/images/ashlinmachining.jpg>
+Package pdftex.def Info: 32_04-08/images/ashlinmachining.jpg  used on input lin
+e 1524.
 (pdftex.def)             Requested size: 198.7425pt x 264.9864pt.
- [85 <./26_02-25/images/PullUpRun2.jpg>]
-<26_02-25/images/Bracket.jpg, id=356, 2218.2875pt x 1658.195pt>
-File: 26_02-25/images/Bracket.jpg Graphic file (type jpg)
-<use 26_02-25/images/Bracket.jpg>
-Package pdftex.def Info: 26_02-25/images/Bracket.jpg  used on input line 1279.
-(pdftex.def)             Requested size: 198.7425pt x 148.54796pt.
- [86 <./26_02-25/images/Bracket.jpg>] (./notebook.aux)
+ [96
+
+ <./32_04-08/images/ashlinmachining.jpg>] (./notebook.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1838,10 +1977,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 26525 strings out of 492616
- 651584 string characters out of 6135178
- 2434704 words of memory out of 5000000
- 29931 multiletter control sequences out of 15000+600000
+ 26722 strings out of 492616
+ 654687 string characters out of 6135178
+ 2435564 words of memory out of 5000000
+ 30126 multiletter control sequences out of 15000+600000
  6246 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,103p,2811b,2002s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1855,10 +1994,10 @@ st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on notebook.pdf (86 pages, 86386253 bytes).
+Output written on notebook.pdf (96 pages, 85814670 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
+ 434 PDF objects out of 1000 (max. 8388607)
+ 253 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -200,6 +200,8 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+INPUT /usr/share/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/share/texmf-dist/tex/latex/listings/listings.sty
 INPUT /usr/share/texmf-dist/tex/latex/listings/listings.sty
 INPUT /usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
@@ -312,6 +314,7 @@ INPUT ./07_10-15/images/letters.jpg
 INPUT 08_10-22/images/IMG_0330.JPG
 INPUT ./08_10-22/images/IMG_0330.JPG
 INPUT ./08_10-22/images/IMG_0330.JPG
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT 09_10-29/images/anvil_marker.jpg
 INPUT ./09_10-29/images/anvil_marker.jpg
 INPUT ./09_10-29/images/anvil_marker.jpg
@@ -321,7 +324,6 @@ INPUT ./09_10-29/images/REAL_anvil_marker[1].png
 INPUT 09_10-29/images/bearingblock.JPG
 INPUT ./09_10-29/images/bearingblock.JPG
 INPUT ./09_10-29/images/bearingblock.JPG
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT 10_11-05/images/og_sorter[1].png
 INPUT ./10_11-05/images/og_sorter[1].png
 INPUT ./10_11-05/images/og_sorter[1].png
@@ -431,12 +433,12 @@ INPUT ./25_02-18/images/phoneMount.png
 INPUT 25_02-18/images/machining.JPG
 INPUT ./25_02-18/images/machining.JPG
 INPUT ./25_02-18/images/machining.JPG
-INPUT 26_02-25/images/PullUpRun2.jpg
-INPUT ./26_02-25/images/PullUpRun2.jpg
-INPUT ./26_02-25/images/PullUpRun2.jpg
-INPUT 26_02-25/images/Bracket.jpg
-INPUT ./26_02-25/images/Bracket.jpg
-INPUT ./26_02-25/images/Bracket.jpg
+INPUT 30_03-25/images/graph.png
+INPUT ./30_03-25/images/graph.png
+INPUT ./30_03-25/images/graph.png
+INPUT 32_04-08/images/ashlinmachining.jpg
+INPUT ./32_04-08/images/ashlinmachining.jpg
+INPUT ./32_04-08/images/ashlinmachining.jpg
 INPUT notebook.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
