@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{rotating}
 \usepackage{pgfplots}
+\usepackage{subcaption}
 
 \usepackage{listings}
 \usepackage{color}

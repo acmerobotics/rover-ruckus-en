@@ -1,0 +1,156 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+
+\subsubsection{Refactor Auto Actions}
+%!refactor auto actions
+Kelly decided to refactor how actions were handled in autonomous to make it easier to have actions be triggered when certain conditions were met, or to have actions triggered by passing waypoints in trajectories. Because of the way the robot state machine works, all mutation functions within subsystems are non-blocking, they update the state of the subsystem but they do not actualy update the hardware. For the hardware to be updated, the \texttt{Robot\#update()} function must be called. This allows for easy code reuse between auto and teleop, subsystem mutator functions are called to trigger actions, either when a button is pressed during teleop or sequentialy during auto, and then the update function is repeatedly called. In auto, execution is controlled by having subsystems return whether they should currently be blocking new commands, and then waiting for all subsystems to stop blocking before starting the next operations. This provides an easy way to start several actions and then wait for them all to complete, or to preform one action after the next. For example, in the beginning of auto the first step is to call \texttt{Lift\#lower()}, which puts the lift into lowering mode. Then \texttt{Robot\#waitForAllSubsystems()} is called, which continually updates the robot until all subsystems cease blocking. Once the robot reaches the ground as detected by the sensor on the bottom of the robot, the lift switches into the finding latch mode, which uses a hall effect sensor to move the frame into a position that allows the robot to disengage from the latch. Once the lift has disengaged from the latch, the lift stops blocking, which allows the next action in the autonomous routine to execute, which is a trajectory that rotates the robot out from the latch. After this trajectory completes, the next trajectory is started, and the lift is told to lower and calibrate, which is not a blocking action and will happen asynchronously while the rest of auto runs. 
+
+This system breaks down then a action needs to be triggered partway through another action. If it is something within a subsystem, e.g. moving a servo to a position to clear an obstacle when the lift reaches a particular height, it is easy to implement within that subsystem, but for an action to be triggered partway through a trajectory, for example to begin extending the rake before reaching the end, a larger restructuring was necessary. Kelly added an \texttt{AutoAction} interface to facilitate triggering actions. All auto actions are defined in the \texttt{AutoOpMode} class, which is an abstract class that handles things that are common to all auto routines, and are declared like such:
+
+\begin{lstlisting}[language=Java] 
+    public AutoAction extendRake = () ->
+        setRakePosition(robot.config.getStartLocation() == StartLocation.CRATER
+                ? AutoPaths.RAKE_POSITION_CRATER
+                : AutoPaths.RAKE_POSITION_DEPOT);
+
+    public AutoAction deployMarker = () -> robot.intake.deployMarker();
+
+    public AutoAction retractRake = () -> {
+        robot.intake.setRakeRetractBlockingDistance(10);
+        robot.intake.retractRake();
+    };
+
+    public AutoAction startIntake = () -> robot.intake.setIntakePower(1);
+
+    public AutoAction reverseIntake = () -> robot.intake.setIntakePower(-1);
+
+    public AutoAction stopIntake = () -> {
+        robot.intake.setIntakePower(0);
+        robot.intake.groundIntakererIn();
+    };
+
+    public AutoAction groundIntake = () -> {
+        robot.intake.setIntakePower(.75);
+        robot.intake.groundIntakererOut();
+    };
+
+    public AutoAction blockingIntake = () -> robot.intake.intake();
+
+    public AutoAction raiseLift = () -> {
+        robot.lift.liftTop();
+        robot.lift.setAsynch(false);
+    };
+
+\end{lstlisting}
+
+If a particular auto routine needs to change the behavior of an action, it can by overwriting the variable. When an opmode creates an instance of \texttt{AutoPathsBuilder} (the class that dynamically builds paths based on a configuration), it passes \texttt{this}, allowing the builder to add a the opmode's actions to the trajectories it builds. For example, this function constructs a set of trajectories to move the robot to its parking position. The intake is stopped after reaching the first waypoint, and intake is started when the end is reached. 
+
+\begin{lstlisting}[language=Java] 
+     public ArrayList<Trajectory> toPark () {
+        TrajectoryBuilder builder = getBuilder();
+        if (location != GoldLocation.LEFT) builder.to(PARK_CLEAR_ONE);
+        builder.to(PARK_CLEAR_TWO)
+            .addActionOnCompletion(opMode.stopIntake);
+            .turnTo(PI);
+            .to(park())
+            .addActionOnCompletion(opMode.blockingIntake);
+        lastPosition = park();
+        return builder.build();
+    }
+
+\end{lstlisting}
+
+This function constructs a set of paths that sample the second mineral in a double sampling routine. It demonstrates how multiple actions can be added to a single segment, and how actions can be added part way through a segment. In particular, passing a negative number to \texttt{addAction} will trigger the action the specified number of seconds before reaching the end of the trajectory. To ensure that actions are not triggered if the robot is horribly out of positoin, a trajectory will not trigger an action until both the time requirement is met, and the total tracking error is less than a specified threshold, currently at one inch. 
+\begin{lstlisting}[language=Java]
+    public SuperArrayList<Trajectory> toSampleSecond () {
+        TrajectoryBuilder builder = getBuilder();
+        if (location != GoldLocation.RIGHT) builder.to(SAMPLE_SECOND_CLEAR);
+        builder.to(sampleSecond());
+            .addAction(-2.5, opMode.retractRake)
+            .addAction(-2, opMode.groundIntake);
+            .addActionOnCompletion(opMode.extendRake);
+        lastPosition = sampleSecond();
+        return builder.buld();
+    }
+\end{lstlisting}
+
+This system allows autonomous routines to be declared very easily:
+\begin{lstlisting}[language=Java]
+@Autonomous(name="doubleSample")
+public class DoubleSampleAuto extends AutoOpMode {
+
+    @Override
+    protected void run() {
+        this.extendRake = () -> robot.intake.goToPosition(30);
+        
+        AutoPaths paths = new AutoPaths(this, goldLocation, startLocation);
+        
+        robot.drive.setCurrentEstimatedPose(paths.start().pos());
+        robot.drive.followTrajectories(paths.startToRelease());
+
+        robot.drive.followTrajectories(paths.toSampleBoth());
+        
+        robot.intake.deployMarker();
+        robot.waitForAllSubsystems();
+        
+        robot.drive.followTrajectories(paths.toSampleBothReturn());
+        robot.pause(1000);
+        robot.drive.followTrajectories(paths.toIntake());
+    }
+}
+
+\end{lstlisting}
+
+\end{document}

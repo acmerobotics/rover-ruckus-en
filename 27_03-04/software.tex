@@ -1,0 +1,109 @@
+\documentclass{article}
+
+\usepackage[letterpaper, portrait, margin=1.5in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{rotating}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\setcounter{secnumdepth}{1}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\renewcommand*{\thepage}{C\arabic{page}}
+
+\pagestyle{fancy}
+\lhead{ACME Robotics}
+\chead{\#8367}
+\rhead{\ifcontents Contents \else Week \thesection \fi}
+
+\newif\ifcontents
+\contentstrue
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\begin{document}
+
+\subsubsection{Switch to Camera 2}
+%! switch to camera 2
+Until now the vision processing code for detecting the location of the gold mineral in the sampling field had used an outdated API for accessing the camera on the phone. As a result, camera code was unstable, and was prone to occasional random crashes, and would sometimes freeze and stop returning frames for processing, meaning that the drive team would need to restart the app before auto could successfully be run. Kelly decided to make a few changes to resolve this. First, the old way that vision pipelines could access the camera was through a singleton class that was tied to the life cycle of the entire robot controller app. When the app started, it would begin capturing frames from the camera, and these would be sent to a \texttt{FrameGrabber} class, which would then return the most recent frame to vision pipelines when needed. Because frames were always being captured using the old API, the system had some mysterious bugs, so Kelly decided to switch to a system that only captured frames when needed. Kelly also wanted to switch to the newer Camera 2 API, as well as provide a better system for multiple vision pipelines to be run at once, which would be necessary for a crater vision pipeline to aid in intaking during auto.
+
+The layout of the activity stayed the same, but Kelly updated the preview window to use the newer API. However, rather than the preview window being initialized when the activity started, it is initially hidden. Kelly then wrote a class \texttt{VisionCamera} that when created would retrieve the preview window from the activity layout, enable it, and attach itself a frame listener for the preview window. The  \texttt{VisionCamera} also attached itself as a listener to the \texttt{OpModeManagerNotifier}, which would allow it to automatically shut itself down when the opmode that created it stopped, even in the event of a crash within the opmode that prevented normal shutdown. The \texttt{VisionCamera} also handles asynchronous loading of the opencv libraries from a package seperately installed on the robot controller phone. This reduces the time it takes to deploy to the robot controller phone, because the opencv libraries never change, and does not initialize the libraries until they are actualy needed, reducing the startup time for the main robot controller activity. 
+
+To allow vision pipelines to access the camera frames, Kelly created a \texttt{VisionPipeline} interface that allows the \texttt{VisionCamera} to send captured frames to a set of pipelines. This also allows the actual vision processing to take place in a separate thread, so it does not slow down any other opmode activities. Kelly refactored the existing pipeline that detected the gold location to use this new process. 
+
+The following listing shows the process for initializing the \texttt{VisionCamera}
+
+\begin{lstlisting}[language=Java]
+    public VisionCamera () {
+        activity = AppUtil.getInstance().getActivity();
+        opModeManager = OpModeManagerImpl.getOpModeManagerOfActivity(activity);
+        opModeManager.registerListener(this);
+        trackers = new ArrayList<>();
+
+        final CountDownLatch countDownLatch = new CountDownLatch(1);
+
+        final BaseLoaderCallback baseLoaderCallback = new BaseLoaderCallback(activity) {
+            @Override
+            public void onManagerConnected(int status) {
+                if (status == LoaderCallbackInterface.SUCCESS) {
+                    Log.i(TAG, "opencv load successful");
+                    countDownLatch.countDown();
+                } else {
+                    Log.e(TAG, "error loading opencv");
+                }
+
+            }
+        };
+
+        AppUtil.getInstance().runOnUiThread(() -> 
+                OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_4_0, activity, baseLoaderCallback);
+        });
+
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            Log.e(TAG, "interrupted while loading opencv");
+        }
+
+        view = (JavaCamera2View) activity.findViewById(com.qualcomm.ftcrobotcontroller.R.id.cameraViewId);
+        view.setCvCameraViewListener(this);
+        AppUtil.getInstance().runOnUiThread(() -> {
+                view.enableView();
+                view.setVisibility(View.VISIBLE);
+            }
+        });
+
+    }
+\end{lstlisting}
+
+\end{document}
